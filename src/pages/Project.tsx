@@ -1,14 +1,9 @@
-import React from 'react';
+import React from "react";
 
-interface ProjectProps {
-  project?: never
-}
-
-const Project = ({project}: ProjectProps) => {
-  console.log(project)
+const Project: React.FC = () => {
   return (
     <div>
-
+      Project
     </div>
   );
 };

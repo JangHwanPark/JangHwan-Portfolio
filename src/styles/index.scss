@@ -1,1 +1,11 @@
+// default
 @use 'base';
+@use 'variables';
+
+// layout
+@use 'layout';
+
+// components
+@use './components/header';
+@use './components/Contents';
+@use './components/Footer';
