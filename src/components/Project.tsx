@@ -1,11 +1,20 @@
 import React from 'react';
 
-const Project = () => {
+interface ProjectProps {
+  title: string;
+}
+
+const Project: React.FC<ProjectProps> = ({title}) => {
+  const date = new Date();
+  const dateYear = date.getFullYear()
+  const dateMonth = date.getMonth()
+  const dateDay = date.getDay()
+
   return (
     <div className='project-info'>
-      Date
+      {dateYear}.{dateMonth}.{dateDay}
       <hr/>
-      Project Name
+      {title}
     </div>
   );
 };

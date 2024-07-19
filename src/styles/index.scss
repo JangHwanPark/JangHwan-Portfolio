@@ -6,6 +6,8 @@
 @use 'layout';
 
 // components
-@use './components/header';
-@use './components/Contents';
+@use './components/Header';
 @use './components/Footer';
+
+// pages
+@use 'pages/ProfileMain';
