@@ -5,11 +5,20 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "types": ["vitest/globals"],
+    "target": "ESNext",
+    "module": "ESNext",
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "composite": true,
+    "noEmit": false,
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vitest/globals"]
   },
-  "include": ["src", "tests"]
+  "include": ["src"]
 }

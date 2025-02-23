@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className='profile-header'>
       <h2>안녕하세요</h2>
