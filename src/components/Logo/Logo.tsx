@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Logo = () => {
   return (
-    <div>
-      japark.dev
-    </div>
+    <h1>
+      <Link to='/'>japark.dev</Link>
+    </h1>
   );
 };
 

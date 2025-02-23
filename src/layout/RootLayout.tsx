@@ -4,9 +4,9 @@ import { Footer, Header } from "../layout";
 
 const RootLayout: React.FC = () => {
   return (
-    <div className='container mx-auto w-full h-full'>
+    <div className='w-full h-full'>
       <Header/>
-      <main className='w-full h-full'>
+      <main className='container mx-auto w-full h-full'>
         <Outlet/>
       </main>
       <Footer/>
