@@ -1,8 +1,7 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
 
-const Layout: React.FC = () => {
-  // Todo: 12col or f layout
+const RootLayout: React.FC = () => {
   return (
     <div className='container'>
       <Outlet/>
@@ -10,4 +9,4 @@ const Layout: React.FC = () => {
   )
 };
 
-export default Layout;
+export default RootLayout;

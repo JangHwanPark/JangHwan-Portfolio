@@ -1,11 +1,10 @@
-import React from 'react';
 import Header from "../components/Header.tsx";
 import Project from "../components/Project.tsx";
 import Footer from "../components/Footer.tsx";
 import MyInfo from "../components/MyInfo.tsx";
 import mock from '../data/mock.json';
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <>
       <Header/>
