@@ -1,10 +1,15 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
+import { Footer, Header } from "../layout";
 
 const RootLayout: React.FC = () => {
   return (
-    <div className='container'>
-      <Outlet/>
+    <div className='container mx-auto w-full h-full'>
+      <Header/>
+      <main className='w-full h-full'>
+        <Outlet/>
+      </main>
+      <Footer/>
     </div>
   )
 };
