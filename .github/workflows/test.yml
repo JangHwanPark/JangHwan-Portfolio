@@ -62,7 +62,7 @@ jobs:
         run: npm run lint
 
       # 테스트 실행
-      - run: vitest
+      - run: npm run test
 
       # 테스트 커버리지 업로드
       - name: Upload test coverage as artifact
