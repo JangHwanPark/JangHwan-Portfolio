@@ -76,7 +76,7 @@ jobs:
 
       # 빌드 실행
       - name: Run ncc
-        run: vite build
+        run: npm run build
 
       # Lint-Staged & Husky 제거 (main 브랜치에서만 실행)
       - name: Remove lint-staged husky
