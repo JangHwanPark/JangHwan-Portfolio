@@ -22,12 +22,14 @@ const Tab = ({
   const isActive = active === tabKey;
   const classes = clsx(
     className,
+    'w-full pb-2',
     isActive && 'border-b-2 border-blue-500');
 
   return (
     <li className={classes}>
       <button
         role="tab"
+        className='w-full h-full cursor-pointer'
         aria-selected={isActive}
         aria-controls={`panel-${tabKey}`}
         onClick={() => handleTabChange(tabKey)}>

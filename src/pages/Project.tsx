@@ -3,10 +3,10 @@ import { TabItem } from "../types/tabs";
 import PageHeader from "../layout/PageHeader/PageHeader";
 
 const tabs: TabItem[] = [
-  { key: "tab1", label: "Tab 1" },
-  { key: "tab2", label: "Tab 2" },
-  { key: "tab3", label: "Tab 3" },
-  { key: "tab4", label: "Tab 4" },
+  { key: "tab1", label: "전체" },
+  { key: "tab2", label: "프런트엔드" },
+  { key: "tab3", label: "백엔드" },
+  { key: "tab4", label: "풀스택" },
 ];
 
 const Project = () => {

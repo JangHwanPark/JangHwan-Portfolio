@@ -6,14 +6,14 @@ import {
   TabPanels,
   TabPanel
 } from "../components";
-import { skills } from "../data";
+//
 import PageHeader from "../layout/PageHeader/PageHeader";
+import Skill from "../components/Skill/Skill";
 
 const tabs: TabItem[] = [
-  { key: "tab1", label: "Tab 1" },
-  { key: "tab2", label: "Tab 2" },
-  { key: "tab3", label: "Tab 3" },
-  { key: "tab4", label: "Tab 4" },
+  { key: "tab1", label: "전체" },
+  { key: "tab2", label: "자주 사용해요" },
+  { key: "tab3", label: "사용 해봤어요" },
 ];
 
 const Skills = () => {
@@ -35,24 +35,17 @@ const Skills = () => {
           ))}
         </TabList>
         <TabPanels>
-          <TabPanel tabKey="tab1">Tab 1 Content</TabPanel>
-          <TabPanel tabKey="tab2">Tab 2 Content</TabPanel>
-          <TabPanel tabKey="tab3">Tab 3 Content</TabPanel>
-          <TabPanel tabKey="tab4">Tab 4 Content</TabPanel>
+          <TabPanel tabKey="tab1">
+            <Skill filter="tab1"/>
+          </TabPanel>
+          <TabPanel tabKey="tab2">
+            <Skill filter="tab2"/>
+          </TabPanel>
+          <TabPanel tabKey="tab3">
+            <Skill filter="tab3"/>
+          </TabPanel>
         </TabPanels>
       </Tabs>
-
-      {/* UI 테스트 */}
-      {skills.map((item, index) => (
-        <article key={index} className="flex items-center gap-3">
-          <figure className='w-10 h-10'>{item.icon}</figure>
-          <div className='text-left'>
-            <h2 className=''>{item.name}</h2>
-            <p>description</p>
-          </div>
-        </article>
-      ))}
-
     </section>
   );
 };

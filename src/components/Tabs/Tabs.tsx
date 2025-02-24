@@ -28,7 +28,11 @@ const Tabs = <T extends {} = {}> ({
 }: TabsProps<T>) => {
   return (
     <TabsProvider tabs={tabs} defaultTab={defaultTab}>
-      <nav>{children}</nav>
+      <div
+        className='w-full'
+        aria-label='Tab Menu'>
+        {children}
+      </div>
     </TabsProvider>
   );
 };

@@ -21,10 +21,12 @@ const TabList = ({
 }: TabListProps) => {
   const classes = clsx(
     className,
+    'pb-5',
     'flex items-center justify-between',)
   return (
     <ul
       role='tablist'
+      aria-orientation='horizontal'
       className={classes}>
       {children}
     </ul>
