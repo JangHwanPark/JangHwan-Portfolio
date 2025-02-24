@@ -17,7 +17,7 @@ const navbar = [
 const Header = () => {
   return (
     <header className='w-full pb-5'>
-      <div className='pt-3 px-10 flex justify-between items-center'>
+      <div className='pt-5 px-10 flex justify-between items-center'>
         <Logo/>
         <Navigation items={navbar} className='w-full max-w-xs'/>
         {/*<Navigation items={iconNavbar} className='w-16 max-w-sm'/>*/}
