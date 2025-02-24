@@ -1,16 +1,21 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
 import { Footer, Header } from "../layout";
+import clsx from "clsx";
 
 const RootLayout: React.FC = () => {
+  const classes = clsx(
+    'container mx-auto w-full',
+    'min-h-[calc(100vh-124px)]'
+  )
   return (
-    <div className='w-full min-h-screen'>
+    <>
       <Header/>
-      <main className='container mx-auto w-full min-h-screen'>
+      <main className={classes}>
         <Outlet/>
       </main>
       <Footer/>
-    </div>
+    </>
   )
 };
 

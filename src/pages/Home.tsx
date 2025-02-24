@@ -7,7 +7,7 @@ const tag = [
 
 const Home = () => {
   return (
-    <section className="w-full h-screen flex items-center justify-center">
+    <section className="w-full min-h-[calc(100vh-124px)] flex items-center justify-center">
       <header className="font-bold leading-8">
         <p className="text-lg">
           {tag.map((item, index) => (
