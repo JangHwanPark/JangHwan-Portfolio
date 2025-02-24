@@ -1,1 +1,6 @@
 export { default as Logo } from './Logo/Logo'
+export { default as Tabs } from './Tabs/Tabs'
+export { default as TabList } from './Tabs/TabList'
+export { default as Tab } from './Tabs/Tab'
+export { default as TabPanels } from './Tabs/TabPanels'
+export { default as TabPanel } from './Tabs/TabPanel'

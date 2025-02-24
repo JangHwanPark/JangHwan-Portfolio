@@ -17,76 +17,91 @@ export const skills = [
   {
     name: "HTML",
     icon: <FaHtml5 />,
-    category: "FrontEnd"
+    category: "FrontEnd",
+    usage: ["frequent"], // 자주 사용
   },
   {
     name: "CSS",
     icon: <FaCss3Alt />,
-    category: "FrontEnd"
+    category: "FrontEnd",
+    usage: ["frequent"],
   },
   {
     name: "JavaScript",
     icon: <FaJs />,
-    category: "FrontEnd"
+    category: "FrontEnd",
+    usage: ["frequent"],
   },
   {
     name: "TypeScript",
     icon: <FaJs />,
-    category: "FrontEnd"
+    category: "FrontEnd",
+    usage: ["familiar"], // 사용해봤어요
   },
   {
     name: "React",
     icon: <FaReact />,
-    category: "FrontEnd"
+    category: "FrontEnd",
+    usage: ["frequent"],
   },
   {
     name: "NextJS",
     icon: <FaReact />,
-    category: "FrontEnd"
+    category: "FrontEnd",
+    usage: ["familiar"],
   },
   {
     name: "NodeJS (Express.js)",
     icon: <FaNodeJs />,
-    category: "BackEnd"
+    category: "BackEnd",
+    usage: ["frequent"],
   },
   {
     name: "MySQL",
     icon: <FaDatabase />,
-    category: "BackEnd"
+    category: "BackEnd",
+    usage: ["familiar"],
   },
   {
     name: "MongoDB",
     icon: <FaDatabase />,
-    category: "BackEnd"
+    category: "BackEnd",
+    usage: ["familiar"],
   },
   {
     name: "Linux (Ubuntu)",
     icon: <FaDocker />,
-    category: "OS"
+    category: "OS",
+    usage: ["familiar"],
   },
   {
     name: "Docker",
     icon: <FaDocker />,
-    category: "Cloud"
+    category: "Cloud",
+    usage: ["familiar"],
   },
   {
     name: "AWS (EC2, S3, RDS)",
     icon: <FaAws />,
-    category: "Cloud"
+    category: "Cloud",
+    usage: ["familiar"],
   },
   {
     name: "NCP (Server)",
     icon: <SiNaver />,
-    category: "Cloud"
+    category: "Cloud",
+    usage: ["familiar"],
   },
   {
     name: "Figma",
     icon: <FaFigma />,
-    category: "Tools"
+    category: "Tools",
+    usage: ["frequent"],
   },
   {
     name: "Git / GitHub",
     icon: <FaGitAlt />,
-    category: "Tools"
+    category: "Tools",
+    usage: ["frequent"],
   },
 ];
