@@ -8,7 +8,7 @@ const tabs: TabItem[] = [
   { key: "tab4", label: "Tab 4" },
 ];
 
-const Portfolio = () => {
+const Project = () => {
   return (
     <section>
       <header>
@@ -54,4 +54,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Project;

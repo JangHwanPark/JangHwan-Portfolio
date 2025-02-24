@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 const navbar = [
   {href: "/", title: 'About'},
   {href: "/skills", title: 'Skills'},
-  {href: "/portfolio", title: 'Portfolio'},
+  {href: "/project", title: 'Project'},
 ];
 
 const iconNavbar  = [

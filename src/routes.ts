@@ -3,8 +3,8 @@ import RootLayout from "./layout/RootLayout";
 import {
   Home,
   Skills,
-  Portfolio,
-  PortfolioDetail,
+  Project,
+  ProjectDetail,
   NotFound
 } from "./pages";
 
@@ -21,8 +21,8 @@ export const router = createBrowserRouter([
       { path: "skills", Component: Skills },
 
       // 포트폴리오 (프로젝트)
-      { path: "portfolio", Component: Portfolio },
-      { path: "portfolio/:id", Component: PortfolioDetail },
+      { path: "project", Component: Project },
+      { path: "project/:id", Component: ProjectDetail },
 
       // 오류 처리 (404)
       { path: "*", Component: NotFound },
