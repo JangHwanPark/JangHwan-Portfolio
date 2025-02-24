@@ -1,16 +1,27 @@
-import { Link } from "react-router-dom";
+import MenuItem from "../../components/MenuItem/MenuItem";
 
-const navbar = [
-  {href: "/skills", title: 'Skills'},
-  {href: "/portfolio", title: 'Portfolio'},
-];
+interface Navbar {
+  href: string;
+  title?: string;
+  icon?: React.ReactNode;
+}
 
-const Navigation = () => {
+interface NavigationProps {
+  items: Navbar[];
+  className?: string;
+}
+
+const Navigation = ({
+  items,
+  className
+}: NavigationProps) => {
   return (
-    <nav>
-      <ul className='flex'>
-        {navbar.map((item, index) => (
-          <li key={index}><Link to={item.href}>{item.title}</Link></li>
+    <nav className={` ${className}`}>
+      <ul className='flex justify-between'>
+        {items.map((item, index) => (
+          <MenuItem key={index} href={item.href} title={item.title}>
+            {item.icon}
+          </MenuItem>
         ))}
       </ul>
     </nav>
