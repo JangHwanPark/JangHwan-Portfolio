@@ -12,95 +12,94 @@ import {
 } from "react-icons/fa";
 import { SiNaver } from "react-icons/si";
 
-
 export const skills = [
   {
     name: "HTML",
-    icon: <FaHtml5 />,
+    icon: <FaHtml5 className="w-full h-full text-orange-600" />,
     category: "FrontEnd",
-    usage: ["frequent"], // 자주 사용
+    usage: ["frequent"],
   },
   {
     name: "CSS",
-    icon: <FaCss3Alt />,
+    icon: <FaCss3Alt className="w-full h-full text-blue-500" />,
     category: "FrontEnd",
     usage: ["frequent"],
   },
   {
     name: "JavaScript",
-    icon: <FaJs />,
+    icon: <FaJs className="w-full h-full text-yellow-400" />,
     category: "FrontEnd",
     usage: ["frequent"],
   },
   {
     name: "TypeScript",
-    icon: <FaJs />,
+    icon: <FaJs className="w-full h-full text-blue-600" />,
     category: "FrontEnd",
-    usage: ["familiar"], // 사용해봤어요
+    usage: ["familiar"],
   },
   {
     name: "React",
-    icon: <FaReact />,
+    icon: <FaReact className="w-full h-full text-cyan-500" />,
     category: "FrontEnd",
     usage: ["frequent"],
   },
   {
     name: "NextJS",
-    icon: <FaReact />,
+    icon: <FaReact className="w-full h-full text-gray-800" />,
     category: "FrontEnd",
     usage: ["familiar"],
   },
   {
     name: "NodeJS (Express.js)",
-    icon: <FaNodeJs />,
+    icon: <FaNodeJs className="w-full h-full text-green-500" />,
     category: "BackEnd",
     usage: ["frequent"],
   },
   {
     name: "MySQL",
-    icon: <FaDatabase />,
+    icon: <FaDatabase className="w-full h-full text-blue-700" />,
     category: "BackEnd",
     usage: ["familiar"],
   },
   {
     name: "MongoDB",
-    icon: <FaDatabase />,
+    icon: <FaDatabase className="w-full h-full text-green-600" />,
     category: "BackEnd",
     usage: ["familiar"],
   },
   {
     name: "Linux (Ubuntu)",
-    icon: <FaDocker />,
+    icon: <FaDocker className="w-full h-full text-orange-500" />,
     category: "OS",
     usage: ["familiar"],
   },
   {
     name: "Docker",
-    icon: <FaDocker />,
+    icon: <FaDocker className="w-full h-full text-blue-400" />,
     category: "Cloud",
     usage: ["familiar"],
   },
   {
     name: "AWS (EC2, S3, RDS)",
-    icon: <FaAws />,
+    icon: <FaAws className="w-full h-full text-orange-600" />,
     category: "Cloud",
     usage: ["familiar"],
   },
   {
     name: "NCP (Server)",
-    icon: <SiNaver />,
+    icon: <SiNaver className="w-full h-full text-green-500" />,
     category: "Cloud",
     usage: ["familiar"],
   },
   {
     name: "Figma",
-    icon: <FaFigma />,
+    icon: <FaFigma className="w-full h-full text-pink-500" />,
     category: "Tools",
     usage: ["frequent"],
   },
   {
     name: "Git / GitHub",
-    icon: <FaGitAlt />,
+    icon: <FaGitAlt className="w-full h-full text-red-600" />,
     category: "Tools",
     usage: ["frequent"],
   },
