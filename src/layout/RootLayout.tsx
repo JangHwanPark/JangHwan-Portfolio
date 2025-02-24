@@ -1,10 +1,13 @@
-import React from "react";
+import { useState } from "react";
 import { Outlet } from 'react-router-dom';
 import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
+import Preloader from "../components/Preloader/Preloader";
 
-const RootLayout: React.FC = () => {
+const RootLayout = () => {
+  const [complete, setComplete] = useState(false);
+
   const classes = clsx(
     'container mx-auto w-full',
     'min-h-[calc(100vh-124px)]');
@@ -15,13 +18,16 @@ const RootLayout: React.FC = () => {
 
   return (
     <ThemeProvider>
-      <div className={dark}>
-        <Header/>
-        <main className={classes}>
-          <Outlet/>
-        </main>
-        <Footer/>
-      </div>
+      <Preloader setComplete={setComplete}/>
+      {complete && (
+        <div className={dark}>
+          <Header/>
+          <main className={classes}>
+            <Outlet/>
+          </main>
+          <Footer/>
+        </div>
+      )}
     </ThemeProvider>
   )
 };
