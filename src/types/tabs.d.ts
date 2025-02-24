@@ -2,7 +2,7 @@
 export interface TabItem<T = {}> {
   key: string;
   label: string;
-  icon?: React.ReactNode; // 아이콘 추가 가능
+  icon?: ReactNode; // 아이콘 추가 가능
   extra?: T; // 확장 가능 필드
 }
 

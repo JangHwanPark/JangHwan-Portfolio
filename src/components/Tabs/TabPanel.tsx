@@ -1,4 +1,4 @@
-import { useTabs } from "../../context/TabsContext";
+import { useTabs } from "../../providers/TabProvider";
 
 /**
  * `TabPanel` 컴포넌트는 특정 탭이 활성화될 때만 표시되는 컨텐츠입니다.

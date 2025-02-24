@@ -1,5 +1,5 @@
 import { TabProps } from "../../types/tabs";
-import { useTabs } from "../../context/TabsContext";
+import { useTabs } from "../../providers/TabProvider";
 import clsx from "clsx";
 
 /**
@@ -20,7 +20,6 @@ const Tab = ({
 }: TabProps) => {
   const {active, handleTabChange} = useTabs();
   const isActive = active === tabKey;
-  console.log(isActive);
   const classes = clsx(
     className,
     isActive && 'border-b-2 border-blue-500');

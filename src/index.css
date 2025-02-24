@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* 다크모드 */
+@variant dark (&:where(.dark, .dark *));
+
 html, body {
     width: 100%;
     min-width: calc(100vw - 20px);
