@@ -13,7 +13,7 @@ describe("Navigation 컴포넌트 테스트", () => {
   it("Navigation 컴포넌트가 정상적으로 렌더링 되어야 한다.", () => {
     render(
       <MemoryRouter>
-        <Navigation />
+        <Navigation items={navbar}/>
       </MemoryRouter>
     );
 
@@ -24,7 +24,7 @@ describe("Navigation 컴포넌트 테스트", () => {
   it("Navigation의 각 항목이 `Link`로 렌더링 되어야 한다.", () => {
     render(
       <MemoryRouter>
-        <Navigation />
+        <Navigation items={navbar}/>
       </MemoryRouter>
     );
 
