@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* 다크모드 */
-@variant dark (&:where(.dark, .dark *));
+@variant dark (&:where([data-them=dark], [data-theme=dark] *));
 
 html, body {
     width: 100%;

@@ -44,7 +44,7 @@ export const ThemeProvider = ({
   const [theme, setTheme] = useState<Theme>('light');
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    const selectedTheme = e.currentTarget.value as Theme;
+    const selectedTheme = e.currentTarget.dataset.theme as Theme;
     setTheme(selectedTheme);
   }
 

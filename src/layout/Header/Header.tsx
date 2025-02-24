@@ -1,6 +1,7 @@
 import { Logo } from "../../components";
 import Navigation from "../Navigation/Navigation";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+// import { FaGithub, FaLinkedin } from "react-icons/fa";
+import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
 
 const navbar = [
   {href: "/", title: 'About'},
@@ -8,10 +9,10 @@ const navbar = [
   {href: "/project", title: 'Project'},
 ];
 
-const iconNavbar  = [
+/*const iconNavbar  = [
   {href: '/', icon: <FaGithub className='w-6 h-6'/>},
   {href: '/', icon: <FaLinkedin className='w-6 h-6'/>}
-];
+];*/
 
 const Header = () => {
   return (
@@ -19,7 +20,8 @@ const Header = () => {
       <div className='pt-3 px-10 flex justify-between items-center'>
         <Logo/>
         <Navigation items={navbar} className='w-full max-w-xs'/>
-        <Navigation items={iconNavbar} className='w-16 max-w-sm'/>
+        {/*<Navigation items={iconNavbar} className='w-16 max-w-sm'/>*/}
+        <DarkModeButton/>
       </div>
     </header>
   );
