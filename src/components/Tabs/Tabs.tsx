@@ -28,7 +28,7 @@ const Tabs = <T extends {} = {}> ({
 }: TabsProps<T>) => {
   return (
     <TabsProvider tabs={tabs} defaultTab={defaultTab}>
-      <div>{children}</div>
+      <nav>{children}</nav>
     </TabsProvider>
   );
 };
