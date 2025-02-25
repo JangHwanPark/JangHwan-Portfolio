@@ -6,7 +6,7 @@ interface MenuItemProps {
   href: string;
   className?: string;
   children?: ReactNode;
-  type?: 'link' | 'nav';
+  type?: 'link' | 'nav' | 'icon';
 }
 
 const MenuItem = ({
@@ -15,8 +15,14 @@ const MenuItem = ({
   children,
   type = 'link',
 }: MenuItemProps) => {
+  const itemClass = clsx(
+    ' p-0',
+    type !== 'icon' && 'w-20 text-lg text-center',
+    type === 'icon' && 'w-fit',
+    className);
+
   return (
-    <li className={clsx('w-20 p-0 text-lg text-center', className)}>
+    <li className={itemClass}>
       {type === 'nav' ? (
         <NavLink
           to={href}

@@ -1,6 +1,5 @@
 import { Logo } from "../../components";
 import Navigation from "../Navigation/Navigation";
-// import { FaGithub, FaLinkedin } from "react-icons/fa";
 import DarkModeSwitch from "../../components/DarkModeSwitch/DarkModeSwitch";
 
 const navbar = [
@@ -8,11 +7,6 @@ const navbar = [
   {href: "/skills", title: 'Skills'},
   {href: "/project", title: 'Project'},
 ];
-
-/*const iconNavbar  = [
-  {href: '/', icon: <FaGithub className='w-6 h-6'/>},
-  {href: '/', icon: <FaLinkedin className='w-6 h-6'/>}
-];*/
 
 const Header = () => {
   return (
@@ -22,9 +16,7 @@ const Header = () => {
         <Navigation
           className='w-full max-w-xs'
           items={navbar}
-          type='nav'
-        />
-        {/*<Navigation items={iconNavbar} className='w-16 max-w-sm'/>*/}
+          type='nav'/>
         <DarkModeSwitch/>
       </div>
     </header>

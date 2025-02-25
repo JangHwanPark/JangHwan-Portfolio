@@ -1,9 +1,15 @@
 // import { useState } from "react";
 import { Outlet } from 'react-router-dom';
-import { Footer, Header } from "../layout";
+import { Footer, Header, Navigation } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 // import Preloader from "../components/Preloader/Preloader";
+
+const iconNavbar  = [
+  {href: '/', icon: <FaGithub className='w-6 h-6'/>},
+  {href: '/', icon: <FaLinkedin className='w-6 h-6'/>}
+];
 
 const RootLayout = () => {
   /*const [complete, setComplete] = useState(false);*/
@@ -13,6 +19,7 @@ const RootLayout = () => {
     'min-h-[calc(100vh-132px)]');
 
   const dark = clsx(
+    'relative',
     'text-gray-800 bg-white',
     'dark:bg-gray-800 dark:text-white');
 
@@ -25,6 +32,10 @@ const RootLayout = () => {
           <main className={classes}>
             <Outlet/>
           </main>
+          <Navigation
+            items={iconNavbar}
+            type='icon'
+            className='absolute top-10/12 left-12'/>
           <Footer/>
         </div>
       {/*)}*/}
