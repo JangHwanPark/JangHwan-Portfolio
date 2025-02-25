@@ -27,17 +27,18 @@ const RootLayout = () => {
     <ThemeProvider>
      {/* <Preloader setComplete={setComplete}/>
       {complete && (*/}
-        <div className={dark}>
-          <Header/>
-          <main className={classes}>
-            <Outlet/>
-          </main>
-          <Navigation
-            items={iconNavbar}
-            type='icon'
-            className='absolute top-10/12 left-12'/>
-          <Footer/>
-        </div>
+      <div className={dark}>
+        <Header/>
+        <main className={classes}>
+          <Outlet/>
+        </main>
+        <Footer/>
+        <Navigation
+          items={iconNavbar}
+          type='icon'
+          // absolute bottom-1/12 left-12
+          className='fixed bottom-1/12 left-12'/>
+      </div>
       {/*)}*/}
     </ThemeProvider>
   )

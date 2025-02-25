@@ -10,7 +10,7 @@ const navbar = [
 
 const Header = () => {
   return (
-    <header className='w-full pb-5'>
+    <header className='w-full pb-5 fixed top-0'>
       <div className='pt-5 px-10 flex justify-between items-center'>
         <Logo/>
         <Navigation
