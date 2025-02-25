@@ -19,7 +19,11 @@ const Header = () => {
     <header className='w-full pb-5'>
       <div className='pt-5 px-10 flex justify-between items-center'>
         <Logo/>
-        <Navigation items={navbar} className='w-full max-w-xs'/>
+        <Navigation
+          className='w-full max-w-xs'
+          items={navbar}
+          type='nav'
+        />
         {/*<Navigation items={iconNavbar} className='w-16 max-w-sm'/>*/}
         <DarkModeSwitch/>
       </div>

@@ -1,35 +1,36 @@
+import { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
 import clsx from "clsx";
 
 interface MenuItemProps {
-  title?: string;
   href: string;
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   type?: 'link' | 'nav';
 }
 
 const MenuItem = ({
-  title,
   href,
   className,
   children,
   type = 'link',
 }: MenuItemProps) => {
-  const Component = type === 'nav' ? NavLink : Link;
-  const classes = clsx('p-0', className);
   return (
-    <li className={classes}>
-      {children ? (
-        // 아이콘만 클릭 가능하도록 구현
-        <Component to={href}>
+    <li className={clsx('w-20 p-0 text-lg text-center', className)}>
+      {type === 'nav' ? (
+        <NavLink
+          to={href}
+          className={({ isActive }) => clsx(
+            'relative w-full h-full flex items-center justify-center pb-1',
+            'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-500',
+            'after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100',
+            isActive && 'active font-semibold after:scale-x-100')}>
           {children}
-        </Component>
+        </NavLink>
       ) : (
-        // 기본적으로 텍스트 링크
-        <Component to={href}>
-          {title}
-        </Component>
+        <Link to={href}>
+          {children}
+        </Link>
       )}
     </li>
   );

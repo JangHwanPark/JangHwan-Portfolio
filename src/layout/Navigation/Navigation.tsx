@@ -1,26 +1,33 @@
+import { ReactNode } from "react";
 import MenuItem from "../../components/MenuItem/MenuItem";
 
 interface Navbar {
   href: string;
   title?: string;
-  icon?: React.ReactNode;
+  icon?: ReactNode;
 }
 
 interface NavigationProps {
   items: Navbar[];
   className?: string;
+  type?: 'link' | 'nav';
 }
 
 const Navigation = ({
   items,
-  className
+  className,
+  type = 'link'
 }: NavigationProps) => {
   return (
-    <nav className={` ${className}`}>
-      <ul className='flex justify-between'>
+    <nav className={`${className}`}>
+      <ul className='flex justify-between gap-5'>
         {items.map((item, index) => (
-          <MenuItem key={index} href={item.href} title={item.title}>
+          <MenuItem
+            key={index}
+            href={item.href}
+            type={type}>
             {item.icon}
+            {item.title}
           </MenuItem>
         ))}
       </ul>
