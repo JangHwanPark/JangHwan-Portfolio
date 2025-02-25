@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import { Footer, Header, Navigation } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
@@ -27,7 +27,8 @@ const RootLayout = () => {
     <ThemeProvider>
      {/* <Preloader setComplete={setComplete}/>
       {complete && (*/}
-      <div className={dark}>
+      <ScrollRestoration/>
+        <div className={dark}>
         <Header/>
         <main className={classes}>
           <Outlet/>
