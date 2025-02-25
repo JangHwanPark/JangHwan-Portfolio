@@ -11,7 +11,7 @@ const tabs: TabItem[] = [
 
 const Project = () => {
   return (
-    <section className='w-full max-w-3xl mx-auto'>
+    <section className='w-full py-16 min-h-screen max-w-3xl mx-auto'>
       <PageHeader title="Projects">
         개발은 단순한 코드 작성이 아니라, 문제를 해결하고 더 나은 서비스를 만드는 과정이라고 생각합니다.
         다양한 프로젝트를 진행하며 팀원들과 협업하고, 새로운 기술을 적용하며 성장해왔습니다.
