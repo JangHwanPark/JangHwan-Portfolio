@@ -6,6 +6,7 @@ const navbar = [
   {href: "/", title: 'About'},
   {href: "/skills", title: 'Skills'},
   {href: "/project", title: 'Project'},
+  {href: "/experience", title: 'Experience'},
 ];
 
 const Header = () => {
