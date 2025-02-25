@@ -1,11 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { ThemeProvider } from "../../providers/ThemeProvider";
-import DarkModeButton from "./DarkModeButton";
+import DarkModeSwitch from "./DarkModeSwitch";
 import { RootLayout } from "../../layout";
 import { MemoryRouter } from "react-router-dom";
 
-describe("DarkModeButton 컴포넌트 테스트", () => {
+describe("DarkModeSwitch 컴포넌트 테스트", () => {
   it("초기 테마는 라이트 모드여야 한다.", () => {
     render(
       <MemoryRouter>
@@ -20,7 +20,7 @@ describe("DarkModeButton 컴포넌트 테스트", () => {
   it("초기 컴포넌트 아이콘이 정상적으로 렌더링 되어야 한다.", () => {
     render(
       <ThemeProvider>
-        <DarkModeButton />
+        <DarkModeSwitch />
       </ThemeProvider>,
     );
     // 초기 값은 "light"이므로 LightMode 아이콘이 존재해야 함
@@ -30,7 +30,7 @@ describe("DarkModeButton 컴포넌트 테스트", () => {
   it("버튼 클릭시 테마가 변경되어야 한다.", () => {
     render(
       <ThemeProvider>
-        <DarkModeButton />
+        <DarkModeSwitch />
       </ThemeProvider>,
     );
 

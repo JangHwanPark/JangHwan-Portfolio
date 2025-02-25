@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* 테마 변수 */
+@theme {
+
+}
+
 /* 다크모드 */
 @variant dark (&:where([data-them=dark], [data-theme=dark] *));
 

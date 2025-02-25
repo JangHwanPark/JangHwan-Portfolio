@@ -6,7 +6,7 @@ const tag = [
 
 const Home = () => {
   return (
-    <section className="w-full min-h-[calc(100vh-124px)] flex items-center">
+    <section className="w-full min-h-[calc(100vh-132px)] flex items-center">
       <header className="font-bold leading-8">
         <p className="w-fit text-lg mb-3">
           {tag.map((item, index) => (

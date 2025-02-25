@@ -1,7 +1,7 @@
 import { Logo } from "../../components";
 import Navigation from "../Navigation/Navigation";
 // import { FaGithub, FaLinkedin } from "react-icons/fa";
-import DarkModeButton from "../../components/DarkModeButton/DarkModeButton";
+import DarkModeSwitch from "../../components/DarkModeSwitch/DarkModeSwitch";
 
 const navbar = [
   {href: "/", title: 'About'},
@@ -21,7 +21,7 @@ const Header = () => {
         <Logo/>
         <Navigation items={navbar} className='w-full max-w-xs'/>
         {/*<Navigation items={iconNavbar} className='w-16 max-w-sm'/>*/}
-        <DarkModeButton/>
+        <DarkModeSwitch/>
       </div>
     </header>
   );
