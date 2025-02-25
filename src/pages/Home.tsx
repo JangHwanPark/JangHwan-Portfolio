@@ -1,4 +1,6 @@
-const tag = [
+import Tags from "../components/Tags/Tags";
+
+const tags = [
   { label: "협업" },
   { label: "팀워크" },
   { label: "사용자 중심" },
@@ -6,13 +8,9 @@ const tag = [
 
 const Home = () => {
   return (
-    <section className="w-full min-h-[calc(100vh-132px)] flex items-center">
+    <section className="w-full min-h-[calc(100vh-136px)] flex items-center">
       <header className="font-bold leading-8">
-        <p className="w-fit text-lg mb-3">
-          {tag.map((item, index) => (
-            <span key={index} className='first:pr-2 last:pl-2'>#{item.label}</span>
-          ))}
-        </p>
+        <Tags items={tags}/>
         <h1 className="w-fit mb-8 text-6xl leading-20">
           {/* 사용자 경험을 디자인하는 */}
           {/* 사용자 경험을 고민하는 */}

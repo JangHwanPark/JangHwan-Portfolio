@@ -16,7 +16,7 @@ const RootLayout = () => {
 
   const classes = clsx(
     'container mx-auto w-full',
-    'min-h-[calc(100vh-132px)]');
+    'min-h-[calc(100vh-136px)]');
 
   const dark = clsx(
     'relative',
