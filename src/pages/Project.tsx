@@ -1,6 +1,7 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "../components";
 import { TabItem } from "../types/tabs";
 import PageHeader from "../layout/PageHeader/PageHeader";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 const tabs: TabItem[] = [
   { key: "tab1", label: "전체" },
@@ -18,7 +19,9 @@ const Project = () => {
         특히, 사용자 경험을 개선하고, 유지보수성이 높은 코드를 작성하는 데 집중하고 있습니다.
         아래 프로젝트들은 제가 경험한 작업물들입니다.
       </PageHeader>
-
+      <div className='w-full mr-auto pb-4'>
+        카드로보기 / 그리드로 보기
+      </div>
       <Tabs tabs={tabs} defaultTab="tab1">
         <TabList>
           {tabs.map((tab) => (
@@ -28,26 +31,30 @@ const Project = () => {
           ))}
         </TabList>
         <TabPanels>
-          <TabPanel tabKey="tab1">Tab 1 Content</TabPanel>
+          <TabPanel tabKey="tab1">
+            <ProjectCard/>
+          </TabPanel>
           <TabPanel tabKey="tab2">Tab 2 Content</TabPanel>
           <TabPanel tabKey="tab3">Tab 3 Content</TabPanel>
           <TabPanel tabKey="tab4">Tab 4 Content</TabPanel>
         </TabPanels>
       </Tabs>
-      전체
-      Vanila JS
-      React
-      NextJS
-      NodeJS
+      {/*<div>
+        전체
+        Vanila JS
+        React
+        NextJS
+        NodeJS
 
-      Titov(Visionlife)
-      DA
-      Teamming
-      Node-Apis
-      React-Components
-      LLK
-      React Shopping
-      Attack-web
+        Titov(Visionlife)
+        DA
+        Teamming
+        Node-Apis
+        React-Components
+        LLK
+        React Shopping
+        Attack-web
+      </div>*/}
     </section>
   );
 };
