@@ -30,9 +30,8 @@ export const router = createBrowserRouter([
 
       // 오류 처리 (404)
       { path: "*", Component: NotFound },
-
-      // 테스트 페이지
-      { path: "/test", Component: TestPage },
-    ]
-  }
+    ],
+  },
+  // 테스트 페이지
+  { path: "/test", Component: TestPage },
 ])
