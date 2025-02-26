@@ -9,6 +9,7 @@ import {
   NotFound,
   TestPage
 } from "./pages";
+import TestGsap from "./pages/TestGSAP";
 
 export const router = createBrowserRouter([
   {
@@ -34,4 +35,5 @@ export const router = createBrowserRouter([
   },
   // 테스트 페이지
   { path: "/test", Component: TestPage },
+  { path: "/gsap", Component: TestGsap },
 ])
