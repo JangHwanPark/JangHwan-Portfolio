@@ -1,9 +1,10 @@
 // import { useState } from "react";
-import { Outlet, ScrollRestoration } from 'react-router-dom';
+import { ScrollRestoration } from 'react-router-dom';
 import { Footer, Header, Navigation } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Experience, Home, Project, Skills } from "../pages";
 // import Preloader from "../components/Preloader/Preloader";
 
 const iconNavbar  = [
@@ -15,7 +16,8 @@ const RootLayout = () => {
   /*const [complete, setComplete] = useState(false);*/
 
   const classes = clsx(
-    'container mx-auto w-full',
+    'max-w-4xl md:max-w-5xl lg:max-w-6xl',
+    'mx-auto w-full h-[400vh]',
     'min-h-[calc(100vh-136px)]');
 
   const dark = clsx(
@@ -31,7 +33,10 @@ const RootLayout = () => {
         <div className={dark}>
         <Header/>
         <main className={classes}>
-          <Outlet/>
+          <Home/>
+          <Skills/>
+          <Project/>
+          <Experience/>
         </main>
         <Footer/>
         <Navigation

@@ -11,7 +11,7 @@ const navbar = [
 
 const Header = () => {
   return (
-    <header className='w-full pb-5 fixed top-0'>
+    <header className='w-full pb-5 bg-white sticky top-0 z-9999'>
       <div className='pt-5 px-10 flex justify-between items-center'>
         <Logo/>
         <Navigation

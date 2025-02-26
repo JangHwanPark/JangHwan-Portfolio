@@ -18,7 +18,7 @@ const tabs: TabItem[] = [
 
 const Skills = () => {
   return (
-    <section className='w-full py-16 min-h-screen max-w-3xl mx-auto'>
+    <section className='w-full py-16 min-h-screen bg-red-300'>
       <PageHeader title='SKILLS'>
         저는 새로운 기술을 배우고 실험하는 것을 즐깁니다.
         프론트엔드부터 백엔드, 데이터베이스, 개발 도구까지 다양한 기술을 익히고 활용하며,

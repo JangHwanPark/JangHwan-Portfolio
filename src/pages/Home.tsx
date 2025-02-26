@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tags from "../components/Tags/Tags";
 
 const tags = [
@@ -9,17 +10,20 @@ const tags = [
   { label: "사용자 중심" },
 ];
 
+// gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+
 const Home = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
   const textRef = useRef<HTMLHeadingElement | null>(null);
-  const animatedSections = useRef({
-    header: false,
-    img: false,
-    text: false
-  });
 
   useGSAP(() => {
+    gsap.set(headerRef.current, {
+      y: 100
+    })
+
     gsap.set(imgRef.current, {
       opacity: 0,
       x: -100
@@ -30,83 +34,45 @@ const Home = () => {
       y: 50
     });
 
-    const timeline = gsap.timeline();
-    let lastScrollY = window.scrollY; // 이전 스크롤 위치 저장
-
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const isScrollingDown = scrollY > lastScrollY;
-
-      if (isScrollingDown) {
-        // 아래로 스크롤할 때 애니메이션 실행
-        if (scrollY > 300 && !animatedSections.current.header) {
-          timeline.to(headerRef.current, {
-            y: -200,
-            duration: 1.2,
-            ease: "power2.out"
-          });
-          animatedSections.current.header = true;
-        }
-
-        if (scrollY > 400 && !animatedSections.current.img) {
-          timeline.to(imgRef.current, {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            ease: "power2.out"
-          });
-          animatedSections.current.img = true;
-        }
-
-        if (scrollY > 500 && !animatedSections.current.text) {
-          timeline.to(textRef.current, {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          });
-          animatedSections.current.text = true;
-        }
-      } else {
-        // 위로 스크롤할 때 원래 위치로 복귀
-        if (scrollY < 500 && animatedSections.current.text) {
-          timeline.to(textRef.current, {
-            opacity: 0,
-            y: 50,
-            duration: 1.2,
-            ease: "power2.out"
-          });
-          animatedSections.current.text = false;
-        }
-
-        if (scrollY < 400 && animatedSections.current.img) {
-          timeline.to(imgRef.current, {
-            opacity: 0,
-            x: -100,
-            duration: 1.2,
-            ease: "power2.out"
-          });
-          animatedSections.current.img = false;
-        }
-
-        if (scrollY < 300 && animatedSections.current.header) {
-          timeline.to(headerRef.current, {
-            y: 0,
-            duration: 1.2,
-            ease: "power2.out"
-          });
-          animatedSections.current.header = false;
-        }
+    gsap.to(headerRef.current, {
+      y: -100,  // 위로 이동
+      duration: 2,
+      scrollTrigger: {
+        trigger: sectionRef.current,  // section 요소를 기준으로
+        start: "top 50px",  // 요소의 top / bottom 이 뷰포트의 250px 에 도달하면 시작
+        end: "bottom top",  // 요소의 `bottom`이 뷰포트의 `top`에 닿을 때까지 유지
+        markers: true
       }
-    };
+    });
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    gsap.to(imgRef.current, {
+      x: 0,
+      opacity: 1,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 100px",
+        end: "bottom center",
+        markers: true
+      }
+    });
+
+    gsap.to(textRef.current, {
+      y: -50,
+      opacity: 1,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 150px",
+        end: "bottom center",
+        markers: true
+      }
+    })
   }, []);
-
+// relative top-30
   return (
-    <section className="w-full h-[200vh] min-h-screen flex flex-col justify-center">
-      <header ref={headerRef} className="fixed top-5/12 font-semibold leading-8">
+    <section ref={sectionRef} className="relative w-full px-10 min-h-screen flex flex-col items-center bg-blue-300">
+      <header ref={headerRef} className="absolute top-3/12 left-16 w-full text-left font-semibold leading-8">
         <Tags items={tags} />
         <h1 className="w-fit text-6xl leading-20 font-bold">
           {/* 사용자 경험을 디자인하는 */}
@@ -120,11 +86,11 @@ const Home = () => {
           제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.
         </h2>*/}
       </header>
-      <div className="fixed top-6/12 w-full max-w-5xl flex items-center gap-5">
-        <img ref={imgRef} className='w-96 h-96 rounded-xl' src="/src/assets/images/p1.jpg" alt="" />
-        <h2 ref={textRef} className="w-fit text-xl leading-8 font-semibold">
-          저는 팀워크와 협업을 중시하는 신입 프론트엔드 개발자입니다.<br />
-          사용자 중심의 웹 애플리케이션을 개발하기 위해 팀과 함께 협력하며 성장하고 있습니다.<br />
+      <div className="absolute top-6/12 w-full max-w-5xl flex items-center gap-5">
+        <img ref={imgRef} className='w-96 h-96 rounded-full' src="/src/assets/images/p1.jpg" alt="" />
+        <h2 ref={textRef} className="w-fit text-xl leading-10 font-semibold">
+          데이터를 효과적으로 시각화하고, 더 나은 UI를 설계하는 것을 목표로 합니다.
+          사용자 중심의 인터페이스를 고민하며, 팀과 함께 성장하고 있습니다.
           제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.
         </h2>
       </div>
