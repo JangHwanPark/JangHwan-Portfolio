@@ -21,7 +21,7 @@ const Home = () => {
 
   useGSAP(() => {
     gsap.set(headerRef.current, {
-      y: 100
+      y: 200
     })
 
     gsap.set(imgRef.current, {
@@ -35,11 +35,11 @@ const Home = () => {
     });
 
     gsap.to(headerRef.current, {
-      y: -100,  // 위로 이동
+      y: 100,  // 위로 이동
       duration: 2,
       scrollTrigger: {
         trigger: sectionRef.current,  // section 요소를 기준으로
-        start: "top 50px",  // 요소의 top / bottom 이 뷰포트의 250px 에 도달하면 시작
+        start: "top 350px",  // 요소의 top / bottom 이 뷰포트의 250px 에 도달하면 시작
         end: "bottom top",  // 요소의 `bottom`이 뷰포트의 `top`에 닿을 때까지 유지
         markers: true
       }
@@ -51,7 +51,7 @@ const Home = () => {
       duration: 1.2,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 100px",
+        start: "top 400px",
         end: "bottom center",
         markers: true
       }
@@ -63,7 +63,7 @@ const Home = () => {
       duration: 1.2,
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 150px",
+        start: "top 420px",
         end: "bottom center",
         markers: true
       }
@@ -71,7 +71,7 @@ const Home = () => {
   }, []);
 // relative top-30
   return (
-    <section ref={sectionRef} className="relative w-full px-10 min-h-screen flex flex-col items-center bg-blue-300">
+    <section ref={sectionRef} className="relative w-full h-[120vh] px-10 min-h-screen flex flex-col items-center bg-blue-300">
       <header ref={headerRef} className="absolute top-3/12 left-16 w-full text-left font-semibold leading-8">
         <Tags items={tags} />
         <h1 className="w-fit text-6xl leading-20 font-bold">
