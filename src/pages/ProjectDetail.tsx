@@ -12,8 +12,7 @@ const ProjectDetail = () => {
   };
 
   if (!project) {
-    console.warn("⚠ 프로젝트 데이터 없음! URL로 직접 접근했을 가능성이 높음.");
-    return <div>잘못된 접근입니다. <button onClick={closeModal}>돌아가기</button></div>;
+    return console.warn("⚠ 프로젝트 데이터 없음! URL로 직접 접근했을 가능성이 높음.");
   }
 
   return (
