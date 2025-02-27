@@ -1,12 +1,8 @@
-import Preloader from "../components/Preloader/Preloader";
-import { useState } from "react";
+import Home from "./Home";
 
 const TestPage = () => {
-  const [complete, setComplete] = useState(false);
-  console.log(complete);
   return (
-    <>
-      <Preloader setComplete={setComplete}/>
+    <><Home/>
     </>
   );
 };
