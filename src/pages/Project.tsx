@@ -45,13 +45,17 @@ const Project = () => {
     });
   }, []);
 
+  const connClass = clsx(
+    'w-full max-w-3xl md:max-w-6xl mx-auto',
+    'min-h-screen flex flex-col items-start justify-center gap-6 bg-gray-200')
+
   const horizontallyClass = clsx(
     "w-[600px] p-10 flex flex-col items-center justify-start gap-10");
 
   // content-stretch
   return (
-    <section id='projects' ref={sections.projects} className="min-h-screen flex flex-col items-start justify-center gap-6 bg-gray-200">
-      <h2 className="max-w-3xl md:max-w-6xl ml-6 md:ml-10 mr-auto text-4xl md:text-7xl font-bold">
+    <section id='projects' ref={sections.projects} className={connClass}>
+      <h2 className="ml-6 md:ml-10 mr-auto text-4xl md:text-7xl font-bold">
         My <span>Work</span>
       </h2>
       <ul ref={horizonRef} className="w-[3600px] mb-16 flex relative gap-10">

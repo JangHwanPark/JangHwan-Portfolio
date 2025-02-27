@@ -54,32 +54,32 @@ const About = () => {
   }, []);
 
   const connClass = clsx(
-    'min-h-screen max-w-3xl mx-auto flex items-center justify-center gap-5',
-    'flex-col', 'md:max-w-4xl md:flex-row', 'lg:max-w-5xl');
+    'bg-blue-100',
+    'w-full max-w-3xl md:max-w-6xl mx-auto',
+    'min-h-screen flex flex-col items-center justify-center gap-5',
+    'md:flex-row',);
 
   const imgClass = clsx(
     'w-80 h-[400px] md:h-[450px] object-cover rounded-xl'
   )
 
   return (
-    <section ref={sections.about} id='about' className="w-full bg-blue-200">
-      <article className={connClass}>
-        <img ref={imgRef} className={imgClass} src="/src/assets/images/p1.jpg" alt="" />
-        <header className="font-semibold leading-8">
-          <Tags items={tags} />
-          <h2 ref={titleRef} className="w-fit mb-3 text-xl md:text-3xl leading-10 font-bold">
-            {/* 사용자 경험을 디자인하는 */}
-            {/* 사용자 경험을 고민하는 */}
-            데이터를 조각하는<br />
-            프런트엔드 개발자 박장환입니다.
-          </h2>
-          <p ref={textRef} className="w-fit max-w-md text-md md:text-xl leading-8 font-semibold">
-            데이터를 효과적으로 시각화하고, 더 나은 UI를 설계하는 것을 목표로
-            사용자 중심의 인터페이스를 고민하며, 팀과 함께 성장하고 있습니다.
-            제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.
-          </p>
-        </header>
-      </article>
+    <section ref={sections.about} id='about' className={connClass}>
+      <img ref={imgRef} className={imgClass} src="/src/assets/images/p1.jpg" alt="" />
+      <header className="font-semibold leading-8">
+        <Tags items={tags} />
+        <h2 ref={titleRef} className="w-fit mb-3 text-xl md:text-3xl leading-10 font-bold">
+          {/* 사용자 경험을 디자인하는 */}
+          {/* 사용자 경험을 고민하는 */}
+          데이터를 조각하는<br />
+          프런트엔드 개발자 박장환입니다.
+        </h2>
+        <p ref={textRef} className="w-fit max-w-md text-md md:text-xl leading-8 font-semibold">
+          데이터를 효과적으로 시각화하고, 더 나은 UI를 설계하는 것을 목표로
+          사용자 중심의 인터페이스를 고민하며, 팀과 함께 성장하고 있습니다.
+          제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.
+        </p>
+      </header>
     </section>
   );
 };

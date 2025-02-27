@@ -8,6 +8,11 @@ const Skills = () => {
   const frequency = skills.filter(item => item.usage.includes('frequent'));
   const familiar = skills.filter(item => item.usage.includes('familiar'));
 
+  const connClass = clsx(
+    'bg-red-200',
+    'w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-10 min-h-screen flex flex-col justify-center gap-10'
+  )
+
   const skillsConn = clsx(
     'p-10 border rounded-xl');
 
@@ -15,27 +20,25 @@ const Skills = () => {
     'mb-10 text-xl font-semibold text-center');
 
   return (
-    <section ref={sections.skills} id='skills' className='w-full max-w-full py-16 bg-red-200'>
-      <article className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-10 min-h-screen flex flex-col justify-center gap-10'>
-        {/*<h2>
+    <section ref={sections.skills} id='skills' className={connClass}>
+      {/*<h2>
           <span>&lt;</span>
           SKILLS
           <span>/&gt;</span>
         </h2>*/}
-        {/* 사용 빈도별 | 분야별 */}
-        <h2 className="w-fit py-10 text-7xl font-bold">SKILLS</h2>
-        <div className='flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0'>
-          <div className={skillsConn}>
-            <h3 className={subTitleClass}>자주 사용해요</h3>
-            <IconSkills skills={frequency}/>
-          </div>
+      {/* 사용 빈도별 | 분야별 */}
+      <h2 className="w-fit py-10 text-7xl font-bold">SKILLS</h2>
+      <div className='flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0'>
+        <article className={skillsConn}>
+          <h3 className={subTitleClass}>자주 사용해요</h3>
+          <IconSkills skills={frequency}/>
+        </article>
 
-          <div className={skillsConn}>
-            <h3 className={subTitleClass}>사용해 봤어요</h3>
-            <IconSkills skills={familiar}/>
-          </div>
-        </div>
-      </article>
+        <article className={skillsConn}>
+          <h3 className={subTitleClass}>사용해 봤어요</h3>
+          <IconSkills skills={familiar}/>
+        </article>
+      </div>
     </section>
   );
 };

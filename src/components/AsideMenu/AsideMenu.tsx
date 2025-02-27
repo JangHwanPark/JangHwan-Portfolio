@@ -1,8 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
-//import clsx from "clsx";
+import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { useEffect, useState } from "react";
 import clsx from "clsx";
+// import { useEffect, useState } from "react";
 
 const icon = [
   { href: "/", icon: <FaGithub className="w-6 h-6" /> },
@@ -20,21 +19,21 @@ interface AsideMenuProps {
 }*/
 
 const AsideMenu = () => {
- //const listClass = clsx('flex gap-5 flex-col');
-  const pathMap: { [key: string]: string } = {
+  //const listClass = clsx('flex gap-5 flex-col');
+  /*const pathMap: { [key: string]: string } = {
     "/": "Home",
     "/about": "About",
     "/skills": "Skills",
     "/projects": "Projects",
     "/experience": "Experience",
-  };
+  };*/
 
-  const location = useLocation();
+  /*const location = useLocation();
   const [pathName, setPathName] = useState("메인 페이지");
   console.log(location.pathname);
   useEffect(() => {
     setPathName(pathMap[location.pathname] || "페이지 없음");
-  }, [location.pathname])
+  }, [location.pathname])*/
 
   const asideClass = clsx(
     'flex flex-col gap-5 justify-center fixed bottom-1/12 left-10');
