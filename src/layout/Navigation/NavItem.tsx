@@ -6,18 +6,21 @@ interface MenuItemProps {
   href: string;
   className?: string;
   children?: ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
 const NavItem = ({
   href,
   className,
-  children
+  children,
+  onClick,
 }: MenuItemProps) => {
   const itemClass = clsx('w-20 text-lg text-center p-0', className);
   return (
     <li className={itemClass}>
       <NavLink
         to={href}
+        onClick={onClick}
         className={({ isActive }) => clsx(
           'relative w-full h-full flex items-center justify-center pb-1',
           'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-500',

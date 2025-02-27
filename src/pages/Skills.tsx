@@ -1,8 +1,10 @@
 import { skills } from "../data";
 import { IconSkills } from "../components";
 import clsx from "clsx";
+import { useScroll } from "../providers/ScrollProvider";
 
 const Skills = () => {
+  const { sections } = useScroll();
   const frequency = skills.filter(item => item.usage.includes('frequent'));
   const familiar = skills.filter(item => item.usage.includes('familiar'));
 
@@ -13,7 +15,7 @@ const Skills = () => {
     'mb-10 text-xl font-semibold text-center');
 
   return (
-    <section className='w-full max-w-full py-16 bg-red-200'>
+    <section ref={sections.skills} id='skills' className='w-full max-w-full py-16 bg-red-200'>
       <article className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-10 min-h-screen flex flex-col justify-center gap-10'>
         {/*<h2>
           <span>&lt;</span>

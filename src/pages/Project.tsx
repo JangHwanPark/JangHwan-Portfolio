@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../data";
+import { useScroll } from "../providers/ScrollProvider";
 
 /*const tabs: TabItem[] = [
   { key: "tab1", label: "전체" },
@@ -20,10 +21,7 @@ import { projects } from "../data";
 
 const Project = () => {
   gsap.registerPlugin(ScrollTrigger);
-
-  const containerRef = useRef<HTMLElement | null>(null);
-  // const containerRef = useRef<HTMLUListElement | null>(null);
-  // const horizonRef = useRef<HTMLLIElement[]>([]);
+  const { sections } = useScroll();
   const horizonRef = useRef<HTMLUListElement | null>(null);
 
   const projectCnt = projects.length;
@@ -36,7 +34,7 @@ const Project = () => {
       x: `-${totalWidth - window.innerWidth}px`, // 가로 스크롤 이동
       ease: "none",
       scrollTrigger: {
-        trigger: containerRef.current, // 트리거 기준 요소
+        trigger: sections.projects.current, // 트리거 기준 요소
         // top top : article 의 Top 이 뷰포트 상단(top)에 도달하면 실행
         // bottom bottom : article 의 바텀이 `뷰포트 바텀`과 만나면 고정 시작
         start: "bottom bottom",
@@ -52,7 +50,7 @@ const Project = () => {
 
   // content-stretch
   return (
-    <section ref={containerRef} className="min-h-screen flex flex-col items-start justify-center gap-6 bg-gray-200">
+    <section id='projects' ref={sections.projects} className="min-h-screen flex flex-col items-start justify-center gap-6 bg-gray-200">
       <h2 className="max-w-6xl ml-10 mr-auto text-7xl font-bold">
         My <span>Work</span>
       </h2>

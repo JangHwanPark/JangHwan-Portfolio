@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import Tags from "../components/Tags/Tags";
+import { useScroll } from "../providers/ScrollProvider";
 
 const tags = [
   { label: "협업" },
@@ -10,6 +11,7 @@ const tags = [
 ];
 
 const About = () => {
+  const { sections } = useScroll();
   const imgRef = useRef<HTMLImageElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const textRef = useRef<HTMLParagraphElement | null>(null);
@@ -51,7 +53,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="w-full bg-blue-200">
+    <section ref={sections.about} id='about' className="w-full bg-blue-200">
       <article
         className="max-w-3xl md:max-w-4xl lg:max-w-5xl min-h-screen mx-auto flex items-center justify-center gap-5">
         <img ref={imgRef} className="w-80 h-[450px] object-cover rounded-xl" src="/src/assets/images/p1.jpg" alt="" />

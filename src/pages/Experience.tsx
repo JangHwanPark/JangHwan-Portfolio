@@ -1,6 +1,9 @@
+import { useScroll } from "../providers/ScrollProvider";
+
 const Experience = () => {
+  const { sections } = useScroll();
   return (
-    <section className='bg-amber-200 min-h-screen'>
+    <section ref={sections.experience} id='experience' className='bg-amber-200 min-h-screen'>
       Experience
     </section>
   );

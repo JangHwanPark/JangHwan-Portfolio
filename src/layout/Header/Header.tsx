@@ -11,7 +11,7 @@ const navbar = [
   {href: "/", title: 'Home'},
   {href: "/about", title: 'About'},
   {href: "/skills", title: 'Skills'},
-  {href: "/project", title: 'Project'},
+  {href: "/projects", title: 'Projects'},
   {href: "/experience", title: 'Experience'},
 ];
 
