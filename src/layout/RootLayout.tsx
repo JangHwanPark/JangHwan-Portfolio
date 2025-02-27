@@ -2,7 +2,7 @@ import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
 // Home,
-import { About, Project, Skills, Experience } from "../pages";
+import { About, Project, Skills, Experience, ProjectDetail } from "../pages";
 import AsideMenu from "../components/AsideMenu/AsideMenu";
 import { ScrollProvider } from "../providers/ScrollProvider";
 // import { useRef } from "react";
@@ -41,6 +41,7 @@ const RootLayout = () => {
           <About />
           <Skills />
           <Project />
+          <ProjectDetail/>
           <Experience />
         </main>
         <Footer />
