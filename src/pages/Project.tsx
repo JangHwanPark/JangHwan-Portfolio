@@ -56,7 +56,7 @@ const Project = () => {
       <h2 className="max-w-6xl ml-10 mr-auto text-7xl font-bold">
         My <span>Work</span>
       </h2>
-      <ul ref={horizonRef} className="w-[3600px] mb-16 flex relative">
+      <ul ref={horizonRef} className="w-[3600px] mb-16 flex relative gap-10">
         {projects.map((project, index) => (
           <li key={index} className={horizontallyClass}>
             {/* 프로젝트 정보 */}

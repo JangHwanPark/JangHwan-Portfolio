@@ -16,7 +16,7 @@ const Navigation = ({
   className,
 }: NavigationProps) => {
   const navbarClass = clsx(
-    'w-full max-w-xs', className);
+    'w-full max-w-xs lg:max-w-xl', className);
   return (
     <nav className={navbarClass}>
       <ul className='flex gap-5 flex-row justify-between'>

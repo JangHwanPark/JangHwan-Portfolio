@@ -13,8 +13,8 @@ const Skills = () => {
     'mb-10 text-xl font-semibold text-center');
 
   return (
-    <section className='w-full max-w-full py-16 bg-red-300'>
-      <article className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-10 min-h-screen'>
+    <section className='w-full max-w-full py-16 bg-red-200'>
+      <article className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-10 min-h-screen flex flex-col justify-center gap-10'>
         {/*<h2>
           <span>&lt;</span>
           SKILLS

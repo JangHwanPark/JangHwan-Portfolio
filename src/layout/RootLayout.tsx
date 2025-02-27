@@ -4,7 +4,8 @@ import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
 // import gsap from "gsap";
-import { Experience, Home, About, Project, Skills } from "../pages";
+// Experience
+import { Home, About, Project, Skills } from "../pages";
 import AsideMenu from "../components/AsideMenu/AsideMenu";
 // import Preloader from "../components/Preloader/Preloader";
 // import { useGSAP } from "@gsap/react";
@@ -38,7 +39,7 @@ const RootLayout = () => {
           <About />
           <Skills />
           <Project />
-          <Experience />
+          {/*<Experience />*/}
         </main>
         <Footer />
         <AsideMenu/>
