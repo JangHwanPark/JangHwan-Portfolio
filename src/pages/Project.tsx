@@ -33,54 +33,53 @@ const Project = () => {
 
   useGSAP(() => {
     gsap.to(horizonRef.current, {
-      x: `-${totalWidth - window.innerWidth}px`,
+      x: `-${totalWidth - window.innerWidth}px`, // 가로 스크롤 이동
       ease: "none",
       scrollTrigger: {
-        // 스크롤 트리거 기준 요소
-        trigger: containerRef.current,
-        start: 'top top',
-        end: `+=${totalWidth}`,
-        scrub: 1,
-        pin: true,
+        trigger: containerRef.current, // 트리거 기준 요소
+        // top top : article 의 Top 이 뷰포트 상단(top)에 도달하면 실행
+        // bottom bottom : article 의 바텀이 `뷰포트 바텀`과 만나면 고정 시작
+        start: "bottom bottom",
+        end: `+=${totalWidth}`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
+        scrub: 1, // 부드러운 애니메이션 효과
+        pin: true, // 활성화 시 article이 고정됨
       },
     });
   }, []);
 
   const horizontallyClass = clsx(
-    "w-[1200px] p-32 flex flex-col items-center justify-start gap-10");
+    "w-[600px] p-32 flex flex-col items-center justify-start gap-10");
 
-  // style={{ height: `${connHeight}px` }}
+  // content-stretch
   return (
-    <section className="bg-green-100">
-      <article ref={containerRef} className="min-h-screen flex flex-col items-center justify-center content-stretch">
-        <h2>
-          My <span>Work</span>
-        </h2>
-        <ul ref={horizonRef} className="w-full flex relative">
-          {projects.map((item, index) => (
-            <li key={index} className={horizontallyClass}>
+    <section ref={containerRef} className="min-h-screen flex flex-col items-start justify-end gap-10 bg-gray-200">
+      <h2 className="max-w-6xl mb-10 ml-32 mr-auto text-7xl font-bold">
+        My <span>Work</span>
+      </h2>
+      <ul ref={horizonRef} className="w-full mb-20 flex relative">
+        {projects.map((item, index) => (
+          <li key={index} className={horizontallyClass}>
+            <div>
               <div>
                 <div>
+                  <h3>{item}</h3>
                   <div>
-                    <h3>{item}</h3>
-                    <div>
-                      <h4>Project Name</h4>
-                      <p>Category</p>
-                    </div>
+                    <h4>Project Name</h4>
+                    <p>Category</p>
                   </div>
-                  <h4>Tools and features</h4>
-                  <p>Javascript, TypeScript, React, Threejs</p>
                 </div>
-                <div className="w-full flex justify-center">
-                  <Link to="/">
-                    <div>img</div>
-                  </Link>
-                </div>
+                <h4>Tools and features</h4>
+                <p>Javascript, TypeScript, React, Threejs</p>
               </div>
-            </li>
-          ))}
-        </ul>
-      </article>
+              <div className="w-full flex justify-center">
+                <Link to="/">
+                  <div>img</div>
+                </Link>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
