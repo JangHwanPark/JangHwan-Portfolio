@@ -15,7 +15,7 @@ const NavItem = ({
   children,
   onClick,
 }: MenuItemProps) => {
-  const itemClass = clsx('w-20 text-lg text-center p-0', className);
+  const itemClass = clsx('w-20 text-5xl font-semibold md:text-lg md:font-base text-center p-0', className);
   return (
     <li className={itemClass}>
       <NavLink

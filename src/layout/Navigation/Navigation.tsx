@@ -3,8 +3,10 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import NavItem from "./NavItem";
 import clsx from "clsx";
 import { useScroll } from "../../providers/ScrollProvider";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { PiHamburger } from "react-icons/pi";
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
 // import { useGSAP } from "@gsap/react";
 
 interface Navbar {
@@ -24,6 +26,12 @@ const Navigation = ({
   gsap.registerPlugin(ScrollToPlugin);
   const { sections } = useScroll();
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuOpen = () => {
+    console.log("menu open");
+    setIsOpen(!isOpen);
+  }
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -63,11 +71,12 @@ const Navigation = ({
   }
 
   const navbarClass = clsx(
-    'w-full max-w-xs lg:max-w-xl', className);
+    'w-fit md:w-full max-w-xs lg:max-w-xl', className);
 
   return (
     <nav className={navbarClass}>
-      <ul className='flex gap-5 flex-row justify-between'>
+      {/* PC / Tablet */}
+      <ul className='hidden md:flex gap-5 flex-row justify-between'>
         {items.map((item, index) => (
           <NavItem
             key={index}
@@ -77,6 +86,35 @@ const Navigation = ({
           </NavItem>
         ))}
       </ul>
+      {/* Mobile */}
+      <button className='flex items-center lg:hidden' onClick={handleMenuOpen}>
+        <PiHamburger className='w-6 h-6'/>
+      </button>
+      {isOpen && (
+        <div className="h-screen fixed inset-0 text-white bg-black/50 z-50 flex items-center justify-center" onClick={handleMenuOpen}>
+          {/* 메뉴 컨테이너 */}
+          <div className="h-screen w-64 p-6 rounded-lg shadow-lg relative flex flex-col justify-center items-center" onClick={(e) => e.stopPropagation()}>
+            {/* 닫기 버튼 */}
+            <button className="absolute top-3 right-3 text-2xl" onClick={handleMenuOpen}>
+              <IoMdClose />
+            </button>
+
+            {/* 메뉴 리스트 */}
+            <ul className="flex flex-col gap-10">
+              {items.map((item, index) => (
+                <li key={index}>
+                  <NavItem
+                    onClick={(e) => handleClick(e, item.href.slice(1))}
+                    href={item.href}
+                    className="">
+                    {item.title}
+                  </NavItem>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
