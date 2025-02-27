@@ -6,7 +6,7 @@ import { MemoryRouter } from "react-router-dom";
 
 const navbar = [
   {href: "/skills", title: 'Skills'},
-  {href: "/portfolio", title: 'Portfolio'},
+  {href: "/projects", title: 'Portfolio'},
 ];
 
 describe("Navigation 컴포넌트 테스트", () => {
