@@ -1,7 +1,7 @@
 import { skills } from "../../data";
 import { useMemo } from "react";
 
-const Skill = ({
+const FilteredSkills = ({
   filter
 } : {
   filter: string;
@@ -38,4 +38,4 @@ const Skill = ({
   );
 };
 
-export default Skill;
+export default FilteredSkills;

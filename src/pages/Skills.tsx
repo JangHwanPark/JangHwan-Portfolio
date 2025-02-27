@@ -4,11 +4,11 @@ import {
   TabList,
   Tab,
   TabPanels,
-  TabPanel
+  TabPanel,
+  FilteredSkills
 } from "../components";
 //
 import PageHeader from "../layout/PageHeader/PageHeader";
-import Skill from "../components/Skill/Skill";
 
 const tabs: TabItem[] = [
   { key: "tab1", label: "전체" },
@@ -37,13 +37,13 @@ const Skills = () => {
           </TabList>
           <TabPanels>
             <TabPanel tabKey="tab1">
-              <Skill filter="tab1"/>
+              <FilteredSkills filter="tab1"/>
             </TabPanel>
             <TabPanel tabKey="tab2">
-              <Skill filter="tab2"/>
+              <FilteredSkills filter="tab2"/>
             </TabPanel>
             <TabPanel tabKey="tab3">
-              <Skill filter="tab3"/>
+              <FilteredSkills filter="tab3"/>
             </TabPanel>
           </TabPanels>
         </Tabs>

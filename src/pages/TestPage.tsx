@@ -1,9 +1,10 @@
-import Home from "./Home";
+import Skills from "../components/Skills/Skills";
 
 const TestPage = () => {
   return (
-    <><Home/>
-    </>
+    <div className='min-h-screen flex justify-center items-center gap-3'>
+      <Skills/>
+    </div>
   );
 };
 
