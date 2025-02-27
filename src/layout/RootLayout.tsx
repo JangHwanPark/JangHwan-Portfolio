@@ -18,9 +18,9 @@ const RootLayout = () => {
   /*const [complete, setComplete] = useState(false);*/
 
   const classes = clsx(
-    "max-w-4xl md:max-w-5xl lg:max-w-6xl",
-    "mx-auto w-full",
-    "min-h-[calc(100vh-136px)]");
+    // min-h-[calc(100vh-136px)]
+    // "max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto",
+    "w-full min-h-[calc(100vh-136px)]");
 
   const dark = clsx(
     "relative",
@@ -34,6 +34,7 @@ const RootLayout = () => {
       {complete && (*/}
       <ScrollRestoration />
       <div className={dark}>
+        <h1 className='hidden'>페이지 본문</h1>
         <Header />
         <main className={classes}>
           <Home />
@@ -46,8 +47,7 @@ const RootLayout = () => {
         <Navigation
           items={iconNavbar}
           type="icon"
-          // absolute bottom-1/12 left-12
-          className="fixed bottom-1/12 left-12" />
+          className="fixed bottom-1/12 left-4" />
       </div>
       {/*)}*/}
     </ThemeProvider>
