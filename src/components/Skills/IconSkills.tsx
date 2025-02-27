@@ -1,8 +1,13 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
-import { skills } from "../../data";
 
-const Skills = () => {
+interface IconSkillsProps {
+  skills: SkillsType[];
+}
+
+const IconSkills = ({
+  skills
+}: IconSkillsProps) => {
   const popupRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleMouseEnter = (index: number) => {
@@ -24,18 +29,18 @@ const Skills = () => {
   };
 
   return (
-    <div className="cursor-pointer flex gap-4">
+    <div className="cursor-pointer grid grid-rows-4 grid-cols-3 gap-8">
       {skills.map((skill, index) => (
         <div
           key={index}
           className="relative flex flex-col items-center"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}>
-          <figure className="w-10 h-10">{skill.icon}</figure>
+          <figure className="w-28 h-28">{skill.icon}</figure>
 
           {/* 팝업 (툴팁) */}
           <div
-            className="absolute bottom-[-40px] bg-gray-900 text-white px-2 py-1 rounded opacity-0 text-sm text-center"
+            className="absolute bottom-[-50px] bg-gray-900 text-white px-2 py-1 rounded opacity-0 text-sm text-center"
             ref={(el) =>{
               if (el) (popupRefs.current[index] = el);
             }}>
@@ -47,4 +52,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default IconSkills;

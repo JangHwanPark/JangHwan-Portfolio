@@ -1,9 +1,9 @@
-import Skills from "../components/Skills/Skills";
+import IconSkills from "../components/Skills/IconSkills";
 
 const TestPage = () => {
   return (
     <div className='min-h-screen flex justify-center items-center gap-3'>
-      <Skills/>
+      <IconSkills/>
     </div>
   );
 };
