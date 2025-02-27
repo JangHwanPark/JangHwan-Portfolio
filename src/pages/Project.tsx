@@ -1,60 +1,86 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from "../components";
-import { TabItem } from "../types/tabs";
-import PageHeader from "../layout/PageHeader/PageHeader";
-import ProjectCard from "../components/ProjectCard/ProjectCard";
+// import { Tab, TabList, TabPanel, TabPanels, Tabs } from "../components";
+// import { TabItem } from "../types/tabs";
+// import PageHeader from "../layout/PageHeader/PageHeader";
+// import ProjectCard from "../components/ProjectCard/ProjectCard";
+// import Horizontally from "../components/Scroll/Horizontally";
+import clsx from "clsx";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const tabs: TabItem[] = [
+/*const tabs: TabItem[] = [
   { key: "tab1", label: "전체" },
   { key: "tab2", label: "프런트엔드" },
   { key: "tab3", label: "백엔드" },
   { key: "tab4", label: "풀스택" },
-];
+];*/
 
 const Project = () => {
-  return (
-    <section className='w-full py-16 min-h-screen bg-green-300'>
-      <PageHeader title="Projects">
-        개발은 단순한 코드 작성이 아니라, 문제를 해결하고 더 나은 서비스를 만드는 과정이라고 생각합니다.
-        다양한 프로젝트를 진행하며 팀원들과 협업하고, 새로운 기술을 적용하며 성장해왔습니다.
-        특히, 사용자 경험을 개선하고, 유지보수성이 높은 코드를 작성하는 데 집중하고 있습니다.
-        아래 프로젝트들은 제가 경험한 작업물들입니다.
-      </PageHeader>
-      <div className='w-full mr-auto pb-4'>
-        카드로보기 / 그리드로 보기
-      </div>
-      <Tabs tabs={tabs} defaultTab="tab1">
-        <TabList>
-          {tabs.map((tab) => (
-            <Tab key={tab.key} tabKey={tab.key}>
-              {tab.label}
-            </Tab>
-          ))}
-        </TabList>
-        <TabPanels>
-          <TabPanel tabKey="tab1">
-            <ProjectCard/>
-          </TabPanel>
-          <TabPanel tabKey="tab2">Tab 2 Content</TabPanel>
-          <TabPanel tabKey="tab3">Tab 3 Content</TabPanel>
-          <TabPanel tabKey="tab4">Tab 4 Content</TabPanel>
-        </TabPanels>
-      </Tabs>
-      {/*<div>
-        전체
-        Vanila JS
-        React
-        NextJS
-        NodeJS
+  gsap.registerPlugin(ScrollTrigger);
+  const projects = ["Project 1", "Project 2", "Project 3", "Project 4", "Project 5", "Project 6"];
 
-        Titov(Visionlife)
-        DA
-        Teamming
-        Node-Apis
-        React-Components
-        LLK
-        React Shopping
-        Attack-web
-      </div>*/}
+  const containerRef = useRef<HTMLElement | null>(null);
+  // const containerRef = useRef<HTMLUListElement | null>(null);
+  // const horizonRef = useRef<HTMLLIElement[]>([]);
+  const horizonRef = useRef<HTMLUListElement | null>(null);
+
+  const projectCnt = projects.length;
+  const itemWidth = 600;
+  const totalWidth = projectCnt * itemWidth;
+  // const connHeight = window.innerHeight + itemWidth;
+
+  useGSAP(() => {
+    gsap.to(horizonRef.current, {
+      x: `-${totalWidth - window.innerWidth}px`,
+      ease: "none",
+      scrollTrigger: {
+        // 스크롤 트리거 기준 요소
+        trigger: containerRef.current,
+        start: 'top top',
+        end: `+=${totalWidth}`,
+        scrub: 1,
+        pin: true,
+      },
+    });
+  }, []);
+
+  const horizontallyClass = clsx(
+    "w-[1200px] p-32 flex flex-col items-center justify-start gap-10");
+
+  // style={{ height: `${connHeight}px` }}
+  return (
+    <section className="min-h-screen bg-green-100">
+      <article ref={containerRef} className="flex flex-col content-stretch">
+        <h2>
+          My <span>Work</span>
+        </h2>
+        <ul ref={horizonRef} className="w-full h-full flex relative">
+          {projects.map((item, index) => (
+            <li key={index} className={horizontallyClass}>
+              <div>
+                <div>
+                  <div>
+                    <h3>{item}</h3>
+                    <div>
+                      <h4>Project Name</h4>
+                      <p>Category</p>
+                    </div>
+                  </div>
+                  <h4>Tools and features</h4>
+                  <p>Javascript, TypeScript, React, Threejs</p>
+                </div>
+                <div className="w-full flex justify-center">
+                  <Link to="/">
+                    <div>img</div>
+                  </Link>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </article>
     </section>
   );
 };

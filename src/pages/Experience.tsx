@@ -1,8 +1,8 @@
 const Experience = () => {
   return (
-    <div>
+    <section className='bg-amber-200 min-h-screen'>
       Experience
-    </div>
+    </section>
   );
 };
 
