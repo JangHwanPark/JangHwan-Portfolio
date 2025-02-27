@@ -48,7 +48,18 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
         trigger: ref.current,
         start: "top center",
         end: "bottom center",
+
+        // 아래 방향 스크롤 시 URL 변경
         onEnter: () => {
+          if (location.pathname !== `/${key}` && key !== "home") {
+            navigate(`/${key}`, { replace: true });
+          } else if (key === "home" && location.pathname !== "/") {
+            navigate("/", { replace: true });
+          }
+        },
+
+        // 위 방향 스크롤 시 URL 변경
+        onEnterBack: () => {
           if (location.pathname !== `/${key}` && key !== "home") {
             navigate(`/${key}`, { replace: true });
           } else if (key === "home" && location.pathname !== "/") {
