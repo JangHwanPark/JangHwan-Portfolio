@@ -9,6 +9,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { projects } from "../data";
 
 /*const tabs: TabItem[] = [
   { key: "tab1", label: "전체" },
@@ -19,7 +20,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Project = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const projects = ["Project 1", "Project 2", "Project 3", "Project 4", "Project 5", "Project 6"];
 
   const containerRef = useRef<HTMLElement | null>(null);
   // const containerRef = useRef<HTMLUListElement | null>(null);
@@ -48,35 +48,40 @@ const Project = () => {
   }, []);
 
   const horizontallyClass = clsx(
-    "w-[600px] p-32 flex flex-col items-center justify-start gap-10");
+    "w-[600px] p-10 flex flex-col items-center justify-start gap-10");
 
   // content-stretch
   return (
-    <section ref={containerRef} className="min-h-screen flex flex-col items-start justify-end gap-10 bg-gray-200">
-      <h2 className="max-w-6xl mb-10 ml-32 mr-auto text-7xl font-bold">
+    <section ref={containerRef} className="min-h-screen flex flex-col items-start justify-center gap-6 bg-gray-200">
+      <h2 className="max-w-6xl ml-10 mr-auto text-7xl font-bold">
         My <span>Work</span>
       </h2>
-      <ul ref={horizonRef} className="w-full mb-20 flex relative">
-        {projects.map((item, index) => (
+      <ul ref={horizonRef} className="w-[3600px] mb-16 flex relative">
+        {projects.map((project, index) => (
           <li key={index} className={horizontallyClass}>
-            <div>
-              <div>
-                <div>
-                  <h3>{item}</h3>
-                  <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+            {/* 프로젝트 정보 */}
+            <article className='w-full'>
+              {/* 프로젝트 헤더 */}
+              <div className='w-full'>
+                <header className='w-full my-10 flex items-center justify-between'>
+                  <h3 className='text-3xl font-semibold'>0{String(index + 1)}.</h3>
+                  <div className='text-end'>
+                    <h4 className='text-xl font-semibold'>{project.name}</h4>
+                    <p>웹 애플리케이션</p>
                   </div>
+                </header>
+                <div className='mb-10'>
+                  <h4 className='text-xl font-semibold'>Tools and features</h4>
+                  <p>Javascript, TypeScript, React, Threejs</p>
                 </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
               </div>
-              <div className="w-full flex justify-center">
+              {/* 프로젝트 이미지 */}
+              <figure className="w-full flex justify-center">
                 <Link to="/">
-                  <div>img</div>
+                  <img src="/src/assets/images/p2.webp" alt="" className='w-full h-full'/>
                 </Link>
-              </div>
-            </div>
+              </figure>
+            </article>
           </li>
         ))}
       </ul>
