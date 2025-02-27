@@ -1,18 +1,15 @@
 // import { useRef } from "react";
 import { ScrollRestoration } from "react-router-dom";
-import { Footer, Header, Navigation } from "../layout";
+import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
 // import gsap from "gsap";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Experience, Home, About, Project, Skills } from "../pages";
+import AsideMenu from "../components/AsideMenu/AsideMenu";
 // import Preloader from "../components/Preloader/Preloader";
 // import { useGSAP } from "@gsap/react";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
-const iconNavbar = [
-  { href: "/", icon: <FaGithub className="w-6 h-6" /> },
-  { href: "/", icon: <FaLinkedin className="w-6 h-6" /> },
-];
+
 
 const RootLayout = () => {
   /*const [complete, setComplete] = useState(false);*/
@@ -44,10 +41,7 @@ const RootLayout = () => {
           <Experience />
         </main>
         <Footer />
-        <Navigation
-          items={iconNavbar}
-          type="icon"
-          className="fixed bottom-1/12 left-4" />
+        <AsideMenu/>
       </div>
       {/*)}*/}
     </ThemeProvider>

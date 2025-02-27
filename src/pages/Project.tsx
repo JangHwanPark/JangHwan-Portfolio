@@ -51,12 +51,12 @@ const Project = () => {
 
   // style={{ height: `${connHeight}px` }}
   return (
-    <section className="min-h-screen bg-green-100">
-      <article ref={containerRef} className="flex flex-col content-stretch">
+    <section className="bg-green-100">
+      <article ref={containerRef} className="min-h-screen flex flex-col items-center justify-center content-stretch">
         <h2>
           My <span>Work</span>
         </h2>
-        <ul ref={horizonRef} className="w-full h-full flex relative">
+        <ul ref={horizonRef} className="w-full flex relative">
           {projects.map((item, index) => (
             <li key={index} className={horizontallyClass}>
               <div>

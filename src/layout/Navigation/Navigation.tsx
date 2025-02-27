@@ -1,40 +1,31 @@
-import { ReactNode } from "react";
-import MenuItem from "../../components/MenuItem/MenuItem";
+import NavItem from "./NavItem";
 import clsx from "clsx";
 
 interface Navbar {
   href: string;
   title?: string;
-  icon?: ReactNode;
 }
 
 interface NavigationProps {
   items: Navbar[];
   className?: string;
-  type?: 'link' | 'nav' | 'icon';
 }
 
 const Navigation = ({
   items,
   className,
-  type = 'link'
 }: NavigationProps) => {
-  const listClass = clsx(
-    'flex gap-5',
-    type !== 'icon' && 'flex-row justify-between',
-    type === 'icon' && 'flex-col');
-
+  const navbarClass = clsx(
+    'w-full max-w-xs', className);
   return (
-    <nav className={className}>
-      <ul className={listClass}>
+    <nav className={navbarClass}>
+      <ul className='flex gap-5 flex-row justify-between'>
         {items.map((item, index) => (
-          <MenuItem
+          <NavItem
             key={index}
-            href={item.href}
-            type={type}>
-            {item.icon}
+            href={item.href}>
             {item.title}
-          </MenuItem>
+          </NavItem>
         ))}
       </ul>
     </nav>
