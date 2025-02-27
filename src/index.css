@@ -2,7 +2,12 @@
 
 /* 테마 변수 */
 @theme {
-
+    --breakpoint-xs: 365px;
+    --breakpoint-sm: 460px;
+    --breakpoint-md: 640px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
 }
 
 /* 다크모드 */

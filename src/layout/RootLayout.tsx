@@ -44,8 +44,8 @@ const RootLayout = () => {
         <Footer />
         <AsideMenu/>
       </div>
-      {/*)}*/}
       </ScrollProvider>
+      {/*)}*/}
     </ThemeProvider>
   );
 };

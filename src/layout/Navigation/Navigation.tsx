@@ -24,11 +24,6 @@ const Navigation = ({
   gsap.registerPlugin(ScrollToPlugin);
   const { sections } = useScroll();
   const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    console.log("🔹 현재 경로:", location.pathname);
-  }, [location]);
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,

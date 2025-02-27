@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll } from "../providers/ScrollProvider";
+import clsx from "clsx";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -23,13 +24,33 @@ const Home = () => {
     });
   }, []);
 
+  const sectionClass = clsx(
+    "w-full min-h-screen flex flex-col items-center justify-start",
+    "bg-gray-900 text-white");
+
+  const textClass = clsx(
+    "hidden md:block font-bold flex gap-3 text-md",
+    "lg:text-4xl lg:flex-col");
+
+  const testMobileClass = clsx(
+    'text-2xl flex flex-col items-center justify-start gap-6',
+    'lg:hidden',);
+
   return (
-    <section ref={sections.home} id='home' className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center justify-start">
+    <section ref={sections.home} id="home" className={sectionClass}>
       {/* 텍스트 영역 */}
       <article className="h-screen flex items-center justify-center">
-        <h2 ref={textRef} className="text-4xl font-bold flex flex-col gap-3">
+        {/* PC / Tablet */}
+        <h2 ref={textRef} className={textClass}>
           <span>Hello, I'm JangHwan.</span>
           <span>A Passionate Frontend Developer.</span>
+        </h2>
+        {/* Mobile */}
+        <h2 ref={textRef} className={testMobileClass}>
+          <span>Hello,</span>
+          <span>I'm JangHwan.</span>
+          <span>A Passionate</span>
+          <span>Frontend Developer.</span>
         </h2>
       </article>
     </section>
