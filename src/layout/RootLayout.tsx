@@ -1,7 +1,8 @@
 import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
-import { Home, About, Project, Skills, Experience } from "../pages";
+// Home,
+import { About, Project, Skills, Experience } from "../pages";
 import AsideMenu from "../components/AsideMenu/AsideMenu";
 import { ScrollProvider } from "../providers/ScrollProvider";
 // import { useRef } from "react";
@@ -35,7 +36,7 @@ const RootLayout = () => {
         <h1 className='hidden'>페이지 본문</h1>
         <Header />
         <main className={classes}>
-          <Home />
+          {/*<Home />*/}
           <About />
           <Skills />
           <Project />

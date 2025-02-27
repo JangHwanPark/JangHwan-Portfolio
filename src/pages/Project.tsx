@@ -75,7 +75,7 @@ const Project = () => {
               </div>
               {/* 프로젝트 이미지 */}
               <figure className="w-full flex justify-center">
-                <Link to="/">
+                <Link to={`/projects/${project.name}`} state={{ modal: true, project}}>
                   <img src="/src/assets/images/p2.webp" alt="" className='w-full h-full'/>
                 </Link>
               </figure>

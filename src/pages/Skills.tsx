@@ -22,6 +22,7 @@ const Skills = () => {
           SKILLS
           <span>/&gt;</span>
         </h2>*/}
+        {/* 사용 빈도별 | 분야별 */}
         <h2 className="w-fit py-10 text-7xl font-bold">SKILLS</h2>
         <div className='flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0'>
           <div className={skillsConn}>

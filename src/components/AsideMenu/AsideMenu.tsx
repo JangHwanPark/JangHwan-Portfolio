@@ -22,11 +22,11 @@ interface AsideMenuProps {
 const AsideMenu = () => {
  //const listClass = clsx('flex gap-5 flex-col');
   const pathMap: { [key: string]: string } = {
-    "/": "메인 페이지",
-    "/about": "자기 소개",
-    "/skills": "기술 스택",
-    "/projects": "프로젝트",
-    "/experience": "경험",
+    "/": "Home",
+    "/about": "About",
+    "/skills": "Skills",
+    "/projects": "Projects",
+    "/experience": "Experience",
   };
 
   const location = useLocation();
@@ -41,7 +41,7 @@ const AsideMenu = () => {
 
   return (
     <nav className={asideClass}>
-      <p className='rotate-270'>{pathName}</p>
+      {/*<p className='rotate-270'>{pathName}</p>*/}
       <ul className='flex gap-5 flex-col'>
         {icon.map((item, index) => (
           <li key={index}>
