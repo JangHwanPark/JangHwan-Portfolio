@@ -1,4 +1,8 @@
 import { createContext, useRef, useContext, RefObject, ReactNode } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface ScrollContextProps {
   sections: {
@@ -22,6 +26,10 @@ const ScrollContext = createContext<ScrollContextProps | undefined>(undefined);
  * </ScrollProvider>
  */
 export const ScrollProvider = ({ children }: { children: ReactNode }) => {
+  gsap.registerPlugin(ScrollTrigger);
+  const navigate = useNavigate();
+  const location = useLocation();
+
   // 주요 페이지 섹션을 관리하는 참조 객체
   const sections = {
     home: useRef<HTMLElement>(null),
@@ -30,6 +38,28 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
     projects: useRef<HTMLElement>(null),
     experience: useRef<HTMLElement>(null),
   };
+
+  // useGSAP을 사용하여 ScrollTrigger 설정
+  useGSAP(() => {
+    Object.entries(sections).forEach(([key, ref]) => {
+      if (!ref.current) return;
+
+      ScrollTrigger.create({
+        trigger: ref.current,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => {
+          if (location.pathname !== `/${key}` && key !== "home") {
+            navigate(`/${key}`, { replace: true });
+          } else if (key === "home" && location.pathname !== "/") {
+            navigate("/", { replace: true });
+          }
+        },
+      });
+    });
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+  }, []);
 
   return (
     <ScrollContext.Provider value={{ sections }}>

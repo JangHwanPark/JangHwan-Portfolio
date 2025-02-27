@@ -1,12 +1,12 @@
-// import { useRef } from "react";
-// import { ScrollRestoration } from "react-router-dom";
 import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
-// import gsap from "gsap";
 import { Home, About, Project, Skills, Experience } from "../pages";
 import AsideMenu from "../components/AsideMenu/AsideMenu";
 import { ScrollProvider } from "../providers/ScrollProvider";
+// import { useRef } from "react";
+// import { ScrollRestoration } from "react-router-dom";
+// import gsap from "gsap";
 // import Preloader from "../components/Preloader/Preloader";
 // import { useGSAP } from "@gsap/react";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -30,7 +30,6 @@ const RootLayout = () => {
     <ThemeProvider>
       {/* <Preloader setComplete={setComplete}/>
       {complete && (*/}
-      {/*<ScrollRestoration />*/}
       <ScrollProvider>
       <div className={dark}>
         <h1 className='hidden'>페이지 본문</h1>
