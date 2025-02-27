@@ -23,7 +23,7 @@ const Skills = () => {
           <span>/&gt;</span>
         </h2>*/}
         <h2 className="w-fit py-10 text-7xl font-bold">SKILLS</h2>
-        <div className='flex items-center justify-between'>
+        <div className='flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0'>
           <div className={skillsConn}>
             <h3 className={subTitleClass}>자주 사용해요</h3>
             <IconSkills skills={frequency}/>

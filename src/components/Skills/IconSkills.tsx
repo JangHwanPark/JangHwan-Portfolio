@@ -29,14 +29,14 @@ const IconSkills = ({
   };
 
   return (
-    <div className="cursor-pointer grid grid-rows-4 grid-cols-3 gap-8">
+    <div className="cursor-pointer grid grid-rows-3 grid-cols-3 gap-8">
       {skills.map((skill, index) => (
         <div
           key={index}
           className="relative flex flex-col items-center"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}>
-          <figure className="w-28 h-28">{skill.icon}</figure>
+          <figure className="w-14 h-14 md:w-28 md:h-28">{skill.icon}</figure>
 
           {/* 팝업 (툴팁) */}
           <div

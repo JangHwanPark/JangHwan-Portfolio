@@ -51,7 +51,7 @@ const Project = () => {
   // content-stretch
   return (
     <section id='projects' ref={sections.projects} className="min-h-screen flex flex-col items-start justify-center gap-6 bg-gray-200">
-      <h2 className="max-w-6xl ml-10 mr-auto text-7xl font-bold">
+      <h2 className="max-w-3xl md:max-w-6xl ml-6 md:ml-10 mr-auto text-4xl md:text-7xl font-bold">
         My <span>Work</span>
       </h2>
       <ul ref={horizonRef} className="w-[3600px] mb-16 flex relative gap-10">
