@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/*Background (배경)	#121212	다크모드 배경 (진한 블랙)
+Text (글자)	#EEEEEE	연한 회색 (가독성 좋게)
+Primary (메인 포인트)	#00FFF0	네온 민트 (네온 느낌 강조)
+Secondary (서브 포인트)	#FF007A	핫핑크 (보조 색상)
+Accent (강조 요소, 버튼 등)	#F8B400	네온 옐로우 (강조할 때 사용)
+Line (곡선 라인 & 테두리)	#00ADB5	청록색 네온 (라인 포인트)*/
+
 /* 테마 변수 */
 @theme {
     --breakpoint-xs: 365px;
@@ -9,17 +16,29 @@
     --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1536px;
 
+    /*4285F4 (파란색) → 기본 버튼, 강조 요소
+    #DB4437 (빨간색) → 경고, 삭제, 강한 포인트 요소
+    #F4B400 (노란색) → 주의, 정보, 강조 텍스트
+    #0F9D58 (녹색) → 성공 메시지, 확인 버튼 등*/
     /* Color */
     --color-c-blue: #4285F4;
     --color-c-red: #DB4437;
     --color-c-yellow: #F4B400;
     --color-c-green: #0F9D58;
 
+    /*#1E1E1E (어두운 배경) → 어두운 테마에서 안정적인 가독성
+    #EAEAEA (밝은 텍스트) → 글씨가 선명하게 보임
+    #888 (서브 텍스트) → 부드러운 보조 텍스트 용도*/
     /* Light Mode */
     /* Dark Mode */
     --color-dark-bg: #1E1E1E;
     --color-dark-text: #EAEAEA;
     --color-dark-sub-text: #888;
+
+    /* ETC */
+    --color-c-purple: #aa42ff;
+    --color-c-s-purple: #d29bff;
+    --color-c-p-purple: #f2c0ff;
 }
 
 /* 다크모드 */
