@@ -73,8 +73,12 @@ const Project = () => {
                 </div>
               </header>
               <div className='mb-10'>
-                <h4 className='text-xl font-semibold'>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <h4 className='mb-2 text-xl font-semibold'>Tools and features</h4>
+                <div className='flex flex-wrap gap-3'>
+                  {project.stack.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                </div>
               </div>
             </div>
             {/* 프로젝트 이미지 */}

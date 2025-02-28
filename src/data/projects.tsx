@@ -196,7 +196,7 @@ export const projects: ProjectsType[] = [
     projectType: "PERSONAL",
     role: ["Fullstack Developer"],
     github: "https://github.com/JangHwanPark/attack-web",
-    stack: ["NextJS", "TypeScript", "Tailwind", "Prisma", "MySQL", "Auth.js", "Git"],
+    stack: ["NextJS", "TypeScript", "Tailwind", "MongoDB", "NextAuth", "Git"],
     responsibilities: [
       "Next.js 기반으로 사용자 및 관리자 페이지 개발",
       "로그인 & 예약 시스템 구현",
@@ -232,7 +232,7 @@ export const projects: ProjectsType[] = [
     role: ["Fullstack Developer"],
     teamSize: 3,
     github: "https://github.com/Team-DataArtist/AU_CampusPay",
-    stack: ["NextJS", "TypeScript", "Tailwind", "MongoDB", "Iamport", "QR Code", "Git"],
+    stack: ["NextJS", "TypeScript", "Tailwind", "MongoDB", "Git"],
     responsibilities: [
       "Next.js 기반으로 온라인 결제 웹 애플리케이션 개발",
       "아임포트를 활용한 온라인 결제 시스템 구축",
