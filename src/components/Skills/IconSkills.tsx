@@ -28,9 +28,9 @@ const IconSkills = ({
       ease: "power2.out",
     });
   };
-  console.log(skills);
+
   return (
-    <div className="cursor-pointer grid grid-rows-3 grid-cols-3 gap-8">
+    <div className="cursor-pointer grid grid-rows-3 grid-cols-3 gap-6">
       {skills.map((skill, index) => (
         <div
           key={index}
@@ -38,8 +38,7 @@ const IconSkills = ({
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}>
           <figure className={clsx(
-            'w-14 h-14 md:w-24 md:h-24 p-4 border-2 rounded-xl',
-            skill.color && `border-[${skill.color}]`)}>
+            'w-14 h-14 md:w-24 md:h-24 p-4 border-2 rounded-xl', skill.color)}>
             {skill.icon}
           </figure>
 

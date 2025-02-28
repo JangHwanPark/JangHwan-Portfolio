@@ -13,6 +13,7 @@ import {
 import { SiNaver } from "react-icons/si";
 
 export const skills = [
+  // ✅ 프론트엔드
   {
     name: "HTML",
     icon: <FaHtml5 className="w-full h-full text-orange-600" />,
@@ -53,8 +54,10 @@ export const skills = [
     icon: <FaReact className="w-full h-full text-gray-800" />,
     color: "text-gray-800",
     category: "FrontEnd",
-    usage: "familiar",
+    usage: "frequent",
   },
+
+  // ✅ 백엔드
   {
     name: "NodeJS (Express.js)",
     icon: <FaNodeJs className="w-full h-full text-green-500" />,
@@ -76,34 +79,38 @@ export const skills = [
     category: "BackEnd",
     usage: "familiar",
   },
+
+  // ✅ DevOps (클라우드 & OS 포함)
   {
     name: "Linux (Ubuntu)",
     icon: <FaDocker className="w-full h-full text-orange-500" />,
     color: "text-orange-500",
-    category: "OS",
+    category: "DevOps",
     usage: "familiar",
   },
   {
     name: "Docker",
     icon: <FaDocker className="w-full h-full text-blue-400" />,
     color: "text-blue-400",
-    category: "Cloud",
+    category: "DevOps",
     usage: "familiar",
   },
   {
     name: "AWS (EC2, S3, RDS)",
     icon: <FaAws className="w-full h-full text-orange-600" />,
     color: "text-orange-600",
-    category: "Cloud",
+    category: "DevOps",
     usage: "familiar",
   },
   {
     name: "NCP (Server)",
     icon: <SiNaver className="w-full h-full text-green-500" />,
     color: "text-green-500",
-    category: "Cloud",
+    category: "DevOps",
     usage: "familiar",
   },
+
+  // ✅ 툴 (협업, 생산성 도구)
   {
     name: "Figma",
     icon: <FaFigma className="w-full h-full text-pink-500" />,
