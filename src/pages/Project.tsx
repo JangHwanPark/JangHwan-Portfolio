@@ -45,45 +45,44 @@ const Project = () => {
     });
   }, []);
 
-  const connClass = clsx(
-    'w-full max-w-3xl md:max-w-6xl mx-auto',
-    'min-h-screen flex flex-col items-start justify-center gap-6 bg-gray-200')
+  const connClass = clsx('w-full max-w-3xl md:max-w-6xl mx-auto')
 
   const horizontallyClass = clsx(
-    "w-[600px] p-10 flex flex-col items-center justify-start gap-10");
+    'w-[600px] py-10 p-6 bg-white border-r',
+    'flex flex-col items-center justify-start gap-6',
+    //'transition-transform duration-300 hover:scale-105'
+  );
 
   // content-stretch
   return (
-    <section id='projects' ref={sections.projects} className={connClass}>
-      <h2 className="ml-6 md:ml-10 mr-auto text-4xl md:text-7xl font-bold">
+    <section id='projects' ref={sections.projects} className='min-h-screen flex flex-col items-start justify-center gap-6'>
+      <h2 className={`mb-20 text-4xl md:text-7xl font-bold ${connClass}`}>
         My <span>Work</span>
       </h2>
-      <ul ref={horizonRef} className="w-[3600px] mb-16 flex relative gap-10">
+      {/* 3600px */}
+      <ul ref={horizonRef} className="w-[4800px] px-24 mb-16 flex relative gap-10 border-y">
         {projects.map((project, index) => (
           <li key={index} className={horizontallyClass}>
-            {/* 프로젝트 정보 */}
-            <article className='w-full'>
-              {/* 프로젝트 헤더 */}
-              <div className='w-full'>
-                <header className='w-full my-10 flex items-center justify-between'>
-                  <h3 className='text-3xl font-semibold'>0{String(index + 1)}.</h3>
-                  <div className='text-end'>
-                    <h4 className='text-xl font-semibold'>{project.name}</h4>
-                    <p>웹 애플리케이션</p>
-                  </div>
-                </header>
-                <div className='mb-10'>
-                  <h4 className='text-xl font-semibold'>Tools and features</h4>
-                  <p>Javascript, TypeScript, React, Threejs</p>
+            {/* 프로젝트 헤더 */}
+            <div className='w-full'>
+              <header className='w-full my-10 flex items-center justify-between'>
+                <h3 className='text-3xl font-semibold'>0{String(index + 1)}.</h3>
+                <div className='text-end'>
+                  <h4 className='text-xl font-semibold'>{project.name}</h4>
+                  <p>웹 애플리케이션</p>
                 </div>
+              </header>
+              <div className='mb-10'>
+                <h4 className='text-xl font-semibold'>Tools and features</h4>
+                <p>Javascript, TypeScript, React, Threejs</p>
               </div>
-              {/* 프로젝트 이미지 */}
-              <figure className="w-full flex justify-center">
-                <Link to={`/projects/${project.name}`} state={{ modal: true, project}}>
-                  <img src="/src/assets/images/p2.webp" alt="" className='w-full h-full'/>
-                </Link>
-              </figure>
-            </article>
+            </div>
+            {/* 프로젝트 이미지 */}
+            <figure className="w-full flex justify-center">
+              <Link to={`/projects/${project.name}`} state={{ modal: true, project}}>
+                <img src="/src/assets/images/p2.webp" alt="" className='w-full h-full'/>
+              </Link>
+            </figure>
           </li>
         ))}
       </ul>
