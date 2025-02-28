@@ -1,21 +1,10 @@
-import { motion } from "motion/react";
-// import Preloader from "../components/Preloader/Preloader";
-// import { useState } from "react";
+import IconSkills from "../components/Skills/IconSkills";
 
 const TestPage = () => {
-  // const [complete, setComplete] = useState(false);
-  // console.log(complete);
   return (
-    <>
-      {/*<Preloader setComplete={setComplete}/>*/}
-      <motion.div
-        animate={{ opacity: 1, x: 100 }}
-        initial={{ opacity: 0, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Hello, Framer Motion!
-      </motion.div>
-    </>
+    <div className='min-h-screen flex justify-center items-center gap-3'>
+      <IconSkills/>
+    </div>
   );
 };
 

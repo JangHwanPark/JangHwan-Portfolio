@@ -1,48 +1,74 @@
-import { TabItem } from "../types/tabs";
-import {
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel
-} from "../components";
-//
-import PageHeader from "../layout/PageHeader/PageHeader";
-import Skill from "../components/Skill/Skill";
+import { Tab, TabList, Tabs } from "../components";
+import clsx from "clsx";
+import { useScroll } from "../providers/ScrollProvider";
+import TabPanels from "../components/Tabs/TabPanels";
+import TabPanel from "../components/Tabs/TabPanel";
+import SkillCategory from "../components/Skills/SkillCategory";
+import { getCategorizedSkills } from "../service";
 
-const tabs: TabItem[] = [
-  { key: "tab1", label: "전체" },
-  { key: "tab2", label: "자주 사용해요" },
-  { key: "tab3", label: "사용 해봤어요" },
+const tabItems = [
+  { key: "frequent", label: "자주 사용해요" },
+  { key: "familiar", label: "사용해 봤어요" },
 ];
 
-const Skills = () => {
-  return (
-    <section className='w-full py-16 min-h-screen bg-red-300'>
-      <PageHeader title='SKILLS'>
-        저는 새로운 기술을 배우고 실험하는 것을 즐깁니다.
-        프론트엔드부터 백엔드, 데이터베이스, 개발 도구까지 다양한 기술을 익히고 활용하며,
-        이를 통해 더 나은 사용자 경험을 만들기 위해 노력하고 있습니다.
-        지금까지 사용해 본 주요 언어, 기술, 도구, 플랫폼은 다음과 같습니다.
-      </PageHeader>
+const categories = ["FrontEnd", "BackEnd", "DevOps", "Tools"];
 
-      <Tabs tabs={tabs} defaultTab="tab1">
+const Skills = () => {
+  const { sections } = useScroll();
+  const categorizedSkills = getCategorizedSkills();
+  const frequent = categorizedSkills.frequent;
+  const familiar = categorizedSkills.familiar;
+
+  const connClass = clsx(
+    'w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto',
+    'px-3 md:px-10 lex flex-col justify-center gap-5');
+
+  const skillsConnClass = clsx(
+    "py-5 grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 md:gap-10");
+
+  return (
+    <section ref={sections.skills} id="skills" className={connClass}>
+      {/* 사용 빈도별 | 분야별 */}
+      <h2 className="w-fit pt-20 pb-8 lg:pt-24 lg:pb-32 text-2xl md:text-4xl lg:text-7xl font-bold">
+        <span>&lt;</span>SKILLS<span>/&gt;</span>
+      </h2>
+      <Tabs tabs={tabItems} defaultTab="home">
         <TabList>
-          {tabs.map((tab) => (
-            <Tab key={tab.key} tabKey={tab.key}>
-              {tab.label}
-            </Tab>
+          {tabItems.map(tab => (
+            <Tab key={tab.key} tabKey={tab.key}>{tab.label}</Tab>
           ))}
         </TabList>
         <TabPanels>
-          <TabPanel tabKey="tab1">
-            <Skill filter="tab1"/>
+          {/* ✅ 자주 사용해요 */}
+          <TabPanel tabKey="frequent">
+            <div className={skillsConnClass}>
+              {categories.map((category, index) => frequent?.[category]?.length > 0 && (
+                <SkillCategory
+                  key={index}
+                  title={`<${category} />`}
+                  className={clsx(
+                    // 첫 번째 카드는 2~4번 열에 배치
+                    category === 'FrontEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
+                    category === 'Tools' && 'md:col-start-2 md:col-end-3')}
+                  skills={frequent[category]} />
+              ))}
+            </div>
           </TabPanel>
-          <TabPanel tabKey="tab2">
-            <Skill filter="tab2"/>
-          </TabPanel>
-          <TabPanel tabKey="tab3">
-            <Skill filter="tab3"/>
+
+          {/* ✅ 사용해 봤어요 */}
+          <TabPanel tabKey="familiar">
+            <div className={skillsConnClass}>
+              {categories.map((category, index) => familiar?.[category]?.length > 0 && (
+                <SkillCategory
+                  key={index}
+                  title={`<${category} />`}
+                  className={clsx(
+                    // 첫 번째 카드는 2~4번 열에 배치
+                    category === 'BackEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
+                    category === 'DevOps' && 'md:col-start-2 md:col-end-3')}
+                  skills={familiar[category]} />
+              ))}
+            </div>
           </TabPanel>
         </TabPanels>
       </Tabs>

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import {
   Home,
+  About,
   Skills,
   Project,
   ProjectDetail,
@@ -9,7 +10,6 @@ import {
   NotFound,
   TestPage
 } from "./pages";
-import TestGsap from "./pages/TestGSAP";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +18,8 @@ export const router = createBrowserRouter([
     children: [
       // 메인 페이지 (소개 페이지)
       { index: true, Component: Home },
+
+      { path: 'about', Component: About },
 
       // 기술 스택
       { path: "skills", Component: Skills },
@@ -35,5 +37,4 @@ export const router = createBrowserRouter([
   },
   // 테스트 페이지
   { path: "/test", Component: TestPage },
-  { path: "/gsap", Component: TestGsap },
 ])

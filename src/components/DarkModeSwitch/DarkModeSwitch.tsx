@@ -16,7 +16,7 @@ const DarkModeSwitch = () => {
     <button
       role="button"
       data-theme={value}
-      className='w-14 h-7 flex items-center cursor-pointer bg-gray-500 rounded-full transition duration-300'
+      className='w-14 h-7 hidden md:flex items-center cursor-pointer bg-gray-500 rounded-full transition duration-300'
       onClick={(e) => handleClick(e)}>
       <div className={switchClasses}>
         {theme === "dark"
