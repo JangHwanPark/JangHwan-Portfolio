@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
+import clsx from "clsx";
 
 interface IconSkillsProps {
   skills: SkillsType[];
@@ -27,7 +28,7 @@ const IconSkills = ({
       ease: "power2.out",
     });
   };
-
+  console.log(skills);
   return (
     <div className="cursor-pointer grid grid-rows-3 grid-cols-3 gap-8">
       {skills.map((skill, index) => (
@@ -36,7 +37,11 @@ const IconSkills = ({
           className="relative flex flex-col items-center"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}>
-          <figure className="w-14 h-14 md:w-28 md:h-28">{skill.icon}</figure>
+          <figure className={clsx(
+            'w-14 h-14 md:w-24 md:h-24 p-4 border-2 rounded-xl',
+            skill.color && `border-[${skill.color}]`)}>
+            {skill.icon}
+          </figure>
 
           {/* 팝업 (툴팁) */}
           <div
