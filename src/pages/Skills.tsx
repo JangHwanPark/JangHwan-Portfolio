@@ -21,15 +21,15 @@ const Skills = () => {
 
   const connClass = clsx(
     'w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto',
-    'px-10 lex flex-col justify-center gap-5');
+    'px-3 md:px-10 lex flex-col justify-center gap-5');
 
   const skillsConnClass = clsx(
-    "py-5 grid grid-cols-2 grid-rows-1 gap-10");
+    "py-5 grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 md:gap-10");
 
   return (
     <section ref={sections.skills} id="skills" className={connClass}>
       {/* 사용 빈도별 | 분야별 */}
-      <h2 className="w-fit pt-24 pb-32 text-7xl font-bold">
+      <h2 className="w-fit pt-20 pb-8 lg:pt-24 lg:pb-32 text-2xl md:text-4xl lg:text-7xl font-bold">
         <span>&lt;</span>SKILLS<span>/&gt;</span>
       </h2>
       <Tabs tabs={tabItems} defaultTab="home">
@@ -48,8 +48,8 @@ const Skills = () => {
                   title={`<${category} />`}
                   className={clsx(
                     // 첫 번째 카드는 2~4번 열에 배치
-                    category === 'FrontEnd' && 'col-span-2 col-start-1 col-end-2',
-                    category === 'Tools' && 'col-start-2 col-end-3')}
+                    category === 'FrontEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
+                    category === 'Tools' && 'md:col-start-2 md:col-end-3')}
                   skills={frequent[category]} />
               ))}
             </div>
@@ -64,8 +64,8 @@ const Skills = () => {
                   title={`<${category} />`}
                   className={clsx(
                     // 첫 번째 카드는 2~4번 열에 배치
-                    category === 'BackEnd' && 'col-span-2 col-start-1 col-end-2',
-                    category === 'DevOps' && 'col-start-2 col-end-3')}
+                    category === 'BackEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
+                    category === 'DevOps' && 'md:col-start-2 md:col-end-3')}
                   skills={familiar[category]} />
               ))}
             </div>
