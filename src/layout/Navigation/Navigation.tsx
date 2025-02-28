@@ -91,7 +91,7 @@ const Navigation = ({
         <PiHamburger className='w-6 h-6'/>
       </button>
       {isOpen && (
-        <div className="h-screen fixed inset-0 text-white bg-black/50 z-50 flex items-center justify-center" onClick={handleMenuOpen}>
+        <div className="h-screen fixed inset-0 text-white bg-black/90 z-50 flex items-center justify-center" onClick={handleMenuOpen}>
           {/* 메뉴 컨테이너 */}
           <div className="h-screen w-64 p-6 rounded-lg shadow-lg relative flex flex-col justify-center items-center" onClick={(e) => e.stopPropagation()}>
             {/* 닫기 버튼 */}
