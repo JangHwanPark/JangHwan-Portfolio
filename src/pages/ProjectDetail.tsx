@@ -12,7 +12,8 @@ const ProjectDetail = () => {
   };
 
   if (!project) {
-    return console.warn("⚠ 프로젝트 데이터 없음! URL로 직접 접근했을 가능성이 높음.");
+    console.warn("⚠ 프로젝트 데이터 없음! URL로 직접 접근했을 가능성이 높음.");
+    return null;
   }
 
   return (
