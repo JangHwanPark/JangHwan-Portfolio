@@ -48,7 +48,7 @@ const Project = () => {
   const connClass = clsx('w-full max-w-3xl md:max-w-6xl mx-auto')
 
   const horizontallyClass = clsx(
-    'w-[380px] md:w-[600px] py-10 p-6 bg-white border-r',
+    'w-[350px] md:w-[600px] py-10 p-6 bg-white border-r',
     'flex flex-col items-center justify-start gap-6',
     //'transition-transform duration-300 hover:scale-105'
   );
@@ -84,7 +84,7 @@ const Project = () => {
             {/* 프로젝트 이미지 */}
             <figure className="w-full flex justify-center">
               <Link to={`/projects/${project.name}`} state={{ modal: true, project}}>
-                <img src="/src/assets/images/p2.webp" alt="" className='w-full h-96'/>
+                <img src="/src/assets/images/p2.webp" alt="" className='w-96 h-36 lg:w-full lg:h-96'/>
               </Link>
             </figure>
           </li>
