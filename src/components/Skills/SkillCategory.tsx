@@ -3,13 +3,15 @@ import clsx from "clsx";
 
 const SkillCategory = ({
   title,
+  className,
   skills,
 } : {
   title: string;
+  className?: string;
   skills: SkillsType[];
 }) => {
   const skillsConn = clsx(
-    'p-10 border rounded-xl');
+    'p-10 border rounded-xl',className);
 
   const subTitleClass = clsx(
     'mb-10 text-xl font-semibold text-center');

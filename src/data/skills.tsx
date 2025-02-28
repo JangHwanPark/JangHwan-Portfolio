@@ -8,9 +8,10 @@ import {
   FaDocker,
   FaAws,
   FaFigma,
-  FaGitAlt,
+  FaGitAlt, FaConfluence, FaPython,
 } from "react-icons/fa";
-import { SiNaver } from "react-icons/si";
+import { SiJira, SiNaver, SiPostman, SiSpring } from "react-icons/si";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 
 export const skills = [
   // ✅ 프론트엔드
@@ -51,8 +52,15 @@ export const skills = [
   },
   {
     name: "NextJS",
-    icon: <FaReact className="w-full h-full text-gray-800" />,
+    icon: <RiNextjsFill className="w-full h-full text-gray-800" />,
     color: "text-gray-800",
+    category: "FrontEnd",
+    usage: "frequent",
+  },
+  {
+    name: "TailwindCss",
+    icon: <RiTailwindCssFill  className="w-full h-full text-sky-400" />,
+    color: "text-sky-400",
     category: "FrontEnd",
     usage: "frequent",
   },
@@ -62,6 +70,13 @@ export const skills = [
     name: "NodeJS (Express.js)",
     icon: <FaNodeJs className="w-full h-full text-green-500" />,
     color: "text-green-500",
+    category: "BackEnd",
+    usage: "familiar",
+  },
+  {
+    name: "Spring",
+    icon: <SiSpring className="w-full h-full text-[#6DB33F]" />,
+    color: "text-[#6DB33F]",
     category: "BackEnd",
     usage: "familiar",
   },
@@ -76,6 +91,13 @@ export const skills = [
     name: "MongoDB",
     icon: <FaDatabase className="w-full h-full text-green-600" />,
     color: "text-green-600",
+    category: "BackEnd",
+    usage: "familiar",
+  },
+  {
+    name: "Python",
+    icon: <FaPython className="w-full h-full text-[#3776AB]" />,
+    color: "text-[#3776AB]",
     category: "BackEnd",
     usage: "familiar",
   },
@@ -122,6 +144,27 @@ export const skills = [
     name: "Git / GitHub",
     icon: <FaGitAlt className="w-full h-full text-red-600" />,
     color: "text-red-600",
+    category: "Tools",
+    usage: "frequent",
+  },
+  {
+    name: "Jira",
+    icon: <SiJira  className="w-full h-full text-[#0052CC]" />,
+    color: "text-[#0052CC]",
+    category: "Tools",
+    usage: "frequent",
+  },
+  {
+    name: "Confluence",
+    icon: <FaConfluence className="w-full h-full text-[#172B4D]" />,
+    color: "text-[#172B4D]",
+    category: "Tools",
+    usage: "frequent",
+  },
+  {
+    name: "PostMan",
+    icon: <SiPostman className="w-full h-full text-[#FF6C37]" />,
+    color: "text-[#FF6C37]",
     category: "Tools",
     usage: "frequent",
   },

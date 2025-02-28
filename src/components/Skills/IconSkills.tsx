@@ -38,7 +38,7 @@ const IconSkills = ({
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}>
           <figure className={clsx(
-            'w-14 h-14 md:w-24 md:h-24 p-4 border-2 rounded-xl', skill.color)}>
+            'w-14 h-14 md:w-16 md:h-16 lg:w-24 lg:h-24 p-4 border-2 rounded-xl', skill.color)}>
             {skill.icon}
           </figure>
 
