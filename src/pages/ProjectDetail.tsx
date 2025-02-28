@@ -17,13 +17,13 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-5 rounded-lg w-96">
+    <section className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center">
+      <div className="my-32 h-11/12 w-8/12 bg-white p-5 rounded-lg">
         <h2 className="text-2xl font-bold">{project.name}</h2>
         <p>프로젝트 상세 내용...</p>
         <button onClick={closeModal} className="mt-4 p-2 bg-red-500 text-white rounded">닫기</button>
       </div>
-    </div>
+    </section>
   );
 };
 
