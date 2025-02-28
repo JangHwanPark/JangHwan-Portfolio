@@ -38,7 +38,7 @@ const RootLayout = () => {
         <Header />
         <main className={classes}>
           {/*<Home />*/}
-          <div className='w-full h-96'>
+          <div className='hidden lg:block w-full h-96'>
             <div className='w-8/12 h-full border-r-2'></div>
           </div>
           <About />

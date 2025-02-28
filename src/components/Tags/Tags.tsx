@@ -35,7 +35,7 @@ const Tags = ({
   })
 
   return (
-    <ul className="w-fit text-lg mb-1 flex flex-row gap-3">
+    <ul className="w-fit text-sm md:text-lg mb-1 flex flex-row gap-3">
       {items.map((item, index) => (
         <li key={index} ref={(el) => {
           if (el) listRef.current[index] = el;
