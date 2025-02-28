@@ -19,7 +19,6 @@ const RootLayout = () => {
   const classes = clsx(
     // min-h-[calc(100vh-136px)]
     // "max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto",
-    'bg-black/50',
     "w-full min-h-[calc(100vh-136px)]");
 
   const dark = clsx(

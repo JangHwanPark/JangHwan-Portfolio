@@ -9,7 +9,6 @@ const Skills = () => {
   const familiar = skills.filter(item => item.usage.includes('familiar'));
 
   const connClass = clsx(
-    'bg-red-200',
     'w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-10 min-h-screen flex flex-col justify-center gap-10'
   )
 

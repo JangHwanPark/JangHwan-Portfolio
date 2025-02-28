@@ -8,6 +8,18 @@
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1536px;
+
+    /* Color */
+    --color-c-blue: #4285F4;
+    --color-c-red: #DB4437;
+    --color-c-yellow: #F4B400;
+    --color-c-green: #0F9D58;
+
+    /* Light Mode */
+    /* Dark Mode */
+    --color-dark-bg: #1E1E1E;
+    --color-dark-text: #EAEAEA;
+    --color-dark-sub-text: #888;
 }
 
 /* 다크모드 */
