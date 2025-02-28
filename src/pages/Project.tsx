@@ -48,7 +48,7 @@ const Project = () => {
   const connClass = clsx('w-full max-w-3xl md:max-w-6xl mx-auto')
 
   const horizontallyClass = clsx(
-    'w-[600px] py-10 p-6 bg-white border-r',
+    'w-[380px] md:w-[600px] py-10 p-6 bg-white border-r',
     'flex flex-col items-center justify-start gap-6',
     //'transition-transform duration-300 hover:scale-105'
   );
@@ -56,11 +56,11 @@ const Project = () => {
   // content-stretch
   return (
     <section id='projects' ref={sections.projects} className='flex flex-col items-start justify-center gap-6'>
-      <h2 className={`my-20 text-4xl md:text-7xl font-bold ${connClass}`}>
+      <h2 className={`mt-20 mb-5 px-4 md:my-20 text-4xl md:text-7xl font-bold ${connClass}`}>
         My <span>Work</span>
       </h2>
       {/* 3600px */}
-      <ul ref={horizonRef} className="w-[4800px] px-24 mb-48 flex relative gap-10 border-y">
+      <ul ref={horizonRef} className="w-[4000px] md:w-[4800px] px-24 md:mb-48 flex relative gap-10 border-y">
         {projects.map((project, index) => (
           <li key={index} className={horizontallyClass}>
             {/* 프로젝트 헤더 */}
@@ -84,7 +84,7 @@ const Project = () => {
             {/* 프로젝트 이미지 */}
             <figure className="w-full flex justify-center">
               <Link to={`/projects/${project.name}`} state={{ modal: true, project}}>
-                <img src="/src/assets/images/p2.webp" alt="" className='w-full h-full'/>
+                <img src="/src/assets/images/p2.webp" alt="" className='w-full h-96'/>
               </Link>
             </figure>
           </li>

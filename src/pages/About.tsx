@@ -94,7 +94,7 @@ const About = () => {
       {/* Image */}
       <div className='md:relative lg:right-32'>
         <div className="md:w-[410px] md:h-[470px] bg-c-yellow md:absolute md:top-[-30px] md:left-[10px] md:z-0] "></div>
-        <img ref={imgRef} className={imgClass} src="/src/assets/images/p3.webp" alt="" />
+        <img ref={imgRef} className={imgClass} src="/src/assets/images/p1.webp" alt="" />
       </div>
     </section>
   );
