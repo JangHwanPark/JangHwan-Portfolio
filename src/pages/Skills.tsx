@@ -20,7 +20,8 @@ const Skills = () => {
   const familiar = categorizedSkills.familiar;
 
   const connClass = clsx(
-    "w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-10 min-h-screen flex flex-col justify-center gap-5");
+    'w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto',
+    'px-10 lex flex-col justify-center gap-5');
 
   const skillsConnClass = clsx(
     "py-5 grid grid-cols-2 grid-rows-1 gap-10");
@@ -28,7 +29,7 @@ const Skills = () => {
   return (
     <section ref={sections.skills} id="skills" className={connClass}>
       {/* 사용 빈도별 | 분야별 */}
-      <h2 className="w-fit py-10 text-7xl font-bold">
+      <h2 className="w-fit pt-24 pb-32 text-7xl font-bold">
         <span>&lt;</span>SKILLS<span>/&gt;</span>
       </h2>
       <Tabs tabs={tabItems} defaultTab="home">

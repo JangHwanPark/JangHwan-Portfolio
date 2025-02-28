@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { About, Project, Skills, Experience, ProjectDetail } from "../pages";
 import AsideMenu from "../components/AsideMenu/AsideMenu";
 import { ScrollProvider } from "../providers/ScrollProvider";
+import CurveLine from "../components/Line/CurveLine";
 // import { useRef } from "react";
 // import { ScrollRestoration } from "react-router-dom";
 // import gsap from "gsap";
@@ -37,8 +38,18 @@ const RootLayout = () => {
         <Header />
         <main className={classes}>
           {/*<Home />*/}
+          <div className='w-full h-96'>
+            <div className='w-8/12 h-full border-r-2'></div>
+          </div>
           <About />
+          <CurveLine
+            firstClass='w-6/12 ml-72'
+            lastClass='w-3/12 ml-72'/>
           <Skills />
+          <CurveLine
+            containerClass='mt-20'
+            firstClass='w-4/12 ml-56'
+            lastClass='w-full ml-56'/>
           <Project />
           <ProjectDetail/>
           <Experience />

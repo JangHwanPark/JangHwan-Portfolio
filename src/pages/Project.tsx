@@ -55,12 +55,12 @@ const Project = () => {
 
   // content-stretch
   return (
-    <section id='projects' ref={sections.projects} className='min-h-screen flex flex-col items-start justify-center gap-6'>
-      <h2 className={`mb-20 text-4xl md:text-7xl font-bold ${connClass}`}>
+    <section id='projects' ref={sections.projects} className='flex flex-col items-start justify-center gap-6'>
+      <h2 className={`my-20 text-4xl md:text-7xl font-bold ${connClass}`}>
         My <span>Work</span>
       </h2>
       {/* 3600px */}
-      <ul ref={horizonRef} className="w-[4800px] px-24 mb-16 flex relative gap-10 border-y">
+      <ul ref={horizonRef} className="w-[4800px] px-24 mb-48 flex relative gap-10 border-y">
         {projects.map((project, index) => (
           <li key={index} className={horizontallyClass}>
             {/* 프로젝트 헤더 */}
