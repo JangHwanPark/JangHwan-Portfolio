@@ -86,30 +86,34 @@ const Navigation = ({
           </NavItem>
         ))}
       </ul>
+
       {/* Mobile */}
       <button className='flex items-center lg:hidden' onClick={handleMenuOpen}>
         <PiHamburger className='w-6 h-6'/>
       </button>
+
       {isOpen && (
         <div className="h-screen fixed inset-0 text-white bg-black/90 z-50 flex items-center justify-center" onClick={handleMenuOpen}>
           {/* 메뉴 컨테이너 */}
           <div className="h-screen w-64 p-6 rounded-lg shadow-lg relative flex flex-col justify-center items-center" onClick={(e) => e.stopPropagation()}>
             {/* 닫기 버튼 */}
-            <button className="absolute top-3 right-3 text-2xl" onClick={handleMenuOpen}>
+            <button
+              className="absolute top-3 right-3 text-2xl"
+              onClick={handleMenuOpen}
+              aria-label='Close'>
               <IoMdClose />
             </button>
 
             {/* 메뉴 리스트 */}
             <ul className="flex flex-col gap-10">
               {items.map((item, index) => (
-                <li key={index}>
-                  <NavItem
-                    onClick={(e) => handleClick(e, item.href.slice(1))}
-                    href={item.href}
-                    className="">
-                    {item.title}
-                  </NavItem>
-                </li>
+                <NavItem
+                  key={index}
+                  onClick={(e) => handleClick(e, item.href.slice(1))}
+                  href={item.href}
+                  className="">
+                  {item.title}
+                </NavItem>
               ))}
             </ul>
           </div>
