@@ -11,10 +11,16 @@ const SkillCategory = ({
   skills: SkillsType[];
 }) => {
   const skillsConn = clsx(
-    'p-10 border rounded-xl',className);
+    "first:mb-32 last:mt-32 p-6 md:p-8 bg-white rounded-2xl shadow-lg border border-gray-200",
+    "hover:shadow-2xl transition-all duration-300 ease-in-out",
+    className
+  );
 
   const subTitleClass = clsx(
-    'mb-10 text-xl font-semibold text-center');
+    "mb-6 text-xl font-bold text-center text-gray-800",
+    "bg-gradient-to-r from-blue-500 to-indigo-500 text-transparent bg-clip-text"
+  );
+
   return (
     <article className={skillsConn}>
       <h3 className={subTitleClass}>{title}</h3>

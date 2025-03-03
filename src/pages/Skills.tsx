@@ -29,13 +29,22 @@ const Skills = () => {
   return (
     <section ref={sections.skills} id="skills" className={connClass}>
       {/* 사용 빈도별 | 분야별 */}
-      <h2 className="w-fit pt-20 pb-8 lg:pt-24 lg:pb-32 text-2xl md:text-4xl lg:text-7xl font-bold">
+      <h2 className="w-fit pt-20 pb-8 lg:pt-24 lg:pb-5 text-2xl md:text-4xl lg:text-7xl font-bold">
         <span>&lt;</span>SKILLS<span>/&gt;</span>
       </h2>
+      <p className='text-lg pb-10 leading-10'>
+        다양한 기술을 경험하며 더 나은 사용자 경험을 제공하기 위해 끊임없이 고민합니다.<br/>
+        문제를 발견하고 해결하는 과정 속에서 지속적으로 성장해 나가고자 합니다.
+      </p>
       <Tabs tabs={tabItems} defaultTab="home">
         <TabList>
           {tabItems.map(tab => (
-            <Tab key={tab.key} tabKey={tab.key}>{tab.label}</Tab>
+            <Tab
+            key={tab.key}
+            tabKey={tab.key}
+            className='px-10 py-3 text-xl'>
+              {tab.label}
+            </Tab>
           ))}
         </TabList>
         <TabPanels>

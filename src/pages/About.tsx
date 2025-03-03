@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import Tags from "../components/Tags/Tags";
 import { useScroll } from "../providers/ScrollProvider";
 import clsx from "clsx";
+import profileImg from "../assets/images/p1.webp";
 
 const tags = [
   { label: "협업" },
@@ -73,7 +74,7 @@ const About = () => {
     <section ref={sections.about} id='about' className={connClass}>
       {/* intro */}
       <div className='relative flex flex-col items-center justify-center gap-10'>
-        <article className="mb-0 lg:relative lg:mb-52 font-semibold leading-8">
+        <article className="mb-0 lg:relative lg:mb-52 lg:left-32 font-semibold leading-8">
           <Tags items={tags} />
           <h2 ref={titleRef} className="w-fit mt-8 sm:mt-0 mb-3 text-lg sm:text-xl md:text-3xl lg:text-5xl leading-8 lg:leading-20 font-bold relative z-12">
             {/* 사용자 경험을 디자인하는 */}
@@ -95,7 +96,7 @@ const About = () => {
       {/* Image */}
       <div className='md:relative lg:right-32'>
         <div className="md:w-[410px] md:h-[450px] bg-c-yellow md:absolute md:top-[-30px] md:left-[10px] md:z-0] "></div>
-        <img ref={imgRef} className={imgClass} src="/src/assets/images/p1.webp" alt="" />
+        <img ref={imgRef} className={imgClass} src={profileImg} alt="Profile" />
       </div>
     </section>
   );

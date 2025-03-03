@@ -47,13 +47,13 @@ const RootLayout = () => {
             lastClass='w-3/12 ml-72'/>
           <Skills />
           <CurveLine
-            containerClass='mt-20'
-            firstClass='w-4/12 ml-56'
+            containerClass='mt-12'
+            firstClass='w-7/12 ml-56'
             lastClass='w-full ml-56'/>
           <Project />
           <ProjectDetail/>
           <div className='hidden lg:block w-full h-96 text-c-yellow'>
-            <div className='w-5/10 h-full border-r-2'></div>
+            <div className='w-6/12 h-full border-r-2'></div>
           </div>
           <Experience />
         </main>

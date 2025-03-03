@@ -22,8 +22,7 @@ const Tab = ({
   const isActive = active === tabKey;
   const classes = clsx(
     className,
-    'w-full pb-2',
-    isActive && 'border-b-2 border-blue-500');
+    isActive && 'bg-c-yellow font-bold text-white rounded-t-xl',);
 
   return (
     <li className={classes}>
