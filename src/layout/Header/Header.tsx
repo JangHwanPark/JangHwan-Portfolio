@@ -8,7 +8,7 @@ import Navigation from "../Navigation/Navigation";
 import DarkModeSwitch from "../../components/DarkModeSwitch/DarkModeSwitch";
 
 const navbar = [
-  {href: "/", title: 'Home'},
+  /*{href: "/", title: 'Home'},*/
   {href: "/about", title: 'About'},
   {href: "/skills", title: 'Skills'},
   {href: "/projects", title: 'Projects'},

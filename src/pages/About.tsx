@@ -44,7 +44,8 @@ const About = () => {
     timeline.to(imgRef.current, {
       opacity: 1,
       duration: 1.2,
-      translateY: -100,
+      translateX: -5,
+      translateY: -50,
       ease: "power1.out",
     }).to(titleRef.current, {
       opacity: 1,
@@ -65,7 +66,7 @@ const About = () => {
     'md:flex-row lg:mb-10',);
 
   const imgClass = clsx(
-    'w-62 h-62 md:w-96 md:h-[450px] object-cover ',
+    'w-62 h-62 md:w-[410px] md:h-[450px] object-cover ',
     'rounded-full md:rounded-none relative z-10',)
 
   return (
@@ -93,7 +94,7 @@ const About = () => {
       </div>
       {/* Image */}
       <div className='md:relative lg:right-32'>
-        <div className="md:w-[410px] md:h-[470px] bg-c-yellow md:absolute md:top-[-30px] md:left-[10px] md:z-0] "></div>
+        <div className="md:w-[410px] md:h-[450px] bg-c-yellow md:absolute md:top-[-30px] md:left-[10px] md:z-0] "></div>
         <img ref={imgRef} className={imgClass} src="/src/assets/images/p1.webp" alt="" />
       </div>
     </section>

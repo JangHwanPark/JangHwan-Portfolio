@@ -39,7 +39,7 @@ const RootLayout = () => {
         <main className={classes}>
           {/*<Home />*/}
           <div className='hidden lg:block w-full h-96 text-c-yellow'>
-            <div className='w-7/10 h-full border-r-2'></div>
+            <div className='w-8/12 h-full border-r-2'></div>
           </div>
           <About />
           <CurveLine
