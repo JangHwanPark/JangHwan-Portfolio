@@ -44,7 +44,7 @@ const RootLayout = () => {
           <About />
           <CurveLine
             firstClass='w-6/12 ml-72'
-            lastClass='w-3/12 ml-72'/>
+            lastClass='w-4/12 ml-72'/>
           <Skills />
           <CurveLine
             containerClass='mt-12'

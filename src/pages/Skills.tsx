@@ -29,11 +29,11 @@ const Skills = () => {
   return (
     <section ref={sections.skills} id="skills" className={connClass}>
       {/* 사용 빈도별 | 분야별 */}
-      <h2 className="w-fit pt-20 pb-8 lg:pt-24 lg:pb-5 text-2xl md:text-4xl lg:text-7xl font-bold">
+      <h2 className="w-fit pt-20 pb-3 text-2xl font-bold lg:pt-24 lg:pb-8 md:text-4xl lg:text-7xl ">
         <span>&lt;</span>SKILLS<span>/&gt;</span>
       </h2>
-      <p className='text-lg pb-10 leading-10'>
-        다양한 기술을 경험하며 더 나은 사용자 경험을 제공하기 위해 끊임없이 고민합니다.<br/>
+      <p className='xs:text-sm xs:pb-5 lg:text-lg lg:pb-10 xs:leading-8 lg:leading-10'>
+        다양한 기술을 경험하며 더 나은 사용자 경험을 제공하기 위해 끊임없이 고민합니다.
         문제를 발견하고 해결하는 과정 속에서 지속적으로 성장해 나가고자 합니다.
       </p>
       <Tabs tabs={tabItems} defaultTab="home">
@@ -42,7 +42,7 @@ const Skills = () => {
             <Tab
             key={tab.key}
             tabKey={tab.key}
-            className='px-10 py-3 text-xl'>
+            className='px-8 py-3 xs:text-base lg:text-xl lg:px-10'>
               {tab.label}
             </Tab>
           ))}
