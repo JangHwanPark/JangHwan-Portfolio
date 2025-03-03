@@ -57,9 +57,9 @@ const Experience = () => {
   }, [sections.experience]);
 
   return (
-    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] py-[120px]">
+    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] p-4 lg:px-0 lg:py-[120px]">
       <article className="w-full max-w-6xl">
-        <h2 className="font-bold text-4xl lg:text-7xl leading-10 lg:leading-[70px] text-center bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent mt-12 mb-12 lg:mb-24">
+        <h2 className="font-bold text-4xl lg:text-7xl leading-10 lg:leading-[70px] xs:text-left md:text-center bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent mt-12 mb-12 lg:mb-24">
           My career &
           <br /> experience
         </h2>
@@ -74,21 +74,21 @@ const Experience = () => {
 
           {/* 경력 항목 */}
           {experienceData.map((experience, index) => (
-            <div key={index} className="flex justify-between mb-[50px] md:flex-col md:gap-2 lg:gap-14 md:mb-[70px] lg:flex-row">
-              <div className="flex w-[40%] justify-between gap-[50px] md:w-full md:pl-[10%]">
-                <div>
-                  <h4 className="text-[33px] leading-[30px] font-medium md:text-[22px] md:w-[180px]">
+            <div key={index} className="flex justify-between mb-[50px] flex-col md:gap-2 lg:gap-14 md:mb-[70px] lg:flex-row">
+              <div className="flex flex-row md:flex-col justify-between gap-[50px] md:w-[40%] lg:w-full md:pl-[10%]">
+                <div className='w-full flex flex-col'>
+                  <h4 className="w-full text-xl lg:text-[33px] leading-[30px] font-medium md:text-[22px] md:w-[180px]">
                     {experience.position}
                   </h4>
-                  <h5 className="text-[20px] capitalize mt-[10px] text-accent font-normal md:text-[17px]">
+                  <h5 className="w-full text-lg lg:text-[20px] capitalize mt-[10px] text-accent font-normal md:text-[17px]">
                     {experience.company}
                   </h5>
                 </div>
-                <h3 className="text-[48px] font-medium leading-[45px] md:text-[40px]">
+                <h3 className="text-xl xs:text-2xl lg:text-[48px] font-medium leading-[45px] md:text-[40px]">
                   {experience.year}
                 </h3>
               </div>
-              <p className="w-[40%] text-[18px] font-light md:w-full md:pl-[10%]">
+              <p className="w-full text-sm xs:text-base md:w-[40%] md:text-[18px] font-light lg:w-full md:pl-[10%]">
                 {experience.description}
               </p>
             </div>
