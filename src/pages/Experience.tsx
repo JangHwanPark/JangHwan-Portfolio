@@ -57,7 +57,7 @@ const Experience = () => {
   }, [sections.experience]);
 
   return (
-    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] p-4 lg:px-0 lg:py-[120px]">
+    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] py-4 px-12 lg:px-0 lg:py-[120px]">
       <article className="w-full max-w-6xl">
         <h2 className="font-bold text-4xl lg:text-7xl leading-10 lg:leading-[70px] xs:text-left md:text-center bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent mt-12 mb-12 lg:mb-24">
           My career &
@@ -80,7 +80,7 @@ const Experience = () => {
                   <h4 className="w-full text-xl lg:text-[33px] leading-[30px] font-medium md:text-[22px] md:w-[180px]">
                     {experience.position}
                   </h4>
-                  <h5 className="w-full text-lg lg:text-[20px] capitalize mt-[10px] text-accent font-normal md:text-[17px]">
+                  <h5 className="w-full pb-5 text-lg lg:text-[20px] capitalize mt-[10px] text-accent font-normal md:text-[17px]">
                     {experience.company}
                   </h5>
                 </div>
