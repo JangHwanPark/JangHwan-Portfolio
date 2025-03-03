@@ -84,7 +84,7 @@ const About = () => {
             <span className='text-c-yellow'>프런트엔드 개발자</span>
             <span className='text-c-green'> 박장환입니다.</span>
           </h2>
-          <p ref={textRef} className="md:relative md:z-20 text-md max-w-3xl md:text-xl lg:text-2xl leading-8 md:leading-10 font-normal">
+          <p ref={textRef} className="md:relative md:z-20 xs:text-sm sm:text-base max-w-3xl md:text-xl lg:text-2xl leading-8 md:leading-10 font-normal">
             데이터를 효과적으로 시각화하고, 더 나은 UI를 설계하는 것을 목표로
             사용자 중심의 인터페이스를 고민하며, 팀과 함께 성장하고 있습니다.
             제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.
