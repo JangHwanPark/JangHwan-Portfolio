@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../data";
 import { useScroll } from "../providers/ScrollProvider";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 const Project = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -37,35 +37,9 @@ const Project = () => {
       <h2 className='mt-20 mb-5 px-4 md:my-20 text-4xl md:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto'>
         My <span>Work</span>
       </h2>
-      {/* 3600px */}
       <ul ref={horizonRef} className="relative w-[3600px] lg:w-[3600px] px-24 mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-black before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:bg-black after:absolute after:top-[100%]">
         {projects.map((project, index) => (
-          <li key={index} className='w-[350px] md:w-[600px] py-10 p-6 bg-white border-r flex flex-col items-center justify-start gap-6 h-[860px] lg:h-[904px] xl:h-[1024px]'>
-            {/* 프로젝트 헤더 */}
-            <div className='w-full'>
-              <header className='w-full my-10 flex items-center justify-between'>
-                <h3 className='text-3xl font-semibold'>0{String(index + 1)}.</h3>
-                <div className='text-end'>
-                  <h4 className='text-xl font-semibold'>{project.name}</h4>
-                  <p>웹 애플리케이션</p>
-                </div>
-              </header>
-              <div className='mb-10'>
-                <h4 className='mb-2 text-xl font-semibold'>Tools and features</h4>
-                <div className='flex flex-wrap gap-3'>
-                  {project.stack.map((item, index) => (
-                    <p key={index}>{item}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* 프로젝트 이미지 */}
-            <figure className="w-full flex justify-center">
-              <Link to={`/projects/${project.name}`} state={{ modal: true, project}}>
-                <img src="/src/assets/images/p2.webp" alt="" className='w-96 h-36 lg:w-full lg:h-96'/>
-              </Link>
-            </figure>
-          </li>
+          <ProjectCard key={index} index={index} name={project.name} stack={project.stack} isModal={true} project={project}/>
         ))}
       </ul>
     </section>
