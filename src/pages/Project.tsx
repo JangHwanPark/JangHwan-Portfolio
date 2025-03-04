@@ -1,9 +1,3 @@
-// import { Tab, TabList, TabPanel, TabPanels, Tabs } from "../components";
-// import { TabItem } from "../types/tabs";
-// import PageHeader from "../layout/PageHeader/PageHeader";
-// import ProjectCard from "../components/ProjectCard/ProjectCard";
-// import Horizontally from "../components/Scroll/Horizontally";
-import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -12,21 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../data";
 import { useScroll } from "../providers/ScrollProvider";
 
-/*const tabs: TabItem[] = [
-  { key: "tab1", label: "전체" },
-  { key: "tab2", label: "프런트엔드" },
-  { key: "tab3", label: "백엔드" },
-  { key: "tab4", label: "풀스택" },
-];*/
-
 const Project = () => {
   gsap.registerPlugin(ScrollTrigger);
   const { sections } = useScroll();
   const horizonRef = useRef<HTMLUListElement | null>(null);
 
-  const projectCnt = projects.length;
-  const itemWidth = 600;
-  const totalWidth = projectCnt * itemWidth;
+  const projectCnt = projects.length; // 프로젝트 개수
+  const itemWidth = 600; // 각 아이템(카드)의 너비
+  const totalWidth = projectCnt * itemWidth; // 전체 너비
   // const connHeight = window.innerHeight + itemWidth;
 
   useGSAP(() => {
@@ -45,24 +32,15 @@ const Project = () => {
     });
   }, []);
 
-  const connClass = clsx('w-full max-w-3xl md:max-w-6xl mx-auto')
-
-  const horizontallyClass = clsx(
-    'w-[350px] md:w-[600px] py-10 p-6 bg-white border-r',
-    'flex flex-col items-center justify-start gap-6',
-    //'transition-transform duration-300 hover:scale-105'
-  );
-
-  // content-stretch
   return (
-    <section id='projects' ref={sections.projects} className='flex flex-col items-start justify-center gap-6'>
-      <h2 className={`mt-20 mb-5 px-4 md:my-20 text-4xl md:text-7xl font-bold ${connClass}`}>
+    <section id='projects' ref={sections.projects} className='flex flex-col items-start justify-start'>
+      <h2 className='mt-20 mb-5 px-4 md:my-20 text-4xl md:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto'>
         My <span>Work</span>
       </h2>
       {/* 3600px */}
-      <ul ref={horizonRef} className="w-[4000px] md:w-[4800px] px-24 md:mb-48 flex relative gap-10 border-y">
+      <ul ref={horizonRef} className="relative w-[3600px] lg:w-[3600px] px-24 mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-black before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:bg-black after:absolute after:top-[100%]">
         {projects.map((project, index) => (
-          <li key={index} className={horizontallyClass}>
+          <li key={index} className='w-[350px] md:w-[600px] py-10 p-6 bg-white border-r flex flex-col items-center justify-start gap-6 h-[860px] lg:h-[904px] xl:h-[1024px]'>
             {/* 프로젝트 헤더 */}
             <div className='w-full'>
               <header className='w-full my-10 flex items-center justify-between'>

@@ -2,7 +2,7 @@ import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
 // Home, Project, , ProjectDetail
-import { About,  Skills, Experience } from "../pages";
+import { About, Project, Skills, Experience, ProjectDetail } from "../pages";
 import { AsideMenu } from "../layout";
 import { ScrollProvider } from "../providers/ScrollProvider";
 import CurveLine from "../components/Line/CurveLine";
@@ -44,13 +44,13 @@ const RootLayout = () => {
             firstClass='w-6/12 ml-72'
             lastClass='w-4/12 ml-72'/>
           <Skills />
-          {/*<CurveLine
+          <CurveLine
             containerClass='mt-12'
             firstClass='w-7/12 ml-56'
             lastClass='w-full ml-56'/>
           <Project />
           <ProjectDetail/>
-          <LinearLine className='w-6/12'/>*/}
+          <LinearLine className='w-6/12 mt-32'/>
           <Experience />
         </main>
         <Footer />
