@@ -74,7 +74,7 @@ const About = () => {
     <section ref={sections.about} id='about' className={connClass}>
       {/* intro */}
       <div className='relative flex flex-col items-center justify-center gap-10'>
-        <article className="mb-0 lg:relative lg:mb-10 xl:mb-52 lg:left-32 font-semibold leading-8">
+        <article className="mb-0 lg:relative lg:mb-10 xl:mb-52 lg:left-16 font-semibold leading-8">
           <Tags items={tags} />
           <h2 ref={titleRef} className="w-fit mt-8 mb-3 text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-8 md:leading-12 xl:leading-20 font-bold relative z-12">
             <span className='text-c-blue'>데이터를</span>
@@ -90,7 +90,7 @@ const About = () => {
         </article>
       </div>
       {/* Image */}
-      <div className='lg:relative lg:right-32'>
+      <div className='lg:relative lg:right-16'>
         <div className="lg:w-[350px] xl:w-[410px] lg:h-[450px] bg-c-yellow md:absolute lg:top-[10px] lg:left-[5px] xl:top-[-30px] xl:left-[10px] md:z-0] "></div>
         <img ref={imgRef} className={imgClass} src={profileImg} alt="Profile" />
       </div>
