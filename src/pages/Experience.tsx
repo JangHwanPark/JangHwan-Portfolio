@@ -48,7 +48,7 @@ const Experience = () => {
     timeline.fromTo(
       timelineRef.current,
       { height: "0%", opacity: 0 },
-      { height: '100%', opacity: 1, duration: 1.2, ease: 'power2.out' },
+      { height: '130%', opacity: 1, duration: 1.2, ease: 'power2.out' },
     ).fromTo(
       dotRef.current,
       { y: 0 },
@@ -57,7 +57,7 @@ const Experience = () => {
   }, [sections.experience]);
 
   return (
-    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] py-4 px-12 lg:px-0 lg:py-[120px]">
+    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] py-4 px-12 sm:px-8 md:px-20 lg:px-0 lg:py-[120px]">
       <article className="w-full max-w-6xl">
         <h2 className="font-bold text-4xl lg:text-7xl leading-10 lg:leading-[70px] xs:text-left md:text-center bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent mt-12 mb-12 lg:mb-24">
           My career &
@@ -66,7 +66,7 @@ const Experience = () => {
 
         <div className="relative flex flex-col mx-auto">
           {/* 타임라인 선 */}
-          <div ref={timelineRef} className="absolute top-[-50px] left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-gradient-to-t dark:from-[#F4B400] from-dark-bg via-accent to-transparent"></div>
+          <div ref={timelineRef} className="absolute top-[-50px] -left-3 md:-left-10 lg:left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-gradient-to-t dark:from-[#F4B400] from-dark-bg via-accent to-transparent"></div>
 
           {/* 타임라인 요소 */}
           <div ref={dotRef} className="absolute bottom-0 left-1/2 transform -translate-x-1/2 dark:bg-[#ffd700] w-[10px] h-[10px] rounded-full dark:shadow-[0_0_5px_2px_#ffd700,0_0_15px_8px_#ffcc00,0_0_110px_20px_#ffeb3b]"></div>
@@ -75,9 +75,10 @@ const Experience = () => {
           {/* 경력 항목 */}
           {experienceData.map((experience, index) => (
             <div key={index} className="flex justify-between mb-[50px] flex-col md:gap-2 lg:gap-14 md:mb-[70px] lg:flex-row">
-              <div className="flex flex-row md:flex-col justify-between gap-[50px] md:w-[40%] lg:w-full md:pl-[10%]">
+              <div className="flex flex-row lg:flex-col justify-between gap-[50px] lg:w-[40%] lg:pl-[10%]">
+                {/* 경력 콘텐츠 */}
                 <div className='w-full flex flex-col'>
-                  <h4 className="w-full text-xl lg:text-[33px] leading-[30px] font-medium md:text-[22px] md:w-[180px]">
+                  <h4 className="w-full text-xl lg:text-[33px] leading-[30px] md:text-[22px] lg:w-[180px] font-bold">
                     {experience.position}
                   </h4>
                   <h5 className="w-full pb-5 text-lg lg:text-[20px] capitalize mt-[10px] text-accent font-normal md:text-[17px]">
@@ -88,7 +89,7 @@ const Experience = () => {
                   {experience.year}
                 </h3>
               </div>
-              <p className="w-full text-sm xs:text-base md:w-[40%] md:text-[18px] font-light lg:w-full md:pl-[10%]">
+              <p className="w-full text-sm xs:text-base lg:w-[40%] md:text-[18px] font-light lg:pl-[10%]">
                 {experience.description}
               </p>
             </div>

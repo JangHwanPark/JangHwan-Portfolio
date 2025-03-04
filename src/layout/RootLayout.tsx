@@ -1,9 +1,9 @@
 import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
-// Home,
-import { About, Project, Skills, Experience, ProjectDetail } from "../pages";
-import AsideMenu from "../components/AsideMenu/AsideMenu";
+// Home, Project, , ProjectDetail
+import { About,  Skills, Experience } from "../pages";
+import { AsideMenu } from "../layout";
 import { ScrollProvider } from "../providers/ScrollProvider";
 import CurveLine from "../components/Line/CurveLine";
 import LinearLine from "../components/Line/LinearLine";
@@ -18,10 +18,9 @@ import LinearLine from "../components/Line/LinearLine";
 const RootLayout = () => {
   /*const [complete, setComplete] = useState(false);*/
 
-  const classes = clsx(
-    // min-h-[calc(100vh-136px)]
-    // "max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto",
-    "w-full min-h-[calc(100vh-136px)]");
+  // min-h-[calc(100vh-136px)]
+  // "max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto",
+  const classes = clsx("w-full min-h-[calc(100vh-136px)]");
 
   const dark = clsx(
     "relative",

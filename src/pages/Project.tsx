@@ -37,7 +37,7 @@ const Project = () => {
         trigger: sections.projects.current, // 트리거 기준 요소
         // top top : article 의 Top 이 뷰포트 상단(top)에 도달하면 실행
         // bottom bottom : article 의 바텀이 `뷰포트 바텀`과 만나면 고정 시작
-        start: "bottom 70%",
+        start: "bottom bottom",
         end: `+=${totalWidth}`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
         scrub: 1, // 부드러운 애니메이션 효과
         pin: true, // 활성화 시 article이 고정됨

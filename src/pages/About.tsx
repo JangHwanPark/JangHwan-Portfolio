@@ -62,7 +62,7 @@ const About = () => {
   }, []);
 
   const connClass = clsx(
-    'mt-[74px] w-full px-4 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto',
+    'mt-[74px] w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto',
     'flex flex-col-reverse items-center justify-center gap-3 md:gap-10',
     'md:flex-row lg:mb-10',);
 
@@ -76,9 +76,7 @@ const About = () => {
       <div className='relative flex flex-col items-center justify-center gap-10'>
         <article className="mb-0 lg:relative lg:mb-52 lg:left-32 font-semibold leading-8">
           <Tags items={tags} />
-          <h2 ref={titleRef} className="w-fit mt-8 sm:mt-0 mb-3 text-lg sm:text-xl md:text-3xl lg:text-5xl leading-8 lg:leading-20 font-bold relative z-12">
-            {/* 사용자 경험을 디자인하는 */}
-            {/* 사용자 경험을 고민하는 */}
+          <h2 ref={titleRef} className="w-fit mt-8 mb-3 text-lg sm:text-xl md:text-3xl lg:text-5xl leading-8 lg:leading-20 font-bold relative z-12">
             <span className='text-c-blue'>데이터를</span>
             <span className='text-c-red'> 조각하는</span><br />
             <span className='text-c-yellow'>프런트엔드 개발자</span>
@@ -90,8 +88,6 @@ const About = () => {
             제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.
           </p>
         </article>
-        {/* Line */}
-        {/*<div className='hidden md:block absolute h-7/12 border-2 border-c-yellow -bottom-56 left-1/5'></div>*/}
       </div>
       {/* Image */}
       <div className='md:relative lg:right-32'>
