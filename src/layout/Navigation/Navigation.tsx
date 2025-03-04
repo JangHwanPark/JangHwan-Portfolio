@@ -76,7 +76,7 @@ const Navigation = ({
   return (
     <nav className={navbarClass}>
       {/* PC / Tablet */}
-      <ul className='hidden md:flex gap-5 flex-row justify-between'>
+      <ul className='hidden lg:flex gap-5 flex-row justify-between'>
         {items.map((item, index) => (
           <NavItem
             key={index}

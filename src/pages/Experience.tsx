@@ -57,9 +57,9 @@ const Experience = () => {
   }, [sections.experience]);
 
   return (
-    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] py-4 px-12 sm:px-8 md:px-20 lg:px-0 lg:py-[120px]">
+    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto xl:mb-[250px] py-4 px-12 sm:px-8 md:px-20 lg:px-0 lg:py-[120px]">
       <article className="w-full max-w-6xl">
-        <h2 className="font-bold text-4xl lg:text-7xl leading-10 lg:leading-[70px] xs:text-left md:text-center bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent mt-12 mb-12 lg:mb-24">
+        <h2 className="font-bold text-4xl lg:text-5xl 2xl:text-7xl leading-10 lg:leading-14 xl:leading-[70px] xs:text-left md:text-center bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent mt-12 mb-12 lg:mb-24">
           My career &
           <br /> experience
         </h2>
@@ -75,7 +75,7 @@ const Experience = () => {
           {/* 경력 항목 */}
           {experienceData.map((experience, index) => (
             <div key={index} className="flex justify-between mb-[50px] flex-col md:gap-2 lg:gap-14 md:mb-[70px] lg:flex-row">
-              <div className="flex flex-row lg:flex-col justify-between gap-[50px] lg:w-[40%] lg:pl-[10%]">
+              <div className="flex flex-row  justify-between gap-[50px] lg:w-[40%] lg:pl-[10%]">
                 {/* 경력 콘텐츠 */}
                 <div className='w-full flex flex-col'>
                   <h4 className="w-full text-xl lg:text-[33px] leading-[30px] md:text-[22px] lg:w-[180px] font-bold">
@@ -89,7 +89,7 @@ const Experience = () => {
                   {experience.year}
                 </h3>
               </div>
-              <p className="w-full text-sm xs:text-base lg:w-[40%] md:text-[18px] font-light lg:pl-[10%]">
+              <p className="w-full text-sm xs:text-base lg:w-[40%] md:text-[18px] font-light lg:pr-[10%]">
                 {experience.description}
               </p>
             </div>
