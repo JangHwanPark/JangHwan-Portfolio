@@ -3,7 +3,6 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import Tags from "../components/Tags/Tags";
 import { useScroll } from "../providers/ScrollProvider";
-import clsx from "clsx";
 import profileImg from "../assets/images/p1.webp";
 
 const tags = [
@@ -61,17 +60,8 @@ const About = () => {
     });
   }, []);
 
-  const connClass = clsx(
-    'mt-[74px] py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto',
-    'flex flex-col-reverse items-center justify-center gap-3 lg:gap-10',
-    'lg:flex-row lg:mb-10',);
-
-  const imgClass = clsx(
-    'w-62 h-62 lg:w-[450px] xl:w-[410px] lg:h-[450px] object-cover ',
-    'rounded-full lg:rounded-none relative z-10',)
-
   return (
-    <section ref={sections.about} id='about' className={connClass}>
+    <section ref={sections.about} id='about' className='mt-[74px] py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto flex flex-col-reverse items-center justify-center gap-3 lg:gap-10 lg:flex-row lg:mb-10 xl:mb-0'>
       {/* intro */}
       <div className='relative flex flex-col items-center justify-center gap-10'>
         <article className="mb-0 lg:relative lg:mb-10 xl:mb-52 lg:left-16 font-semibold leading-8">
@@ -82,7 +72,7 @@ const About = () => {
             <span className='text-c-yellow'>프런트엔드 개발자</span>
             <span className='text-c-green'> 박장환입니다.</span>
           </h2>
-          <p ref={textRef} className="md:relative md:z-20 xs:text-sm sm:text-base max-w-3xl lg:text-lg leading-8 lg:leading-10 font-normal">
+          <p ref={textRef} className="md:relative md:z-20 xs:text-sm sm:text-base max-w-3xl lg:text-lg xl:text-xl leading-8 lg:leading-10 font-normal">
             데이터를 효과적으로 시각화하고, 더 나은 UI를 설계하는 것을 목표로
             사용자 중심의 인터페이스를 고민하며, 팀과 함께 성장하고 있습니다.
             제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.
@@ -92,7 +82,7 @@ const About = () => {
       {/* Image */}
       <div className='lg:relative lg:right-16'>
         <div className="lg:w-[350px] xl:w-[410px] lg:h-[450px] bg-c-yellow md:absolute lg:top-[10px] lg:left-[5px] xl:top-[-30px] xl:left-[10px] md:z-0] "></div>
-        <img ref={imgRef} className={imgClass} src={profileImg} alt="Profile" />
+        <img ref={imgRef} src={profileImg} alt="Profile" className='w-62 h-62 lg:w-[450px] xl:w-[410px] lg:h-[450px] object-cover rounded-full lg:rounded-none relative z-10'/>
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ const RootLayout = () => {
         <Header />
         <main className={classes}>
           {/*<Home />*/}
-          <LinearLine className='w-8/12'/>
+          <LinearLine className='w-8/12 xl:w-9/12'/>
           <About />
           <CurveLine
             firstClass='w-6/12 ml-72'
