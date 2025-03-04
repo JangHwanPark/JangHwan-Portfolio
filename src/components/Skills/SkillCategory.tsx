@@ -11,7 +11,9 @@ const SkillCategory = ({
   skills: SkillsType[];
 }) => {
   const skillsConn = clsx(
-    "lg:first:mb-32 lg:last:mt-32 p-6 md:p-8 bg-white rounded-2xl shadow-lg border border-gray-200",
+    "lg:first:mb-40 lg:last:mt-40 p-6 md:p-8 bg-white",
+    'rounded-2xl shadow-lg border border-gray-200',
+    'lg:max-w-2xl lg:mx-auto',
     "hover:shadow-2xl transition-all duration-300 ease-in-out",
     className
   );

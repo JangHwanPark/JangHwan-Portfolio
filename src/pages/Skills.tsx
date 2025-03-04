@@ -24,7 +24,8 @@ const Skills = () => {
     'px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5');
 
   const skillsConnClass = clsx(
-    "py-5 grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 md:gap-10");
+    'py-5 lg:py-0 lg:max-w-4xl lg:mx-auto lg:mt-5',
+    "grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 md:gap-10");
 
   return (
     <section ref={sections.skills} id="skills" className={connClass}>
@@ -33,7 +34,7 @@ const Skills = () => {
         <span>&lt;</span>SKILLS<span>/&gt;</span>
       </h2>
       <p className='xs:text-sm xs:pb-5 sm:text-base lg:text-lg lg:pb-10 xs:leading-8 lg:leading-10'>
-        다양한 기술을 경험하며 더 나은 사용자 경험을 제공하기 위해 끊임없이 고민합니다.
+        다양한 기술을 경험하며 더 나은 사용자 경험을 제공하기 위해 끊임없이 고민합니다.<br/>
         문제를 발견하고 해결하는 과정 속에서 지속적으로 성장해 나가고자 합니다.
       </p>
       <Tabs tabs={tabItems} defaultTab="home">
