@@ -6,6 +6,7 @@ import { About, Project, Skills, Experience, ProjectDetail } from "../pages";
 import AsideMenu from "../components/AsideMenu/AsideMenu";
 import { ScrollProvider } from "../providers/ScrollProvider";
 import CurveLine from "../components/Line/CurveLine";
+import LinearLine from "../components/Line/LinearLine";
 // import { useRef } from "react";
 // import { ScrollRestoration } from "react-router-dom";
 // import gsap from "gsap";
@@ -38,23 +39,19 @@ const RootLayout = () => {
         <Header />
         <main className={classes}>
           {/*<Home />*/}
-          <div className='hidden lg:block w-full h-96 text-c-yellow'>
-            <div className='w-8/12 h-full border-r-2'></div>
-          </div>
+          <LinearLine className='w-8/12'/>
           <About />
           <CurveLine
             firstClass='w-6/12 ml-72'
             lastClass='w-4/12 ml-72'/>
           <Skills />
-          <CurveLine
+          {/*<CurveLine
             containerClass='mt-12'
             firstClass='w-7/12 ml-56'
             lastClass='w-full ml-56'/>
           <Project />
           <ProjectDetail/>
-          <div className='hidden lg:block w-full h-96 text-c-yellow'>
-            <div className='w-6/12 h-full border-r-2'></div>
-          </div>
+          <LinearLine className='w-6/12'/>*/}
           <Experience />
         </main>
         <Footer />
