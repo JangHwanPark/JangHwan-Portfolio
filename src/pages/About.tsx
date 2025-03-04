@@ -69,10 +69,10 @@ const About = () => {
           <h2 ref={titleRef} className="w-fit mt-8 mb-3 text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-8 md:leading-12 xl:leading-20 font-bold relative z-12">
             <span className='text-c-blue'>데이터를</span>
             <span className='text-c-red'> 조각하는</span><br />
-            <span className='text-c-yellow'>프런트엔드 개발자</span>
+            <span className='text-c-yellow'>프론트엔드 개발자</span>
             <span className='text-c-green'> 박장환입니다.</span>
           </h2>
-          <p ref={textRef} className="md:relative md:z-20 xs:text-sm sm:text-base max-w-3xl lg:text-lg xl:text-xl leading-8 lg:leading-10 font-normal">
+          <p ref={textRef} className="md:relative md:z-20 xs:text-sm sm:text-base max-w-3xl lg:text-lg xl:text-xl leading-8 lg:leading-10 font-normal lg:max-w-xl">
             데이터를 효과적으로 시각화하고, 더 나은 UI를 설계하는 것을 목표로
             사용자 중심의 인터페이스를 고민하며, 팀과 함께 성장하고 있습니다.
             제 포트폴리오에서 다양한 프로젝트와 협업 경험을 확인해보세요.

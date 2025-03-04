@@ -37,7 +37,7 @@ const Project = () => {
       <h2 className='mt-20 mb-5 px-4 md:my-20 text-4xl md:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto'>
         My <span>Work</span>
       </h2>
-      <ul ref={horizonRef} className="relative w-[3600px] lg:w-[3600px] px-24 mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-black before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:bg-black after:absolute after:top-[100%]">
+      <ul ref={horizonRef} className="relative w-[3600px] lg:w-[3600px] mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-black before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:bg-black after:absolute after:top-[100%]">
         {projects.map((project, index) => (
           <ProjectCard key={index} index={index} name={project.name} stack={project.stack} isModal={true} project={project}/>
         ))}

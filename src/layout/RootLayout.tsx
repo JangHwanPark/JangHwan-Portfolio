@@ -17,11 +17,6 @@ import LinearLine from "../components/Line/LinearLine";
 
 const RootLayout = () => {
   /*const [complete, setComplete] = useState(false);*/
-
-  // min-h-[calc(100vh-136px)]
-  // "max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto",
-  const classes = clsx("w-full min-h-[calc(100vh-136px)]");
-
   const dark = clsx(
     "relative",
     "text-gray-800 bg-white",
@@ -36,7 +31,7 @@ const RootLayout = () => {
       <div className={dark}>
         <h1 className='hidden'>페이지 본문</h1>
         <Header />
-        <main className={classes}>
+        <main className='w-full min-h-[calc(100vh-136px)]'>
           {/*<Home />*/}
           <LinearLine className='w-8/12 xl:w-9/12'/>
           <About />
