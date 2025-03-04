@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import clsx from "clsx";
+import Tooltip from "../Tooltip/Tooltip";
 
 interface IconSkillsProps {
   skills: SkillsType[];
@@ -37,19 +38,12 @@ const IconSkills = ({
           className="relative flex flex-col items-center"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}>
-          <figure className={clsx(
-            'w-14 h-14 md:w-16 md:h-16 lg:w-24 lg:h-24 p-4 border-2 rounded-xl', skill.color)}>
+          <figure className={clsx('w-14 h-14 md:w-16 md:h-16 lg:w-24 lg:h-24 p-4 border-2 rounded-xl', skill.color)}>
             {skill.icon}
           </figure>
-
-          {/* 팝업 (툴팁) */}
-          <div
-            className="absolute bottom-[-50px] bg-gray-900 text-white px-2 py-1 rounded opacity-0 text-sm text-center"
-            ref={(el) =>{
-              if (el) (popupRefs.current[index] = el);
-            }}>
-            {skill.name}
-          </div>
+          <Tooltip ref={(el) =>{
+            if (el) (popupRefs.current[index] = el);
+          }} text={skill.name}/>
         </div>
       ))}
     </div>
