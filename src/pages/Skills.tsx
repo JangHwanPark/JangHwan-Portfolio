@@ -19,16 +19,8 @@ const Skills = () => {
   const frequent = categorizedSkills.frequent;
   const familiar = categorizedSkills.familiar;
 
-  const connClass = clsx(
-    'w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto',
-    'px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5');
-
-  const skillsConnClass = clsx(
-    'py-5 lg:py-0 lg:max-w-4xl lg:mx-auto lg:mt-5',
-    "grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 md:gap-10");
-
   return (
-    <section ref={sections.skills} id="skills" className={connClass}>
+    <section ref={sections.skills} id="skills" className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5'>
       {/* 사용 빈도별 | 분야별 */}
       <h2 className="w-fit pt-20 pb-3 text-2xl font-bold lg:pt-24 lg:pb-8 md:text-4xl lg:text-7xl ">
         <span>&lt;</span>SKILLS<span>/&gt;</span>
@@ -48,37 +40,33 @@ const Skills = () => {
             </Tab>
           ))}
         </TabList>
-        <TabPanels>
+        <TabPanels className='lg:py-10'>
           {/* ✅ 자주 사용해요 */}
           <TabPanel tabKey="frequent">
-            <div className={skillsConnClass}>
-              {categories.map((category, index) => frequent?.[category]?.length > 0 && (
-                <SkillCategory
-                  key={index}
-                  title={`<${category} />`}
-                  className={clsx(
-                    // 첫 번째 카드는 2~4번 열에 배치
-                    category === 'FrontEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
-                    category === 'Tools' && 'md:col-start-2 md:col-end-3')}
-                  skills={frequent[category]} />
-              ))}
-            </div>
+            {categories.map((category, index) => frequent?.[category]?.length > 0 && (
+              <SkillCategory
+                key={index}
+                title={`<${category} />`}
+                className={clsx(
+                  // 첫 번째 카드는 2~4번 열에 배치
+                  category === 'FrontEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
+                  category === 'Tools' && 'md:col-start-2 md:col-end-3')}
+                skills={frequent[category]} />
+            ))}
           </TabPanel>
 
           {/* ✅ 사용해 봤어요 */}
           <TabPanel tabKey="familiar">
-            <div className={skillsConnClass}>
-              {categories.map((category, index) => familiar?.[category]?.length > 0 && (
-                <SkillCategory
-                  key={index}
-                  title={`<${category} />`}
-                  className={clsx(
-                    // 첫 번째 카드는 2~4번 열에 배치
-                    category === 'BackEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
-                    category === 'DevOps' && 'md:col-start-2 md:col-end-3')}
-                  skills={familiar[category]} />
-              ))}
-            </div>
+            {categories.map((category, index) => familiar?.[category]?.length > 0 && (
+              <SkillCategory
+                key={index}
+                title={`<${category} />`}
+                className={clsx(
+                  // 첫 번째 카드는 2~4번 열에 배치
+                  category === 'BackEnd' && 'col-span-2 col-start-1 col-end-1 md:col-end-2',
+                  category === 'DevOps' && 'md:col-start-2 md:col-end-3')}
+                skills={familiar[category]} />
+            ))}
           </TabPanel>
         </TabPanels>
       </Tabs>
