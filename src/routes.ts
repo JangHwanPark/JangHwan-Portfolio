@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
 
       // 포트폴리오 (프로젝트)
       { path: "project", Component: Project },
-      { path: "project/:id", Component: ProjectDetail },
+      { path: "project/:name", Component: ProjectDetail },
 
       // 경력(경험)
       { path: "experience", Component: Experience },

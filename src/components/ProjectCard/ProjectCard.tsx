@@ -33,7 +33,7 @@ const ProjectCard = ({
           </div>
         </div>
       </div>
-      {/* 프로젝트 이미지 */}
+      {/* 프로젝트 이미지 (모달 페이지로 출력) */}
       <figure className="w-full flex justify-center">
         <Link to={`/projects/${name}`} state={{ modal: isModal, project}}>
           <img src="/src/assets/images/p2.webp" alt="" className='w-96 h-36 lg:w-full lg:h-96'/>

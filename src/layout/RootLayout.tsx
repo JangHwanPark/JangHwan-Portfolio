@@ -1,8 +1,13 @@
 import { Footer, Header } from "../layout";
 import { ThemeProvider } from "../providers/ThemeProvider";
 import clsx from "clsx";
-// Home, Project, , ProjectDetail
-import { About, Project, Skills, Experience, ProjectDetail } from "../pages";
+import {
+  About,
+  Project,
+  Skills,
+  Experience,
+  ProjectDetail
+} from "../pages";
 import { AsideMenu } from "../layout";
 import { ScrollProvider } from "../providers/ScrollProvider";
 import CurveLine from "../components/Line/CurveLine";

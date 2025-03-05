@@ -1,11 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { FaGithub, FaLink } from "react-icons/fa";
+import LinkButton from "../components/Button/LinkButton";
+import { MdCloseFullscreen } from "react-icons/md";
 
 const ProjectDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const project = location.state?.project;
-
-  console.log("🔹 location.state:", location.state);
 
   const closeModal = () => {
     navigate("/projects"); // 프로젝트 목록 페이지로 이동
@@ -18,21 +19,44 @@ const ProjectDetail = () => {
 
   return (
     <section className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-      <article className="my-20 h-auto max-w-4xl bg-white shadow-lg rounded-lg p-8">
-        {/* 프로젝트 타입 및 제목 */}
-        <h3 className="text-center text-lg font-semibold text-gray-500">{project.projectType} 프로젝트</h3>
-        <h2 className="my-6 text-center text-4xl font-bold">{project.name}</h2>
-
-        {/* 프로젝트 이미지 */}
-        <figure className="mb-6">
-          <img src="/src/assets/images/p4.webp" alt={project.name} className="w-full h-96 rounded-lg shadow-md" />
-        </figure>
-
-        {/* 프로젝트 정보 (날짜, 설명) */}
-        <div className="mb-6 text-gray-700">
-          <p className="text-sm text-gray-500">{project.dateRange}</p>
-          <p className="mt-2">{project.description}</p>
+      <div className="my-20 h-auto max-w-6xl bg-white shadow-lg rounded-lg p-8 ">
+        {/* 닫기 버튼 */}
+        <div className="flex justify-end">
+          <button onClick={closeModal} className="px-2 py-2 cursor-pointer">
+            <MdCloseFullscreen size={20}/>
+          </button>
         </div>
+        {/* 프로젝트 정보 */}
+        <article className='flex justify-center gap-5 mb-10'>
+          {/* 프로젝트 이미지 */}
+          <figure className="w-96">
+            <img src="/src/assets/images/p4.webp" alt={project.name} className="w-full h-96 rounded-lg shadow-md" />
+          </figure>
+
+          <div className='mt-auto'>
+            {/* 프로젝트 타입 및 제목 */}
+            <h3 className="text-left text-lg font-semibold text-gray-500">{project.projectType} 프로젝트</h3>
+            <h2 className="my-2 text-left text-4xl font-bold">
+              {project.name}
+            </h2>
+
+            {/* 프로젝트 정보 (날짜, 설명) */}
+            <div className="mb-6 text-gray-700">
+              <p className="text-sm text-gray-500">{project.dateRange}</p>
+              <p className="mt-2 max-w-xl">{project.description}</p>
+            </div>
+
+            {/* 프로젝트 정보 페이지로 이동 */}
+            <div className='w-full my-5 flex justify-start gap-10'>
+              <LinkButton href='/' title='Live Demo'>
+                <FaLink />
+              </LinkButton>
+              <LinkButton href='/' title='Github Repository'>
+                <FaGithub />
+              </LinkButton>
+            </div>
+          </div>
+        </article>
 
         {/* 프로젝트 주요 정보 (과제 & 기능) */}
         <div className="grid grid-cols-2 gap-8">
@@ -81,14 +105,7 @@ const ProjectDetail = () => {
             </div>
           </div>
         </div>
-
-        {/* 닫기 버튼 */}
-        <div className="mt-8 flex justify-center">
-          <button onClick={closeModal} className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
-            닫기
-          </button>
-        </div>
-      </article>
+      </div>
     </section>
   );
 };
