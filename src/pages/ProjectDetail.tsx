@@ -2,6 +2,7 @@ import { FaGithub, FaLink } from "react-icons/fa";
 import LinkButton from "../components/Button/LinkButton";
 import { MdCloseFullscreen } from "react-icons/md";
 
+
 const ProjectDetail = ({
   project,
   onClose
@@ -48,7 +49,7 @@ const ProjectDetail = ({
               <LinkButton href='/' title='Live Demo'>
                 <FaLink />
               </LinkButton>
-              <LinkButton href='/' title='Github Repository'>
+              <LinkButton href='/' title='Source Code'>
                 <FaGithub />
               </LinkButton>
             </div>
@@ -56,7 +57,7 @@ const ProjectDetail = ({
         </article>
 
         {/* 프로젝트 주요 정보 (과제 & 기능) */}
-        <div className="grid grid-cols-2 gap-8">
+        <article className="grid grid-cols-2 gap-8">
           <div>
             <h4 className="text-lg font-semibold mb-2">과제</h4>
             <ul className="list-disc list-inside text-gray-700">
@@ -74,7 +75,7 @@ const ProjectDetail = ({
               ))}
             </ul>
           </div>
-        </div>
+        </article>
 
         {/* 프로젝트 상태 */}
         <div className="mt-6 text-gray-700">
@@ -83,7 +84,7 @@ const ProjectDetail = ({
         </div>
 
         {/* 기술 스택 및 협업 도구 */}
-        <div className="mt-6 grid grid-cols-2 gap-8">
+        <article className="mt-6 grid grid-cols-2 gap-8">
           <div>
             <h4 className="text-lg font-semibold">사용한 기술</h4>
             <div className="flex flex-wrap gap-2 mt-2">
@@ -101,7 +102,7 @@ const ProjectDetail = ({
               ))}
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ const ProjectCard = ({
   onSelectProject: (project: ProjectsType | null) => void;
 }) => {
   return (
-    <li className='w-[350px] md:w-[600px] py-10 p-6 bg-white border-r flex flex-col items-center justify-start gap-6 h-[860px] lg:h-[904px] xl:h-[1024px]'>
+    <li className='w-[350px] md:w-[600px] py-10 p-6 border-r flex flex-col items-center justify-start gap-6 h-[860px] lg:h-[904px] xl:h-[1024px]'>
       {/* 프로젝트 헤더 */}
       <div className='w-full'>
         <header className='w-full my-10 flex items-center justify-between'>

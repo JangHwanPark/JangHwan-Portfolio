@@ -38,7 +38,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header ref={headerRef} className='w-full pb-5 bg-white fixed top-0 z-9999'>
+    <header ref={headerRef} className='w-full pb-5 bg-white dark:bg-dark-bg fixed top-0 z-9999'>
       <div className='pt-5 px-5 md:px-10 flex justify-between items-center'>
         <Logo/>
         <Navigation items={navbar}/>

@@ -65,7 +65,7 @@ const Preloader = ({
       <section ref={containerRef} className={`${classes} z-[9999] flex items-end justify-end bg-black text-white`}>
         <div>
           <PreloaderText
-            className='h-[10rem] pt-40 pb-10 -translate-x-60'
+            className='h-[10rem] pt-40 pb-10 -translate-x-14 sm:-translate-x-40 lg:-translate-x-60'
             items={welcome}
             itemRef={welcomeRef}/>
           <PreloaderText
@@ -74,7 +74,7 @@ const Preloader = ({
             itemRef={nameRef}/>
         </div>
       </section>
-      <div ref={secondOverlayRef} className={`${classes} bg-[#48d64c] z-[9990]`}></div>
+      <div ref={secondOverlayRef} className={`${classes} bg-c-yellow dark:bg-h-yellow z-[9990]`}></div>
     </>
   );
 };

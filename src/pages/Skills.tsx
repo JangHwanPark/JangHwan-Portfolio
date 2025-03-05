@@ -22,7 +22,7 @@ const Skills = () => {
   return (
     <section ref={sections.skills} id="skills" className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5'>
       {/* 사용 빈도별 | 분야별 */}
-      <h2 className="w-fit pt-20 pb-3 text-2xl font-bold lg:pt-24 lg:pb-8 md:text-4xl lg:text-7xl ">
+      <h2 className="w-fit pt-20 pb-3 text-4xl font-bold lg:pt-24 lg:pb-8 lg:text-6xl 2xl:text-7xl bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent">
         <span>&lt;</span>SKILLS<span>/&gt;</span>
       </h2>
       <p className='xs:text-sm xs:pb-5 sm:text-base lg:text-lg lg:pb-10 xs:leading-8 lg:leading-10'>

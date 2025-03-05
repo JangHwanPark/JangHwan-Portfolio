@@ -41,11 +41,11 @@ const Project = ({
 
   return (
     <section id="projects" ref={sections.projects} className="flex flex-col items-start justify-start">
-      <h2 className="mt-20 mb-5 px-4 md:my-20 text-4xl md:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto">
-        My <span>Work</span>
+      <h2 className="mt-20 mb-5 px-4 md:mt-26 md:mb-16 text-4xl lg:text-6xl 2xl:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto dark:from-[#F4B400] dark:to-white bg-gradient-to-b bg-clip-text dark:text-transparent">
+        My Work
       </h2>
       <ul ref={horizonRef}
-          className="relative w-[3600px] lg:w-[3600px] mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-black before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:bg-black after:absolute after:top-[100%]">
+          className="relative w-[3600px] lg:w-[3600px] mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-black dark:before:bg-white before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:bg-black after:absolute after:top-[100%] dark:after:bg-white">
         {projects?.map(project => (
           <ProjectCard key={project.id} isModal={true} project={project} onSelectProject={onSelectProject}/>
         ))}

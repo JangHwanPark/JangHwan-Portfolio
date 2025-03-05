@@ -23,7 +23,7 @@ const NavItem = ({
         onClick={onClick}
         className={({ isActive }) => clsx(
           'relative w-full h-full flex items-center justify-center pb-1',
-          'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-500',
+          'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-500 dark:after:bg-h-yellow',
           'after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100',
           isActive && 'active font-semibold after:scale-x-100')}>
         {children}
