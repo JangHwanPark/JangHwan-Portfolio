@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 
@@ -8,12 +8,9 @@ interface TagItems {
 
 const Tags = ({
   items,
-  isAnimation = false,
 } : {
   items: TagItems[];
-  isAnimation?: boolean;
 }) => {
-  console.log('태그 애니메이션 적용 여부 : ' , isAnimation);
   const listRef = useRef<(HTMLLIElement | null)[]>([]);
   useGSAP(() => {
     // const listItems = gsap.utils.toArray(listRef.current);
@@ -45,4 +42,4 @@ const Tags = ({
   );
 };
 
-export default Tags;
+export default memo(Tags);
