@@ -33,29 +33,29 @@ const RootLayout = () => {
       {/* <Preloader setComplete={setComplete}/>
       {complete && (*/}
       <ScrollProvider>
-      <div className={dark}>
-        <h1 className='hidden'>페이지 본문</h1>
-        <Header />
-        <main className='w-full min-h-[calc(100vh-136px)]'>
-          {/*<Home />*/}
-          <LinearLine className='w-8/12 xl:w-9/12'/>
-          <About />
-          <CurveLine
-            firstClass='w-6/12 ml-72'
-            lastClass='w-4/12 ml-72'/>
-          <Skills />
-          <CurveLine
-            containerClass='mt-12'
-            firstClass='w-7/12 ml-56'
-            lastClass='w-full ml-56'/>
-          <Project />
-          {/*<ProjectDetail/>*/}
-          <LinearLine className='w-6/12 mt-32'/>
-          <Experience />
-        </main>
-        <Footer />
-        <AsideMenu/>
-      </div>
+        <div className={dark}>
+          <h1 className='hidden'>페이지 본문</h1>
+          <Header />
+          <main className='w-full min-h-[calc(100vh-136px)]'>
+            {/*<Home />*/}
+            <LinearLine className='w-8/12 xl:w-9/12'/>
+            <About />
+            <CurveLine
+              firstClass='w-6/12 ml-72'
+              lastClass='w-4/12 ml-72'/>
+            <Skills />
+            <CurveLine
+              containerClass='mt-12'
+              firstClass='w-7/12 ml-56'
+              lastClass='w-full ml-56'/>
+            <Project />
+            {/*<ProjectDetail/>*/}
+            <LinearLine className='w-6/12 mt-32'/>
+            <Experience />
+          </main>
+          <Footer />
+          <AsideMenu/>
+        </div>
       </ScrollProvider>
       {/*)}*/}
     </ThemeProvider>

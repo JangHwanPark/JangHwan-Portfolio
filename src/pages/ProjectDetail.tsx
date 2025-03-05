@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { FaGithub, FaLink } from "react-icons/fa";
 import LinkButton from "../components/Button/LinkButton";
 import { MdCloseFullscreen } from "react-icons/md";
@@ -6,12 +6,16 @@ import { MdCloseFullscreen } from "react-icons/md";
 const ProjectDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { name } = useParams();
   const project = location.state?.project;
 
   const closeModal = () => {
     navigate("/projects"); // 프로젝트 목록 페이지로 이동
   };
-
+  console.log(name);
+  console.log(project);
+  console.log(location);
+  console.log(location.state);
   if (!project) {
     console.warn("⚠ 프로젝트 데이터 없음! URL로 직접 접근했을 가능성이 높음.");
     return null;
