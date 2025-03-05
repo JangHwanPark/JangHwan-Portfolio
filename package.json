@@ -17,7 +17,7 @@
     "precommit": "lint-staged",
     "clean": "rm -rf node_modules dist && npm install",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
