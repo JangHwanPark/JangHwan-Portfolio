@@ -49,7 +49,7 @@ const RootLayout = () => {
             firstClass='w-7/12 ml-56'
             lastClass='w-full ml-56'/>
           <Project />
-          <ProjectDetail/>
+          {/*<ProjectDetail/>*/}
           <LinearLine className='w-6/12 mt-32'/>
           <Experience />
         </main>

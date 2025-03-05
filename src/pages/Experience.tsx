@@ -33,27 +33,36 @@ const experienceData = [
 
 const Experience = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const timelineRef = useRef(null);
-  const dotRef = useRef(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
   const { sections } = useScroll();
 
   useGSAP(() => {
+    if (!timelineRef.current || !dotRef.current) return;
+
+    // 타임라인의 실제 높이, 점의 크기 가져오기
+    const timelineHeight = timelineRef.current.offsetHeight;
+    const dotHeight = dotRef.current.offsetHeight;
+
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: sections.experience.current,
         start: '30% center',
-        end: '180% bottom',
-        scrub: true,
+        // end: '180% bottom',
+        end: `+=${timelineHeight}`,
+        scrub: true
       }
     });
     timeline.fromTo(
       timelineRef.current,
       { height: "0%", opacity: 0 },
-      { height: '130%', opacity: 1, duration: 1.2, ease: 'power2.out' },
+      // { height: '130%', opacity: 1, duration: 1.2, ease: 'power2.out' },
+      { height: `${timelineHeight}px`, opacity: 1, duration: 1.2, ease: 'power2.out' },
     ).fromTo(
       dotRef.current,
-      { y: 0 },
-      { y: 100, ease: 'none' },
+      { y: '0px' },
+      { y: `${timelineHeight - dotHeight}px`, ease: 'none' },
+      '<' // dot이 타임라인과 동시에 이동
     );
   }, [sections.experience]);
 
