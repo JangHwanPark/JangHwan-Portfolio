@@ -7,7 +7,6 @@ import {
   ProjectDetail,
   Experience,
   NotFound,
-  TestPage
 } from "./pages";
 
 export const router = createBrowserRouter([
@@ -32,6 +31,4 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
-  // 테스트 페이지
-  { path: "/test", Component: TestPage },
 ])

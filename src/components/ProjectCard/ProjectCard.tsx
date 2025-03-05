@@ -7,7 +7,7 @@ const ProjectCard = ({
 } : {
   isModal: boolean;
   project: ProjectsType;
-  onSelectProject: (project: ProjectsType | null) => void;
+  onSelectProject?: (project: ProjectsType | null) => void;
 }) => {
   return (
     <li className='w-[350px] md:w-[600px] py-10 p-6 border-r flex flex-col items-center justify-start gap-6 h-[860px] lg:h-[904px] xl:h-[1024px]'>
@@ -31,7 +31,7 @@ const ProjectCard = ({
       </div>
       {/* 프로젝트 이미지 (모달 페이지로 출력) */}
       <figure className="w-full flex justify-center">
-        <Link to={`/projects/${project.id}`} state={{ modal: isModal, project:project }} onClick={() => onSelectProject(project)}>
+        <Link to={`/projects/${project.id}`} state={{ modal: isModal, project:project }} onClick={() => onSelectProject?.(project)}>
           <img src="/src/assets/images/p2.webp" alt="" className='w-96 h-36 lg:w-full lg:h-96'/>
         </Link>
       </figure>

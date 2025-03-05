@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Project = ({
   onSelectProject
 } : {
-  onSelectProject: (project: ProjectsType | null) => void;
+  onSelectProject?: (project: ProjectsType | null) => void;
 }) => {
   const { sections } = useScroll();
   const horizonRef = useRef<HTMLUListElement | null>(null);
