@@ -1,21 +1,14 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { FaGithub, FaLink } from "react-icons/fa";
 import LinkButton from "../components/Button/LinkButton";
 import { MdCloseFullscreen } from "react-icons/md";
 
-const ProjectDetail = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { name } = useParams();
-  const project = location.state?.project;
-
-  const closeModal = () => {
-    navigate("/projects"); // 프로젝트 목록 페이지로 이동
-  };
-  console.log(name);
-  console.log(project);
-  console.log(location);
-  console.log(location.state);
+const ProjectDetail = ({
+  project,
+  onClose
+} : {
+  project: ProjectsType;
+  onClose: () => void;
+}) => {
   if (!project) {
     console.warn("⚠ 프로젝트 데이터 없음! URL로 직접 접근했을 가능성이 높음.");
     return null;
@@ -26,7 +19,7 @@ const ProjectDetail = () => {
       <div className="my-20 h-auto max-w-6xl bg-white shadow-lg rounded-lg p-8 ">
         {/* 닫기 버튼 */}
         <div className="flex justify-end">
-          <button onClick={closeModal} className="px-2 py-2 cursor-pointer">
+          <button onClick={onClose} className="px-2 py-2 cursor-pointer">
             <MdCloseFullscreen size={20}/>
           </button>
         </div>
@@ -67,7 +60,7 @@ const ProjectDetail = () => {
           <div>
             <h4 className="text-lg font-semibold mb-2">과제</h4>
             <ul className="list-disc list-inside text-gray-700">
-              {project.challenges.map((challenge: string, index: number) => (
+              {project.challenges?.map((challenge: string, index: number) => (
                 <li key={index}>{challenge}</li>
               ))}
             </ul>
@@ -103,7 +96,7 @@ const ProjectDetail = () => {
           <div>
             <h4 className="text-lg font-semibold">협업 도구</h4>
             <div className="flex flex-wrap gap-2 mt-2">
-              {project.collaborationTools.map((tool: string, index: number) => (
+              {project.collaborationTools?.map((tool: string, index: number) => (
                 <span key={index} className="px-3 py-1 bg-blue-200 rounded-full text-sm">{tool}</span>
               ))}
             </div>

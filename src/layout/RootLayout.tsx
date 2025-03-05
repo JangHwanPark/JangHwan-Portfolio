@@ -12,6 +12,7 @@ import { AsideMenu } from "../layout";
 import { ScrollProvider } from "../providers/ScrollProvider";
 import CurveLine from "../components/Line/CurveLine";
 import LinearLine from "../components/Line/LinearLine";
+import { useState } from "react";
 // import { useRef } from "react";
 // import { ScrollRestoration } from "react-router-dom";
 // import gsap from "gsap";
@@ -19,8 +20,8 @@ import LinearLine from "../components/Line/LinearLine";
 // import { useGSAP } from "@gsap/react";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
 const RootLayout = () => {
+  const [selectedProject, setSelectedProject] = useState<ProjectsType | null>(null);
   /*const [complete, setComplete] = useState(false);*/
   const dark = clsx(
     "relative",
@@ -37,7 +38,6 @@ const RootLayout = () => {
           <h1 className='hidden'>페이지 본문</h1>
           <Header />
           <main className='w-full min-h-[calc(100vh-136px)]'>
-            {/*<Home />*/}
             <LinearLine className='w-8/12 xl:w-9/12'/>
             <About />
             <CurveLine
@@ -48,8 +48,8 @@ const RootLayout = () => {
               containerClass='mt-12'
               firstClass='w-7/12 ml-56'
               lastClass='w-full ml-56'/>
-            <Project />
-            {/*<ProjectDetail/>*/}
+            <Project onSelectProject={setSelectedProject} />
+            {selectedProject && <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />}
             <LinearLine className='w-6/12 mt-32'/>
             <Experience />
           </main>

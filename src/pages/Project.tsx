@@ -7,7 +7,11 @@ import { useScroll } from "../providers/ScrollProvider";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
-const Project = () => {
+const Project = ({
+  onSelectProject
+} : {
+  onSelectProject: (project: ProjectsType | null) => void;
+}) => {
   const { sections } = useScroll();
   const horizonRef = useRef<HTMLUListElement | null>(null);
 
@@ -42,8 +46,8 @@ const Project = () => {
       </h2>
       <ul ref={horizonRef}
           className="relative w-[3600px] lg:w-[3600px] mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-black before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:bg-black after:absolute after:top-[100%]">
-        {projects?.map((project, index) => (
-          <ProjectCard key={index} index={index} name={project.name} stack={project.stack} isModal={true} project={project} />
+        {projects?.map(project => (
+          <ProjectCard key={project.id} isModal={true} project={project} onSelectProject={onSelectProject}/>
         ))}
       </ul>
     </section>
