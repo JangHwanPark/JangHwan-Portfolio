@@ -1,1 +1,0 @@
-export { getCategorizedSkills } from './skillService.ts';
