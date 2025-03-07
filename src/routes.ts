@@ -8,6 +8,7 @@ import {
   Experience,
   NotFound,
 } from "./pages";
+import TestPage01 from "./pages/test/TestPage01";
 
 export const router = createBrowserRouter([
   {
@@ -31,4 +32,8 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
+  {
+    path: '/test',
+    Component: TestPage01,
+  }
 ])
