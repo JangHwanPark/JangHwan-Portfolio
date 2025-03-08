@@ -9,6 +9,10 @@ on:
       # 버전 태그(v1.0.0 등)는 무시
       - 'v*'
 
+permissions:
+  # GitHub Actions의 푸시 권한 추가
+  contents: write
+
 jobs:
   update-build:
     runs-on: ubuntu-latest
@@ -32,4 +36,4 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add package.json
           git commit -m "🔄 Update build number to ${{ env.COMMIT_COUNT }}" || echo "No changes to commit"
-          git push
+          git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/JangHwanPark/JangHwan-Portfolio.git HEAD:$(git rev-parse --abbrev-ref HEAD)
