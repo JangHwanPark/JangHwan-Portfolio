@@ -21,7 +21,9 @@ const RootLayout = () => {
       {/*<Preloader setComplete={setComplete} />
       {complete && (*/}
       <ScrollProvider>
-        <h1 className="hidden">페이지 본문</h1>
+        <h1 className="hidden">
+          JangHwanPark | FrontEnd Development
+        </h1>
         <Header />
         <main className="w-full min-h-[calc(100vh-136px)]">
           <Home/>
