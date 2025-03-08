@@ -68,7 +68,7 @@ const Navigation = ({
   }
 
   return (
-    <nav className='w-fit md:w-full max-w-xs lg:max-w-md xl:max-w-xl'>
+    <nav className='w-fit lg:w-full max-w-xs lg:max-w-md xl:max-w-xl'>
       {/* PC / Tablet */}
       <ul className='hidden lg:flex gap-3 xl:gap-5 flex-row justify-between'>
         {items.map((item, index) => (
