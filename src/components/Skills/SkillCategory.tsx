@@ -11,17 +11,15 @@ const SkillCategory = ({
   skills: SkillsType[];
 }) => {
   const skillsConn = clsx(
-    "lg:first:mb-40 lg:last:mt-40 p-6 md:p-8 bg-white",
-    'rounded-2xl shadow-lg border border-gray-200',
-    'lg:max-w-2xl lg:mx-auto',
-    "hover:shadow-2xl transition-all duration-300 ease-in-out",
+    'lg:first:mb-40 lg:last:mt-40 p-6 md:p-8 bg-none',
+    'rounded-2xl shadow-lg border border-gray-200 lg:max-w-2xl lg:mx-auto',
+    'hover:shadow-2xl transition-all duration-300 ease-in-out',
     className
   );
 
   const subTitleClass = clsx(
-    "mb-6 text-xl font-bold text-center text-gray-800",
-    "bg-gradient-to-r from-blue-500 to-indigo-500 text-transparent bg-clip-text"
-  );
+    "mb-6 text-xl lg:text-2xl font-bold text-center",
+    "bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent");
 
   return (
     <article className={skillsConn}>

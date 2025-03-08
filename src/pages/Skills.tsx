@@ -18,24 +18,32 @@ const Skills = () => {
   const categorizedSkills = getCategorizedSkills();
   const frequent = categorizedSkills.frequent;
   const familiar = categorizedSkills.familiar;
+  const skillsTextClass = clsx('text-t-sub xs:text-sm sm:text-base lg:text-lg xl:text-xl leading-8');
+  const tagClass = clsx('bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent');
 
   return (
     <section ref={sections.skills} id="skills" className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5'>
-      {/* 사용 빈도별 | 분야별 */}
-      <h2 className="w-fit pt-20 pb-3 text-4xl font-bold lg:pt-24 lg:pb-8 lg:text-6xl 2xl:text-7xl bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent">
-        <span>&lt;</span>SKILLS<span>/&gt;</span>
-      </h2>
-      <p className='xs:text-sm xs:pb-5 sm:text-base lg:text-lg lg:pb-10 xs:leading-8 lg:leading-10'>
-        다양한 기술을 경험하며 더 나은 사용자 경험을 제공하기 위해 끊임없이 고민합니다.<br/>
-        문제를 발견하고 해결하는 과정 속에서 지속적으로 성장해 나가고자 합니다.
-      </p>
+      {/* 섹션 헤더 */}
+      <header className='pt-20 lg:pt-5 lg:pb-10'>
+        <h2 className="w-fit pb-3 text-4xl font-bold lg:pb-8 lg:text-5xl 2xl:text-6xl">
+          <span className={tagClass}>&lt;</span>
+          SKILLS
+          <span className={tagClass}>/&gt;</span>
+        </h2>
+        <p className={skillsTextClass}>
+          새로운 기술을 탐험하고, 더 나은 사용자 경험을 위한 해결책을 고민합니다.
+        </p>
+        <p className={skillsTextClass}>
+          작은 문제 하나하나를 해결하며, 더 나은 가치를 만들기 위해 끊임없이 고민합니다.
+        </p>
+      </header>
+      {/* 섹션 본문 (사용 빈도별 | 분야별) */}
       <Tabs tabs={tabItems} defaultTab="home">
         <TabList>
           {tabItems.map(tab => (
             <Tab
-            key={tab.key}
-            tabKey={tab.key}
-            className='px-8 py-3 xs:text-base lg:text-xl lg:px-10'>
+              key={tab.key}
+              tabKey={tab.key}>
               {tab.label}
             </Tab>
           ))}

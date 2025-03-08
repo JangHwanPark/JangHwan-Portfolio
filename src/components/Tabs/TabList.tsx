@@ -21,7 +21,7 @@ const TabList = ({
 }: TabListProps) => {
   const classes = clsx(
     className,
-    'border-b-2 border-b-c-yellow',
+    'px-10 border-b-2 border-b-c-yellow',
     'flex items-center xs:justify-center sm:justify-start',)
   return (
     <ul

@@ -4,7 +4,7 @@ import {
   Project,
   Skills,
   Experience,
-  ProjectDetail, Home,
+  ProjectDetail,
 } from "../pages";
 import { AsideMenu } from "../layout";
 import { ScrollProvider } from "../providers/ScrollProvider";
@@ -26,17 +26,16 @@ const RootLayout = () => {
         </h1>
         <Header />
         <main className="w-full min-h-[calc(100vh-136px)]">
-          <Home/>
           <LinearLine className="w-8/12 xl:w-9/12" />
           <About />
           <CurveLine
-            firstClass="w-6/12 ml-72"
-            lastClass="w-4/12 ml-72" />
+            firstClass="w-6/12 h-52 ml-93 pl-7 border-b-2"
+            lastClass="w-5/12 h-72 ml-93" />
           <Skills />
           <CurveLine
             containerClass="mt-12"
-            firstClass="w-7/12 ml-56"
-            lastClass="w-full ml-56" />
+            firstClass="w-7/12 h-52 ml-56 border-b-2"
+            lastClass="w-full h-72 ml-56" />
           <Project onSelectProject={setSelectedProject} />
           {selectedProject && <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />}
           <LinearLine className="w-6/12 mt-32" />

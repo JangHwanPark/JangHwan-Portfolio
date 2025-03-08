@@ -19,7 +19,7 @@ const About = () => {
     'md:relative md:z-20 xs:text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-t-sub')
 
   return (
-    <section ref={sections.about} id='about' className='mt-[74px] py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto flex flex-col-reverse items-center justify-center gap-3 lg:gap-10 lg:flex-row lg:mb-10 xl:mb-0 lg:min-h-[500px]'>
+    <section ref={sections.about} id='about' className='py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto flex flex-col-reverse items-center justify-center gap-3 lg:gap-10 lg:flex-row lg:mb-10 xl:mb-0 lg:min-h-[500px]'>
       {/* intro */}
       <article className='relative flex flex-col items-center justify-center gap-2'>
         <h2 ref={titleRef} className="w-full mb-3 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl leading-8 md:leading-12 font-bold relative z-12">
@@ -31,7 +31,7 @@ const About = () => {
             )}>{text}</p>
           ))}
         </h2>
-        <div className='w-full lg:max-w-xl mr-auto'>
+        <div className='w-full lg:max-w-2xl mr-auto'>
           <p ref={textRef} className={`${aboutTextClass} mb-2`}>
             제 홈페이지에 방문해 주셔서 감사합니다.
           </p>
