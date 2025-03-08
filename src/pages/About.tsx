@@ -19,18 +19,18 @@ const About = () => {
     'md:relative md:z-20 xs:text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-t-sub')
 
   return (
-    <section ref={sections.about} id='about' className='mt-24 lg:mt-0 py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto flex flex-col-reverse items-center justify-center gap-3 lg:gap-5 xl:gap-10 lg:flex-row lg:mb-10 xl:mb-0 lg:min-h-[500px]'>
+    <section ref={sections.about} id='about' className='mt-24 lg:mt-0 py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto flex flex-col-reverse items-center justify-center gap-10 lg:gap-5 xl:gap-10 lg:flex-row lg:mb-10 xl:mb-0 lg:min-h-[500px]'>
       {/* intro */}
       <article className='relative flex flex-col items-center justify-center md:gap-5 lg:gap-2'>
         <h2 ref={titleRef} className="w-full lg:mb-3 leading-8 lg:leading-12 font-bold relative z-12 text-center lg:text-left">
           {titleTexts.map((text, index) => (
             <p key={index} className={clsx(
-              'text-lg sm:text-xl',
+              'text-xl sm:text-2xl',
               index < 2
                 ? 'md:text-2xl xl:text-3xl text-t-primary'
                 : 'md:text-3xl xl:text-5xl text-t-sub text-left',
-              index % 2 === 0 ? "mb-1" : "mb-2 lg:mb-5",
-              index === 2 && 'mt-20 lg:mt-0',
+              index % 2 === 0 ? "mb-1" : "mb-5 md:mb-2 lg:mb-5",
+              index === 2 && 'mt-12 md:mt-20 lg:mt-0',
             )}>{text}</p>
           ))}
         </h2>
