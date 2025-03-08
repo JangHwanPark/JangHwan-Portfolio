@@ -22,9 +22,9 @@ const Skills = () => {
   const tagClass = clsx('bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent');
 
   return (
-    <section ref={sections.skills} id="skills" className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5'>
+    <section ref={sections.skills} id="skills" className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5 mb-32 lg:mb-0'>
       {/* 섹션 헤더 */}
-      <header className='pt-20 lg:pt-5 lg:pb-10'>
+      <header className='pt-20 lg:pt-5 pb-10'>
         <h2 className="w-fit pb-3 text-4xl font-bold lg:pb-8 lg:text-5xl 2xl:text-6xl">
           <span className={tagClass}>&lt;</span>
           SKILLS

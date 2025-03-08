@@ -26,7 +26,7 @@ const TimeLine = forwardRef<HTMLDivElement, TimeLineProps>(({
       {/* 타임라인 요소 */}
       {/* from-dark-bg bg-[#F4B400] */}
       {/* shadow-[0_0_5px_2px_#F4B400,0_0_15px_8px_#ffcc00,0_0_110px_20px_#ffeb3b] */}
-      <div ref={dotRef} className="absolute top-[-50px] left-1/2 transform -translate-x-1/2 bg-[#ffd700] w-[10px] h-[10px] rounded-full shadow-[0_0_5px_2px_#ffd700,0_0_15px_8px_#ffcc00,0_0_110px_20px_#ffeb3b]"></div>
+      <div ref={dotRef} className="absolute top-[-50px] md:-left-10 lg:left-1/2 transform -translate-x-1/2 bg-[#ffd700] w-[10px] h-[10px] rounded-full shadow-[0_0_5px_2px_#ffd700,0_0_15px_8px_#ffcc00,0_0_110px_20px_#ffeb3b]"></div>
 
       {/* 경력 항목 */}
       <ul className="space-y-12 md:space-y-16 lg:space-y-32">
