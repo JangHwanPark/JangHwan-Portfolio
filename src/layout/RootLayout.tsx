@@ -17,7 +17,7 @@ const RootLayout = () => {
   /*const [complete, setComplete] = useState(false);*/
 
   return (
-    <div className='text-t-primary bg-primary'>
+    <div className='text-t-primary bg-primary overflow-x-hidden'>
       {/*<Preloader setComplete={setComplete} />
       {complete && (*/}
       <ScrollProvider>
