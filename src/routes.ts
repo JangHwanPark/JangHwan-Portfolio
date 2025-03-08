@@ -6,7 +6,7 @@ import {
   Project,
   ProjectDetail,
   Experience,
-  NotFound,
+  NotFound, Home,
 } from "./pages";
 import TestPage01 from "./pages/test/TestPage01";
 
@@ -16,7 +16,10 @@ export const router = createBrowserRouter([
     Component: RootLayout,
     children: [
       // 메인 페이지 (소개 페이지)
-      { index: true, Component: About },
+      { index: true, Component: Home },
+
+      // 메인 페이지 (소개 페이지)
+      { path: 'about', Component: About },
 
       // 기술 스택
       { path: "skills", Component: Skills },
@@ -35,5 +38,5 @@ export const router = createBrowserRouter([
   {
     path: '/test',
     Component: TestPage01,
-  }
+  },
 ])
