@@ -3,7 +3,7 @@
   "name": "react-portfolio",
   "private": true,
   "version": "1.0.0",
-  "build": 134,
+  "build": 137,
   "type": "module",
   "scripts": {
     "dev": "vite",
