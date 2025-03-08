@@ -34,11 +34,11 @@ const RootLayout = () => {
           <Skills />
           <CurveLine
             containerClass="mt-12"
-            firstClass="w-7/12 h-52 ml-56 border-b-2"
+            firstClass="w-6/12 h-52 ml-56 pl-4 border-b-2"
             lastClass="w-full h-72 ml-56" />
           <Project onSelectProject={setSelectedProject} />
           {selectedProject && <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />}
-          <LinearLine className="w-6/12 mt-32" />
+          <LinearLine wrapperClass='mt-60' className="w-6/12" />
           <Experience />
         </main>
         <Footer />
