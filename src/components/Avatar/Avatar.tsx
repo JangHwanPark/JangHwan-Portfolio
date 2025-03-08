@@ -6,7 +6,7 @@ const Avatar = () => {
   const imgRef = useRef<HTMLImageElement | null>(null);
   const imgSize = clsx(
     'rounded-full lg:rounded-lg',
-    'w-80 h-80 lg:w-[410px] xl:w-[410px]',
+    'w-62 h-62 sm:w-80 sm:h-80 lg:w-[410px] xl:w-[410px]',
     'lg:h-[410px] xl:h-[450px]' ,);
   return (
     <div className={`relative lg:-top-2 ${imgSize}`}>
