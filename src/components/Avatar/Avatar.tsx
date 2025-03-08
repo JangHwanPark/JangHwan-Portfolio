@@ -4,7 +4,10 @@ import clsx from "clsx";
 
 const Avatar = () => {
   const imgRef = useRef<HTMLImageElement | null>(null);
-  const imgSize = clsx('lg:w-[450px] xl:w-[410px] lg:h-[450px] rounded-lg');
+  const imgSize = clsx(
+    'rounded-lg',
+    'lg:w-[410px] xl:w-[410px]',
+    'lg:h-[410px] xl:h-[450px]' ,);
   return (
     <div className={`relative lg:-top-2 ${imgSize}`}>
       <div className={`${imgSize} bg-c-yellow absolute top-5 left-5`}></div>

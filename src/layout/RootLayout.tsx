@@ -26,10 +26,10 @@ const RootLayout = () => {
         </h1>
         <Header />
         <main className="w-full min-h-[calc(100vh-136px)]">
-          <LinearLine className="w-8/12 xl:w-9/12" />
+          <LinearLine className="w-8/12 lg:w-9/12 lg:ml-5" />
           <About />
           <CurveLine
-            firstClass="w-6/12 h-52 ml-93 pl-7 border-b-2"
+            firstClass="w-6/12 h-52 ml-93 pl-7"
             lastClass="w-5/12 h-72 ml-93" />
           <Skills />
           <CurveLine
