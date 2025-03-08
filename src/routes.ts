@@ -8,7 +8,6 @@ import {
   Experience,
   NotFound
 } from "./pages";
-import TestPage01 from "./pages/test/TestPage01";
 
 export const router = createBrowserRouter([
   {
@@ -31,9 +30,5 @@ export const router = createBrowserRouter([
       // 오류 처리 (404)
       { path: "*", Component: NotFound },
     ],
-  },
-  {
-    path: '/test',
-    Component: TestPage01,
-  },
+  }
 ])

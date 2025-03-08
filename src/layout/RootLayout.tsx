@@ -11,15 +11,16 @@ import { ScrollProvider } from "../providers/ScrollProvider";
 import CurveLine from "../components/Line/CurveLine";
 import LinearLine from "../components/Line/LinearLine";
 import { useState } from "react";
+import Preloader from "../components/Preloader/Preloader";
 
 const RootLayout = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectsType | null>(null);
-  /*const [complete, setComplete] = useState(false);*/
+  const [complete, setComplete] = useState(false);
 
   return (
     <div className='text-t-primary bg-primary overflow-x-hidden'>
-      {/*<Preloader setComplete={setComplete} />
-      {complete && (*/}
+      <Preloader setComplete={setComplete} />
+      {complete && (
       <ScrollProvider>
         <h1 className="hidden">
           JangHwanPark | FrontEnd Development
@@ -44,7 +45,7 @@ const RootLayout = () => {
         <Footer />
         <AsideMenu />
       </ScrollProvider>
-      {/* )}*/}
+      )}
     </div>
   );
 };
