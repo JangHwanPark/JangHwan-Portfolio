@@ -37,8 +37,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header ref={headerRef} className='w-full pb-5 fixed top-0 z-9999'>
-      <div className='pt-5 px-10 xl:px-20 flex justify-between items-center'>
+    <header ref={headerRef} className='w-full pb-5 fixed top-0 z-9999 bg-primary'>
+      <div className='pt-5 xs:px-3 sm:px-10 xl:px-20 flex justify-between items-center'>
         <Logo/>
         <Navigation items={navbar}/>
         {/*<DarkModeSwitch/>*/}
