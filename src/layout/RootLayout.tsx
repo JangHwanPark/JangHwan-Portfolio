@@ -30,8 +30,8 @@ const RootLayout = () => {
           <LinearLine className="w-8/12 lg:w-9/12 lg:ml-5" />
           <About />
           <CurveLine
-            firstClass="w-6/12 h-52 ml-93 pl-7"
-            lastClass="w-5/12 h-72 ml-93" />
+            firstClass="lg:w-8/12 xl:w-6/12 h-52 lg:ml-38 xl:ml-112"
+            lastClass="w-4/12 h-72 lg:ml-38 xl:ml-112"/>
           <Skills />
           <CurveLine
             containerClass="mt-12"
