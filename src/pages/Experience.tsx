@@ -48,7 +48,6 @@ const Experience = () => {
       scrollTrigger: {
         trigger: sections.experience.current,
         start: '30% center',
-        // end: '180% bottom',
         end: `+=${timelineHeight}`,
         scrub: true
       }
@@ -56,12 +55,11 @@ const Experience = () => {
     timeline.fromTo(
       timelineRef.current,
       { height: "0%", opacity: 0 },
-      // { height: '130%', opacity: 1, duration: 1.2, ease: 'power2.out' },
       { height: `${timelineHeight}px`, opacity: 1, duration: 1.2, ease: 'power2.out' },
     ).fromTo(
       dotRef.current,
       { y: '0px' },
-      { y: `${timelineHeight - dotHeight}px`, ease: 'none' },
+      { y: `${timelineHeight - dotHeight}px`, duration: 1.2, ease: 'power2.out' },
       '<' // dot이 타임라인과 동시에 이동
     );
   }, [sections.experience]);
