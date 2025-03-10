@@ -28,7 +28,7 @@ const ProjectDetail = ({
         <article className='flex justify-center gap-5 mb-10'>
           {/* 프로젝트 이미지 */}
           <figure className="w-96">
-            <img src="/src/assets/images/p4.webp" alt={project.name} className="w-full h-96 rounded-lg shadow-md" />
+            <img src="/images/p4.webp" alt={project.name} className="w-full h-96 rounded-lg shadow-md" />
           </figure>
 
           <div className='mt-auto'>

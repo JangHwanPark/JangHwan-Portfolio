@@ -36,7 +36,7 @@ const ProjectCard = ({
       {/* 프로젝트 이미지 (모달 페이지로 출력) */}
       <figure className="w-full flex justify-center">
         <Link to={`/projects/${project.id}`} state={{ modal: isModal, project:project }} onClick={() => onSelectProject?.(project)} className='relative'>
-          <img src="/src/assets/images/p2.webp" alt="" className='w-full max-h-[250px] lg:max-h-[300px]'/>
+          <img src="/images/p2.webp" alt="" className='w-full max-h-[250px] lg:max-h-[300px]'/>
         </Link>
       </figure>
     </li>

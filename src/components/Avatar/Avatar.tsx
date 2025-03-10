@@ -1,4 +1,4 @@
-import profileImg from "../../assets/images/p1.webp";
+import profileImg from "../../../public/images/p1.webp";
 import { useRef } from "react";
 import clsx from "clsx";
 
