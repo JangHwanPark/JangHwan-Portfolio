@@ -47,7 +47,7 @@ const Project = ({
         My Work
       </h2>
       <ul ref={horizonRef}
-          // w-[3600px]
+        // w-[3600px]
           style={{ width: `${totalWidth}px` }}
           className="relative w-full h-full mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-white before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:absolute after:top-[100%] after:bg-white">
         {projects?.map(project => (

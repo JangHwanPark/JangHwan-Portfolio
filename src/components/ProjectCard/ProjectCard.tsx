@@ -11,8 +11,8 @@ const ProjectCard = ({
 }) => {
   // h-[860px] lg:h-[904px] xl:h-[1024px]
   return (
-    /* w-[350px] md:w-[600px] */
-    <li className='w-[600px] py-10 p-6 border-r flex flex-col items-center justify-start gap-6'>
+    /* w-[350px] md:w-[600px] py-10 */
+    <li className='w-[600px] p-6 border-r flex flex-col items-center justify-start gap-6'>
       {/* 프로젝트 헤더 */}
       <div className='w-full'>
         <header className='w-full my-10 flex items-center justify-between'>
