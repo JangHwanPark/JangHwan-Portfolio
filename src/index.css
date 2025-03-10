@@ -1,12 +1,5 @@
 @import "tailwindcss";
 
-/*Background (배경)	#121212	다크모드 배경 (진한 블랙)
-Text (글자)	#EEEEEE	연한 회색 (가독성 좋게)
-Primary (메인 포인트)	#00FFF0	네온 민트 (네온 느낌 강조)
-Secondary (서브 포인트)	#FF007A	핫핑크 (보조 색상)
-Accent (강조 요소, 버튼 등)	#F8B400	네온 옐로우 (강조할 때 사용)
-Line (곡선 라인 & 테두리)	#00ADB5	청록색 네온 (라인 포인트)*/
-
 /* 테마 변수 */
 @theme {
     --breakpoint-xs: 365px;
@@ -26,11 +19,7 @@ Line (곡선 라인 & 테두리)	#00ADB5	청록색 네온 (라인 포인트)*/
     --color-danger: #E74C3C;
     --color-t-primary: #F0F1F2;
     --color-t-sub: #A1A6B4;
-
-    --color-c-blue: #4285F4;
-    --color-c-red: #DB4437;
-    /*--color-c-yellow: #FDD663;*/
-    --color-c-yellow: #F4B400;
+    --color-c-yellow: #FFD700; /* F4B400 */
 
     /* ETC */
     --color-c-purple: #aa42ff;
@@ -61,6 +50,9 @@ html, body {
     min-width: calc(100vw - 20px);
     min-height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
+    overflow-x: hidden;
+    background: #0b080c;
+    color: #F0F1F2;
 }
 
 #JangHwanPark {

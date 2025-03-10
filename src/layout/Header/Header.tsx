@@ -7,7 +7,6 @@ import { Logo } from "../../components";
 import Navigation from "../Navigation/Navigation";
 
 const navbar = [
-  /*{href: "/", title: 'Home'},*/
   {href: "/", title: 'About'},
   {href: "/skills", title: 'Skills'},
   {href: "/projects", title: 'Projects'},
@@ -37,11 +36,10 @@ const Header = () => {
   }, []);
 
   return (
-    <header ref={headerRef} className='w-full pb-5 fixed top-0 z-9999 bg-primary'>
+    <header ref={headerRef} className='w-full pb-5 fixed top-0 z-9999'>
       <div className='pt-5 xs:px-3 sm:px-10 xl:px-20 flex justify-between items-center'>
         <Logo/>
         <Navigation items={navbar}/>
-        {/*<DarkModeSwitch/>*/}
       </div>
     </header>
   );

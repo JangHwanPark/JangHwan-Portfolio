@@ -6,16 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { PiHamburger } from "react-icons/pi";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-// import { useGSAP } from "@gsap/react";
-
-interface Navbar {
-  href: string;
-  title?: string;
-}
-
-interface NavigationProps {
-  items: Navbar[];
-}
 
 const Navigation = ({
   items,
