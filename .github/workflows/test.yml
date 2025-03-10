@@ -86,14 +86,14 @@ jobs:
           git checkout package-lock.json package.json
 
       # GitHub Pages 배포 (OS별 배포 제거, 하나의 배포로 통합)
-#      - name: Deploy to GitHub Pages
-#        if: github.ref == 'refs/heads/main' && github.event.repository.fork == false
-#        uses: peaceiris/actions-gh-pages@v4
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_branch: gh-pages
-#          publish_dir: ./test_projects/mdbook/book
-#          allow_empty_commit: true
-#          user_name: 'github-actions[bot]'
-#          user_email: 'github-actions[bot]@users.noreply.github.com'
-#          cname: 'actions-gh-pages.peaceiris.com'
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event.repository.fork == false
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./test_projects/mdbook/book
+          allow_empty_commit: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          cname: 'actions-gh-pages.peaceiris.com'
