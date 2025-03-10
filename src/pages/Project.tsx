@@ -16,7 +16,7 @@ const Project = ({
   const horizonRef = useRef<HTMLUListElement | null>(null);
 
   const projectCnt = projects.length; // 프로젝트 개수
-  const itemWidth = 600; // 각 아이템(카드)의 너비
+  const itemWidth = 500; // 각 아이템(카드)의 너비
   const totalWidth = projectCnt * itemWidth; // 전체 너비
 
   useGSAP(() => {
@@ -43,13 +43,13 @@ const Project = ({
     /* work-section */
     <section id="projects" ref={sections.projects} className="h-[100vh] flex flex-col items-start justify-start">
       {/* mt-26 */}
-      <h2 className="ml-20 mb-5 px-4 md:mt-10 md:mb-16 text-4xl lg:text-6xl 2xl:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto from-[#F4B400] to-white bg-gradient-to-b bg-clip-text text-transparent">
+      <h2 className="mt-32 lg:ml-20 mb-5 px-4 md:mt-10 md:mb-16 text-4xl lg:text-6xl 2xl:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto from-[#F4B400] to-white bg-gradient-to-b bg-clip-text text-transparent">
         My Work
       </h2>
       <ul ref={horizonRef}
         // w-[3600px]
           style={{ width: `${totalWidth}px` }}
-          className="relative w-full h-full mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-white before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:absolute after:top-[100%] after:bg-white">
+          className="relative w-full lg:h-[80%] mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-white before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:absolute after:top-[100%] after:bg-white">
         {projects?.map(project => (
           <ProjectCard key={project.id} isModal={true} project={project} onSelectProject={onSelectProject}/>
         ))}

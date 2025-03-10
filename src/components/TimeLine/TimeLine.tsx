@@ -1,4 +1,7 @@
-import { forwardRef, Ref } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { forwardRef, Ref, useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
 interface Experience {
   year: string;
@@ -13,11 +16,38 @@ interface TimeLineProps {
   dotRef: Ref<HTMLDivElement>;
 }
 
+gsap.registerPlugin(ScrollTrigger);
 const TimeLine = forwardRef<HTMLDivElement, TimeLineProps>(({
   data,
   timelineRef,
   dotRef,
 }, ref) => {
+  // 각 리스트 아이템의 ref 저장
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+
+  useGSAP(() => {
+    itemRefs.current.forEach((item) => {
+      if (!item) return;
+
+      gsap.fromTo(
+        item,
+        { opacity: 0, y: 50 }, // 초기 상태: 투명 & 아래쪽 위치
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%", // 화면의 80% 위치에서 시작
+            end: "top 50%", // 화면의 50% 지점까지 애니메이션 적용
+            scrub: true,
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <div ref={ref} className="relative flex flex-col mx-auto">
       {/* 타임라인 선 */}
@@ -31,7 +61,10 @@ const TimeLine = forwardRef<HTMLDivElement, TimeLineProps>(({
       {/* 경력 항목 */}
       <ul className="space-y-12 md:space-y-16 lg:space-y-32">
         {data.map((experience, index) => (
-          <li key={index} className="lg:px-[8%] flex justify-between mb-12 flex-col md:gap-2 lg:gap-14 md:mb-16 lg:mb-32 lg:last:mb-14 lg:flex-row">
+          /* 각 리스트 요소에 ref 할당 */
+          <li key={index} ref={(el) => {
+            itemRefs.current[index] = el
+          }} className="lg:px-[8%] flex justify-between mb-12 flex-col md:gap-2 lg:gap-14 md:mb-16 lg:mb-32 lg:last:mb-14 lg:flex-row">
             {/* 경력 콘텐츠 */}
             <div className="flex flex-row  justify-between gap-[50px] lg:w-[40%] ">
               <div className='w-full flex flex-col'>

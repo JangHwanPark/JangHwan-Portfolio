@@ -31,8 +31,8 @@ const experienceData = [
   },
 ];
 
+gsap.registerPlugin(ScrollTrigger);
 const Experience = () => {
-  gsap.registerPlugin(ScrollTrigger);
   const timelineRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
   const { sections } = useScroll();
