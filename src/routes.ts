@@ -12,6 +12,8 @@ import TestPage01 from "./pages/test/TestPage01";
 import Loader01 from "./pages/test/PreLoader/Loader01";
 import LoaderLayout from "./layout/LoaderLayout";
 import Loader02 from "./pages/test/PreLoader/Loader02";
+import Event01 from "./pages/event/Event01";
+import Event02 from "./pages/event/Event02";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +37,6 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
-  { path: '/test', Component: TestPage01, },
   {
     path: '/loader',
     Component: LoaderLayout,
@@ -43,6 +44,14 @@ export const router = createBrowserRouter([
       {path: '1', Component: TestPage01},
       {path: '2', Component: Loader01},
       {path: '3', Component: Loader02}
+    ]
+  },
+  {
+    path: '/event',
+    Component: LoaderLayout,
+    children: [
+      {path: '1', Component: Event01},
+      {path: '2', Component: Event02},
     ]
   },
 ])
