@@ -14,6 +14,7 @@ import LoaderLayout from "./layout/LoaderLayout";
 import Loader02 from "./pages/test/PreLoader/Loader02";
 import Event01 from "./pages/event/Event01";
 import Event02 from "./pages/event/Event02";
+import Canvas01 from "./pages/canvas/Canvas01";
 
 export const router = createBrowserRouter([
   {
@@ -54,4 +55,11 @@ export const router = createBrowserRouter([
       {path: '2', Component: Event02},
     ]
   },
+  {
+    path: '/canvas',
+    Component: LoaderLayout,
+    children: [
+      {path: '1', Component: Canvas01}
+    ]
+  }
 ])
