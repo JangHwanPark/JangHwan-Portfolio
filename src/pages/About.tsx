@@ -53,32 +53,39 @@ const About = () => {
     'md:relative md:z-20 xs:text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-t-sub');
 
   return (
-    <section ref={sections.about} id='about' className='mt-24 lg:mt-0 py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto flex flex-col-reverse items-center justify-center gap-10 lg:gap-5 xl:gap-10 lg:flex-row lg:mb-10 xl:mb-0 lg:min-h-[500px]'>
-      {/* intro */}
-      <article className='relative flex flex-col items-center justify-center md:gap-5 lg:gap-2'>
-        <h2 ref={titleRef} className="w-full lg:mb-3 leading-8 lg:leading-12 font-bold relative z-12 text-center lg:text-left">
-          {titleTexts.map((text, index) => (
-            <p key={index} className={clsx(
-              'text-xl sm:text-2xl',
-              index < 2
-                ? 'md:text-2xl xl:text-3xl text-t-primary'
-                : 'md:text-3xl xl:text-5xl text-t-sub text-left',
-              index % 2 === 0 ? "mb-1" : "mb-5 md:mb-2 lg:mb-5",
-              index === 2 && 'mt-12 md:mt-20 lg:mt-0',
-            )}>{text}</p>
-          ))}
-        </h2>
-        <div ref={textRef} className='w-full lg:max-w-lg xl:max-w-2xl mr-auto'>
-          <p className={`${aboutTextClass} mb-2`}>
-            제 홈페이지에 방문해 주셔서 감사합니다.
-          </p>
-          <p className={`${aboutTextClass} leading-7`}>
-            저는 데이터를 시각화하고, 더 나은 UI를 설계하며 사용자 입장에서 경험을 고민하는 프론트엔드 개발자입니다. 저의 다양한 프로젝트와 협업 경험을 담았습니다. 함께 성장하고 만들어가는 과정이 궁금하시다면, 포트폴리오를 확인해 주세요.
-          </p>
-        </div>
-      </article>
-      {/* Image */}
-      <Avatar ref={imgRef}/>
+    <section id='about' ref={sections.about} className={clsx('sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto', 'flex flex-col justify-center')}>
+      <div className='mt-24 lg:mt-0 py-16 lg:py-0 w-full px-4 sm:px-8  flex flex-col-reverse items-center justify-center gap-10 lg:gap-5 xl:gap-10 lg:flex-row lg:mb-10 xl:mb-0 lg:min-h-[500px]'>
+        {/* intro */}
+        <article className='relative flex flex-col items-center justify-center md:gap-5 lg:gap-2'>
+          {/*<h2 className="w-full pb-3 font-bold lg:pb-8 text-xl lg:text-3xl text-left">
+            <span >&lt;</span>h1<span >&gt;</span>
+            <span>About</span>
+            <span >&lt;</span>h1<span >/&gt;</span>
+          </h2>*/}
+          <h3 ref={titleRef} className="w-full lg:mb-3 leading-8 lg:leading-12 font-bold relative z-12 text-center lg:text-left">
+            {titleTexts.map((text, index) => (
+              <p key={index} className={clsx(
+                'text-xl sm:text-2xl',
+                index < 2
+                  ? 'md:text-2xl xl:text-3xl text-t-primary'
+                  : 'md:text-3xl xl:text-5xl text-t-sub text-left',
+                index % 2 === 0 ? "mb-1" : "mb-5 md:mb-2 lg:mb-5",
+                index === 2 && 'mt-12 md:mt-20 lg:mt-0',
+              )}>{text}</p>
+            ))}
+          </h3>
+          <div ref={textRef} className='w-full lg:max-w-lg xl:max-w-2xl mr-auto'>
+            <p className={`${aboutTextClass} mb-2`}>
+              제 홈페이지에 방문해 주셔서 감사합니다.
+            </p>
+            <p className={`${aboutTextClass} leading-7`}>
+              저는 데이터를 시각화하고, 더 나은 UI를 설계하며 사용자 입장에서 경험을 고민하는 프론트엔드 개발자입니다. 저의 다양한 프로젝트와 협업 경험을 담았습니다. 함께 성장하고 만들어가는 과정이 궁금하시다면, 포트폴리오를 확인해 주세요.
+            </p>
+          </div>
+        </article>
+        {/* Image */}
+        <Avatar ref={imgRef}/>
+      </div>
     </section>
   );
 };
