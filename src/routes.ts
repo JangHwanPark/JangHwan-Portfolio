@@ -16,6 +16,9 @@ import Event01 from "./pages/event/Event01";
 import Event02 from "./pages/event/Event02";
 import Canvas01 from "./pages/canvas/Canvas01";
 import Canvas02 from "./pages/canvas/Canvas02";
+import Canvas03 from "./pages/canvas/Canvas03";
+import Canvas04 from "./pages/canvas/Canvas04";
+import Canvas05 from "./pages/canvas/Canvas05";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +65,9 @@ export const router = createBrowserRouter([
     children: [
       {path: '1', Component: Canvas01},
       {path: '2', Component: Canvas02},
+      {path: '3', Component: Canvas03},
+      {path: '4', Component: Canvas04},
+      {path: '5', Component: Canvas05},
     ]
   }
 ])
