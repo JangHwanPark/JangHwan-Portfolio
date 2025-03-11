@@ -2,11 +2,45 @@ import { useRef, memo } from "react";
 import { useScroll } from "../providers/ScrollProvider";
 import Avatar from "../components/Avatar/Avatar";
 import clsx from "clsx";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const About = () => {
   const { sections } = useScroll();
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const textRef = useRef<HTMLParagraphElement | null>(null);
+  const imgRef = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    console.log('titleRef 애니메인션 실행');
+    tl.fromTo(titleRef.current, {
+      opacity: 0,
+      y: -100,
+    }, {
+      opacity: 1,
+      duration: 1.2,
+      y: 0,
+    });
+
+    tl.fromTo(textRef.current, {
+      opacity: 0,
+      y: -100,
+    }, {
+      opacity: 1,
+      duration: 1.2,
+      y: 0,
+    }, '-=0.5');
+
+    tl.fromTo(imgRef.current, {
+      opacity: 0,
+      x: 100,
+    }, {
+      opacity: 1,
+      duration: 1.2,
+      x: 0,
+    }, '-=0.5');
+  }, [titleRef, textRef, imgRef]);
 
   const titleTexts = [
     "안녕하세요. 데이터를 조각하는",
@@ -16,7 +50,7 @@ const About = () => {
   ];
 
   const aboutTextClass = clsx(
-    'md:relative md:z-20 xs:text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-t-sub')
+    'md:relative md:z-20 xs:text-sm sm:text-base lg:text-lg xl:text-xl font-normal text-t-sub');
 
   return (
     <section ref={sections.about} id='about' className='mt-24 lg:mt-0 py-16 lg:py-0 w-full px-4 sm:px-8 sm:max-w-3xl md:max-w-6xl xl:max-w-7xl mx-auto flex flex-col-reverse items-center justify-center gap-10 lg:gap-5 xl:gap-10 lg:flex-row lg:mb-10 xl:mb-0 lg:min-h-[500px]'>
@@ -34,8 +68,8 @@ const About = () => {
             )}>{text}</p>
           ))}
         </h2>
-        <div className='w-full lg:max-w-lg xl:max-w-2xl mr-auto'>
-          <p ref={textRef} className={`${aboutTextClass} mb-2`}>
+        <div ref={textRef} className='w-full lg:max-w-lg xl:max-w-2xl mr-auto'>
+          <p className={`${aboutTextClass} mb-2`}>
             제 홈페이지에 방문해 주셔서 감사합니다.
           </p>
           <p className={`${aboutTextClass} leading-7`}>
@@ -44,7 +78,7 @@ const About = () => {
         </div>
       </article>
       {/* Image */}
-      <Avatar/>
+      <Avatar ref={imgRef}/>
     </section>
   );
 };

@@ -18,11 +18,10 @@ const Skills = () => {
   const categorizedSkills = getCategorizedSkills();
   const frequent = categorizedSkills.frequent;
   const familiar = categorizedSkills.familiar;
-  const skillsTextClass = clsx('text-t-sub xs:text-sm sm:text-base lg:text-lg xl:text-xl leading-8');
   const tagClass = clsx('bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent');
 
   return (
-    <section ref={sections.skills} id="skills" className='w-full max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5 mb-32 lg:mb-0'>
+    <section ref={sections.skills} id="skills" className='w-full max-w-3xl md:max-w-4xl lg:max-w-4xl mx-auto px-4 sm:px-8 md:px-10 lex flex-col justify-center gap-5 mb-32 lg:mb-0'>
       {/* 섹션 헤더 */}
       <header className='pt-20 lg:pt-5 pb-10'>
         <h2 className="w-fit pb-3 text-4xl font-bold lg:pb-8 lg:text-5xl 2xl:text-6xl">
@@ -30,10 +29,8 @@ const Skills = () => {
           SKILLS
           <span className={tagClass}>/&gt;</span>
         </h2>
-        <p className={skillsTextClass}>
+        <p className={clsx('text-t-sub xs:text-sm sm:text-base lg:text-lg xl:text-xl leading-8')}>
           새로운 기술을 탐험하고, 더 나은 사용자 경험을 위한 해결책을 고민합니다.
-        </p>
-        <p className={skillsTextClass}>
           작은 문제 하나하나를 해결하며, 더 나은 가치를 만들기 위해 끊임없이 고민합니다.
         </p>
       </header>

@@ -25,7 +25,7 @@ const TabPanel = ({
 }) => {
   const { active } = useTabs();
   return active === tabKey ? <div className={clsx(
-    'py-5 lg:py-0 lg:max-w-4xl lg:mx-auto lg:mt-5',
+    'py-5 lg:py-0 lg:mt-5',
     "grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 md:gap-10",)}>{children}</div> : null;
 };
 

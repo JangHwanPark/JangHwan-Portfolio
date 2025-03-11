@@ -64,7 +64,7 @@ const Experience = () => {
   }, [sections.experience]);
 
   return (
-    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto xl:mb-[50px] py-4 px-12 sm:px-8 md:px-20 lg:px-0 lg:py-[60px] mt-40 lg:mt-0 mb-28">
+    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto mb-28 xl:mb-32 py-4 px-12 sm:px-8 md:px-20 lg:px-0 lg:py-[60px] mt-40 lg:mt-0">
       <article className="w-full max-w-6xl">
         <h2 className="font-bold text-4xl lg:text-6xl 2xl:text-7xl leading-10 lg:leading-14 xl:leading-[70px] xs:text-left md:text-center bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent mt-32 mb-12 lg:mb-24">
           My career &
