@@ -40,7 +40,7 @@ const CursorEffect = () => {
       {/* 마우스 커서 효과 */}
       <div
         ref={cursorRef}
-        className="fixed w-6 h-6 bg-white rounded-full pointer-events-none mix-blend-difference"
+        className="hidden lg:block fixed w-6 h-6 bg-white rounded-full pointer-events-none mix-blend-difference"
         style={{ transform: "translate(-50%, -50%)" }}
       ></div>
     </>
