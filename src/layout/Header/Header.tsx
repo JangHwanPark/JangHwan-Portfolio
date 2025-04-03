@@ -5,11 +5,9 @@ import { useGSAP } from "@gsap/react";
 
 import { Logo } from "../../components";
 import Navigation from "../Navigation/Navigation";
-import DarkModeSwitch from "../../components/DarkModeSwitch/DarkModeSwitch";
 
 const navbar = [
-  {href: "/", title: 'Home'},
-  {href: "/about", title: 'About'},
+  {href: "/", title: 'About'},
   {href: "/skills", title: 'Skills'},
   {href: "/projects", title: 'Projects'},
   {href: "/experience", title: 'Experience'},
@@ -38,11 +36,10 @@ const Header = () => {
   }, []);
 
   return (
-    <header ref={headerRef} className='w-full pb-5 bg-white fixed top-0 z-9999'>
-      <div className='pt-5 px-5 md:px-10 flex justify-between items-center'>
+    <header ref={headerRef} className='w-full pb-5 fixed top-0 z-9999'>
+      <div className='pt-5 xs:px-3 sm:px-10 xl:px-20 flex justify-between items-center'>
         <Logo/>
         <Navigation items={navbar}/>
-        <DarkModeSwitch/>
       </div>
     </header>
   );

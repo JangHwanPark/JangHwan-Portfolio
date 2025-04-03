@@ -18,7 +18,7 @@ const PreloaderText = ({
           ref={(el) => {
             itemRef.current[index] = el
           }}
-          className='text-8xl font-bold'>
+          className='text-2xl sm:text-3xl lg:text-8xl font-bold'>
           {item}
         </div>
       ))}

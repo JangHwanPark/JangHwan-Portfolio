@@ -13,15 +13,10 @@ export interface TabsContextType<T = {}> {
 }
 
 // 프로 바이더 타입
-export interface TabsProviderProps<T = {}> {
-  tabs: TabItem<T>[];
-  defaultTab?: string;
-  children: ReactNode;
-}
-
 export interface TabsProps<T = {}> {
   tabs: TabItem<T>[];
   defaultTab?: string;
+  onChange?: (tabKey: string) => void;
   children: ReactNode;
 }
 

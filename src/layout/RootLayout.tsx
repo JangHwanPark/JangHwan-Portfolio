@@ -1,68 +1,53 @@
+import { useState } from "react";
 import { Footer, Header } from "../layout";
-import { ThemeProvider } from "../providers/ThemeProvider";
-import clsx from "clsx";
-// Home,
-import { About, Project, Skills, Experience, ProjectDetail } from "../pages";
-import AsideMenu from "../components/AsideMenu/AsideMenu";
+import {
+  About,
+  Project,
+  Skills,
+  Experience,
+  ProjectDetail,
+} from "../pages";
+import { AsideMenu } from "../layout";
 import { ScrollProvider } from "../providers/ScrollProvider";
 import CurveLine from "../components/Line/CurveLine";
-// import { useRef } from "react";
-// import { ScrollRestoration } from "react-router-dom";
-// import gsap from "gsap";
-// import Preloader from "../components/Preloader/Preloader";
-// import { useGSAP } from "@gsap/react";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import LinearLine from "../components/Line/LinearLine";
+import CursorEffect from "../components/CursorEffect/CursorEffect";
+import Preloader from "../components/Preloader/Preloader";
 
 const RootLayout = () => {
-  /*const [complete, setComplete] = useState(false);*/
-
-  const classes = clsx(
-    // min-h-[calc(100vh-136px)]
-    // "max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto",
-    "w-full min-h-[calc(100vh-136px)]");
-
-  const dark = clsx(
-    "relative",
-    "text-gray-800 bg-white",
-    "dark:bg-gray-800 dark:text-white",
-    'overflow-x-hidden');
+  const [selectedProject, setSelectedProject] = useState<ProjectsType | null>(null);
+  const [complete, setComplete] = useState(false);
 
   return (
-    <ThemeProvider>
-      {/* <Preloader setComplete={setComplete}/>
-      {complete && (*/}
+    <>
+      <Preloader setComplete={setComplete} />
+      {complete && (
       <ScrollProvider>
-      <div className={dark}>
-        <h1 className='hidden'>페이지 본문</h1>
+        <h1 className="hidden">
+          JangHwanPark | FrontEnd Development
+        </h1>
+        <CursorEffect/>
         <Header />
-        <main className={classes}>
-          {/*<Home />*/}
-          <div className='hidden lg:block w-full h-96 text-c-yellow'>
-            <div className='w-7/10 h-full border-r-2'></div>
-          </div>
+        <main className="w-full min-h-[calc(100vh-136px)]">
+          <LinearLine className="w-8/12 lg:w-9/12 lg:ml-5" />
           <About />
           <CurveLine
-            firstClass='w-6/12 ml-72'
-            lastClass='w-3/12 ml-72'/>
+            firstClass="lg:w-8/12 xl:w-6/12 h-52 lg:ml-38 xl:ml-112"
+            lastClass="w-4/12 h-72 lg:ml-38 xl:ml-112"/>
           <Skills />
           <CurveLine
-            containerClass='mt-20'
-            firstClass='w-4/12 ml-56'
-            lastClass='w-full ml-56'/>
-          <Project />
-          <ProjectDetail/>
-          <div className='hidden lg:block w-full h-96 text-c-yellow'>
-            <div className='w-5/10 h-full border-r-2'></div>
-          </div>
+            containerClass="mt-12"
+            firstClass="w-6/12 h-52 ml-56 pl-4 border-b-2"
+            lastClass="w-full h-72 ml-56" />
+          <Project onSelectProject={setSelectedProject} />
+          {selectedProject && <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />}
           <Experience />
         </main>
         <Footer />
-        <AsideMenu/>
-      </div>
+        <AsideMenu />
       </ScrollProvider>
-      {/*)}*/}
-    </ThemeProvider>
+      )}
+    </>
   );
 };
 

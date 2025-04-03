@@ -3,7 +3,7 @@ import { useScroll } from "../providers/ScrollProvider";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-// import clsx from "clsx";
+import TimeLine from "../components/TimeLine/TimeLine";
 
 // 더미 데이터
 const experienceData = [
@@ -30,70 +30,50 @@ const experienceData = [
   },
 ];
 
+gsap.registerPlugin(ScrollTrigger);
 const Experience = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  const timelineRef = useRef(null);
-  const dotRef = useRef(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
   const { sections } = useScroll();
 
   useGSAP(() => {
+    if (!timelineRef.current || !dotRef.current) return;
+
+    // 타임라인의 실제 높이, 점의 크기 가져오기
+    const timelineHeight = timelineRef.current.offsetHeight + 100;
+    const dotHeight = dotRef.current.offsetHeight;
+
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: sections.experience.current,
         start: '30% center',
-        end: '180% bottom',
-        scrub: true,
+        end: `+=${timelineHeight}`,
+        scrub: true
       }
     });
     timeline.fromTo(
       timelineRef.current,
       { height: "0%", opacity: 0 },
-      { height: '100%', opacity: 1, duration: 1.2, ease: 'power2.out' },
+      { height: `${timelineHeight}px`, opacity: 1, duration: 1.2, ease: 'power2.out' },
     ).fromTo(
       dotRef.current,
-      { y: 0 },
-      { y: 100, ease: 'none' },
+      { y: '0px' },
+      { y: `${timelineHeight - dotHeight}px`, duration: 1.2, ease: 'power2.out' },
+      '<' // dot이 타임라인과 동시에 이동
     );
   }, [sections.experience]);
 
   return (
-    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto lg:mb-[250px] py-[120px]">
+    <section ref={sections.experience} className="flex flex-col items-center justify-center relative opacity-100 h-auto mx-auto mb-28 xl:mb-32 py-4 px-12 sm:px-8 md:px-20 lg:px-0 lg:py-[60px] mt-40 lg:mt-0">
       <article className="w-full max-w-6xl">
-        <h2 className="font-bold text-4xl lg:text-7xl leading-10 lg:leading-[70px] text-center bg-gradient-to-b dark:from-[#F4B400] dark:to-white bg-clip-text dark:text-transparent mt-12 mb-12 lg:mb-24">
+        <h2 className="font-bold text-4xl lg:text-6xl 2xl:text-7xl leading-10 lg:leading-14 xl:leading-[70px] xs:text-left md:text-center bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent mt-32 mb-12 lg:mb-24">
           My career &
           <br /> experience
         </h2>
-
-        <div className="relative flex flex-col mx-auto">
-          {/* 타임라인 선 */}
-          <div ref={timelineRef} className="absolute top-[-50px] left-1/2 transform -translate-x-1/2 w-[3px] h-full bg-gradient-to-t dark:from-[#F4B400] from-dark-bg via-accent to-transparent"></div>
-
-          {/* 타임라인 요소 */}
-          <div ref={dotRef} className="absolute bottom-0 left-1/2 transform -translate-x-1/2 dark:bg-[#ffd700] w-[10px] h-[10px] rounded-full dark:shadow-[0_0_5px_2px_#ffd700,0_0_15px_8px_#ffcc00,0_0_110px_20px_#ffeb3b]"></div>
-
-
-          {/* 경력 항목 */}
-          {experienceData.map((experience, index) => (
-            <div key={index} className="flex justify-between mb-[50px] md:flex-col md:gap-2 lg:gap-14 md:mb-[70px] lg:flex-row">
-              <div className="flex w-[40%] justify-between gap-[50px] md:w-full md:pl-[10%]">
-                <div>
-                  <h4 className="text-[33px] leading-[30px] font-medium md:text-[22px] md:w-[180px]">
-                    {experience.position}
-                  </h4>
-                  <h5 className="text-[20px] capitalize mt-[10px] text-accent font-normal md:text-[17px]">
-                    {experience.company}
-                  </h5>
-                </div>
-                <h3 className="text-[48px] font-medium leading-[45px] md:text-[40px]">
-                  {experience.year}
-                </h3>
-              </div>
-              <p className="w-[40%] text-[18px] font-light md:w-full md:pl-[10%]">
-                {experience.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        <TimeLine
+          data={experienceData}
+          timelineRef={timelineRef}
+          dotRef={dotRef}/>
       </article>
     </section>
   );

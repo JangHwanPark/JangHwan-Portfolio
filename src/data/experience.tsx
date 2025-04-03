@@ -1,9 +1,10 @@
 export const experience: Experience[] = [
   {
     id: 1,
-    title: "Game Play QA | FIFA Online KR, CN, VN, TH",
-    company: "Adecco Korea (EA Korea)",
-    period: "2020 ~ 2022",
+    title: "Game Play QA",
+    project: "FIFA Online KR, CN, VN, TH",
+    company: "Adecco Korea",
+    period: "2020",
     description: `
     EA Korea FIFA Online 프로젝트의 게임 플레이팀 QA로 근무하며, 경기 AI, 플레이 밸런스, 선수 움직임, 물리 엔진, 스킬 시스템 등을 집중적으로 테스트하였습니다.
     플레이 경험을 분석하여 개선안을 제안하고, 재현이 어려운 버그를 TestBad(사내 QA 툴)를 활용하여 분석 및 보고하는 업무를 담당했습니다.
@@ -29,7 +30,7 @@ export const experience: Experience[] = [
   },
   {
     id: 2,
-    title: "Computer Science 전문학사 (Associate Degree)",
+    title: "Computer Science 전문학사",
     company: "전문대학교",
     period: "2021 ~ 2024 (졸업)",
     description: "컴퓨터 공학 전공 (2년제), 알고리즘, 데이터베이스, 소프트웨어 개발 관련 과목 수강.",
@@ -43,7 +44,7 @@ export const experience: Experience[] = [
   },
   {
     id: 3,
-    title: "Computer Science 학사 과정 (Bachelor's Degree)",
+    title: "Computer Science 학사 과정",
     company: "대학교",
     period: "2024 ~ ing",
     description: "컴퓨터 공학 4년제 학사 과정 재학 중, AI, 운영체제, 네트워크 관련 심화 연구 진행.",

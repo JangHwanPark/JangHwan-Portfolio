@@ -1,35 +1,28 @@
-// import { Tab, TabList, TabPanel, TabPanels, Tabs } from "../components";
-// import { TabItem } from "../types/tabs";
-// import PageHeader from "../layout/PageHeader/PageHeader";
-// import ProjectCard from "../components/ProjectCard/ProjectCard";
-// import Horizontally from "../components/Scroll/Horizontally";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../data";
 import { useScroll } from "../providers/ScrollProvider";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
 
-/*const tabs: TabItem[] = [
-  { key: "tab1", label: "전체" },
-  { key: "tab2", label: "프런트엔드" },
-  { key: "tab3", label: "백엔드" },
-  { key: "tab4", label: "풀스택" },
-];*/
-
-const Project = () => {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+const Project = ({
+  onSelectProject
+} : {
+  onSelectProject?: (project: ProjectsType | null) => void;
+}) => {
   const { sections } = useScroll();
   const horizonRef = useRef<HTMLUListElement | null>(null);
 
-  const projectCnt = projects.length;
-  const itemWidth = 600;
-  const totalWidth = projectCnt * itemWidth;
-  // const connHeight = window.innerHeight + itemWidth;
+  const projectCnt = projects.length; // 프로젝트 개수
+  const itemWidth = 500; // 각 아이템(카드)의 너비
+  const totalWidth = projectCnt * itemWidth; // 전체 너비
 
   useGSAP(() => {
+    // null 체크
+    if (!horizonRef.current || !sections.projects.current) return;
+
     gsap.to(horizonRef.current, {
       x: `-${totalWidth - window.innerWidth}px`, // 가로 스크롤 이동
       ease: "none",
@@ -37,57 +30,28 @@ const Project = () => {
         trigger: sections.projects.current, // 트리거 기준 요소
         // top top : article 의 Top 이 뷰포트 상단(top)에 도달하면 실행
         // bottom bottom : article 의 바텀이 `뷰포트 바텀`과 만나면 고정 시작
-        start: "bottom bottom",
-        end: `+=${totalWidth}`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
+        start: "top top",
+        end: `+=${totalWidth} + window.innerHeight}px`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
         scrub: 1, // 부드러운 애니메이션 효과
         pin: true, // 활성화 시 article이 고정됨
       },
     });
   }, []);
 
-  const connClass = clsx('w-full max-w-3xl md:max-w-6xl mx-auto')
-
-  const horizontallyClass = clsx(
-    'w-[350px] md:w-[600px] py-10 p-6 bg-white border-r',
-    'flex flex-col items-center justify-start gap-6',
-    //'transition-transform duration-300 hover:scale-105'
-  );
-
-  // content-stretch
+  console.log(totalWidth);
   return (
-    <section id='projects' ref={sections.projects} className='flex flex-col items-start justify-center gap-6'>
-      <h2 className={`mt-20 mb-5 px-4 md:my-20 text-4xl md:text-7xl font-bold ${connClass}`}>
-        My <span>Work</span>
+    /* work-section */
+    <section id="projects" ref={sections.projects} className="h-[100vh] flex flex-col items-start justify-start">
+      {/* mt-26 */}
+      <h2 className="mt-32 lg:ml-20 mb-5 px-4 md:mt-10 md:mb-16 text-4xl lg:text-6xl 2xl:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto from-[#F4B400] to-white bg-gradient-to-b bg-clip-text text-transparent">
+        My Work
       </h2>
-      {/* 3600px */}
-      <ul ref={horizonRef} className="w-[4000px] md:w-[4800px] px-24 md:mb-48 flex relative gap-10 border-y">
-        {projects.map((project, index) => (
-          <li key={index} className={horizontallyClass}>
-            {/* 프로젝트 헤더 */}
-            <div className='w-full'>
-              <header className='w-full my-10 flex items-center justify-between'>
-                <h3 className='text-3xl font-semibold'>0{String(index + 1)}.</h3>
-                <div className='text-end'>
-                  <h4 className='text-xl font-semibold'>{project.name}</h4>
-                  <p>웹 애플리케이션</p>
-                </div>
-              </header>
-              <div className='mb-10'>
-                <h4 className='mb-2 text-xl font-semibold'>Tools and features</h4>
-                <div className='flex flex-wrap gap-3'>
-                  {project.stack.map((item, index) => (
-                    <p key={index}>{item}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* 프로젝트 이미지 */}
-            <figure className="w-full flex justify-center">
-              <Link to={`/projects/${project.name}`} state={{ modal: true, project}}>
-                <img src="/src/assets/images/p2.webp" alt="" className='w-96 h-36 lg:w-full lg:h-96'/>
-              </Link>
-            </figure>
-          </li>
+      <ul ref={horizonRef}
+        // w-[3600px]
+          style={{ width: `${totalWidth}px` }}
+          className="relative w-full lg:h-[80%] mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-white before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:absolute after:top-[100%] after:bg-white">
+        {projects?.map(project => (
+          <ProjectCard key={project.id} isModal={true} project={project} onSelectProject={onSelectProject}/>
         ))}
       </ul>
     </section>

@@ -24,13 +24,12 @@ import { TabsProps } from "../../types/tabs";
 const Tabs = <T extends {} = {}> ({
   tabs,
   defaultTab,
+  onChange,
   children,
 }: TabsProps<T>) => {
   return (
-    <TabsProvider tabs={tabs} defaultTab={defaultTab}>
-      <div
-        className='w-full'
-        aria-label='Tab Menu'>
+    <TabsProvider tabs={tabs} defaultTab={defaultTab} onChange={onChange}>
+      <div className='w-full' aria-label='Tab Menu'>
         {children}
       </div>
     </TabsProvider>

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 /**
  * `TabPanels` 컴포넌트는 `TabPanel` 컴포넌트들을 감싸는 컨테이너입니다.
  *
@@ -14,11 +16,15 @@
  */
 const TabPanels = ({
   children,
+  className,
 } : {
-  children: React.ReactNode;
+  children: ReactNode;
+  className?: string;
 }) => {
   return (
-    <div>{children}</div>
+    <div className={className}>
+      {children}
+    </div>
   );
 };
 

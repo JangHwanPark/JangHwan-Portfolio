@@ -1,14 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import {
-  Home,
   About,
   Skills,
   Project,
   ProjectDetail,
   Experience,
-  NotFound,
-  TestPage
+  NotFound
 } from "./pages";
 
 export const router = createBrowserRouter([
@@ -17,16 +15,14 @@ export const router = createBrowserRouter([
     Component: RootLayout,
     children: [
       // 메인 페이지 (소개 페이지)
-      { index: true, Component: Home },
-
-      { path: 'about', Component: About },
+      { index: true, Component: About },
 
       // 기술 스택
       { path: "skills", Component: Skills },
 
       // 포트폴리오 (프로젝트)
-      { path: "project", Component: Project },
-      { path: "project/:id", Component: ProjectDetail },
+      { path: "projects", Component: Project },
+      { path: "projects/:id", Component: ProjectDetail },
 
       // 경력(경험)
       { path: "experience", Component: Experience },
@@ -34,7 +30,5 @@ export const router = createBrowserRouter([
       // 오류 처리 (404)
       { path: "*", Component: NotFound },
     ],
-  },
-  // 테스트 페이지
-  { path: "/test", Component: TestPage },
+  }
 ])

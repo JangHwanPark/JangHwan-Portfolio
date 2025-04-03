@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { gsap } from 'gsap';
+import clsx from "clsx";
 import PreloaderText from "./PreloaderText";
 
 const Preloader = ({
@@ -9,73 +9,90 @@ const Preloader = ({
 } : {
   setComplete: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const [text, setText] = useState("");
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const installConnRef = useRef<HTMLDivElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
   const welcomeRef = useRef<(HTMLDivElement | null)[]>([]);
-  const nameRef = useRef<(HTMLDivElement | null)[]>([]);
-  const containerRef = useRef(null);
-  const secondOverlayRef = useRef(null);
-
   const welcome = ['W', 'E', 'L', 'C', 'O', 'M', 'E'];
-  const lastName = ['J', 'A' ,'N', 'G', 'H', 'W', 'A', 'N'];
-
-  const classes = clsx(
-    'w-screen h-screen',
-    'fixed top-0 left-0 bottom-0 right-0');
 
   useGSAP(() => {
-    const timeline = gsap.timeline();
-    // span 요소들을 순회하며 애니메이션 적용
-    timeline.to(welcomeRef.current, {
+    const fullText = "npm install";
+    const tl = gsap.timeline();
+
+    // 타이핑 애니메이션
+    tl.to({}, {
+      // 전체 텍스트 길이에 따른 타이핑 시간
+      duration: 0.1 * fullText.length,
+      onUpdate: function () {
+        // 현재 진행 상태 기반으로 글자 계산
+        const index = Math.floor(this.progress() * fullText.length);
+        setText(fullText.slice(0, index + 1)); // 한 글자씩 추가
+      },
+    });
+
+    // 프로그레스 바 애니메이션
+    tl.to(progressBarRef.current, {
+      width: "100%",
+      duration: 2, // 2초 동안 진행
+      ease: "power2.out",
+      repeat: 0,
+    });
+
+    tl.to(installConnRef.current, {
+      y: -200,
+      duration: 1,
+      opacity: 0,
+    }, '+=0.3');
+
+    tl.fromTo(welcomeRef.current, {
+      opacity: 0,
+    }, {
+      opacity: 1,
       y: '-100%',
       ease: 'back.out(1.7)',
-      duration: 1.4,
+      duration: 0.5,
       stagger: 0.05,
-    });
+    }, '+=0.1');
 
-    timeline.to(nameRef.current, {
-      y: '-100%', // span 요소들을 위로 이동
-      ease: 'back.out(1.7)', // 이징 함수 (부드러운 종료 효과)
-      duration: 1.4, // 애니메이션 지속 시간 (1.4초)
-      stagger: 0.05, // 각 span 요소 사이의 지연 시간 (0.05초 간격)
-    });
-
-    // 컨테이너(container)와 두 번째 오버레이(overlay)를 거의 동시에 애니메이션 처리
-    timeline.to([containerRef.current, secondOverlayRef.current], {
+    tl.to(containerRef.current, {
       scaleY: 0,
-      transformOrigin: 'top',
-      ease: 'back.out(1.7)',
+      transformOrigin: 'bottom',
       duration: 1,
+      ease: 'back.out(1.7)',
       stagger: 0.2,
+      delay: 1,
       onComplete: () => {
         setComplete(true);
       },
     });
-
-    // 한 요소에 약간의 지연 시간을 적용
-    timeline.to(secondOverlayRef.current, {
-      scaleY: 0, // 요소의 Y축 크기를 0으로 줄임
-      transformOrigin: 'top', // 변환 기준점을 상단으로 설정
-      ease: [0.83, 0, 0.17, 1] as any, // 사용자 정의 이징 함수 적용
-      duration: 1, // 애니메이션 지속 시간 (1초)
-      delay: -0.9, // 타이밍을 미세 조정하기 위해 지연 시간 조정 (필요에 따라 수정 가능)
-    });
-  }, [setComplete]);
+  }, []);
 
   return (
-    <>
-      <section ref={containerRef} className={`${classes} z-[9999] flex items-end justify-end bg-black text-white`}>
-        <div>
-          <PreloaderText
-            className='h-[10rem] pt-40 pb-10 -translate-x-60'
-            items={welcome}
-            itemRef={welcomeRef}/>
-          <PreloaderText
-            className='h-[20rem] py-20 -translate-x-10'
-            items={lastName}
-            itemRef={nameRef}/>
+    <section ref={containerRef} className={clsx(
+      "w-screen h-screen", "fixed top-0 left-0 bottom-0 right-0",
+      "z-[9999] bg-black text-white")}>
+      <div ref={installConnRef} className={clsx('w-full max-w-2xl mx-auto',
+        'flex flex-col items-start ', 'relative top-1/2 -translate-y-1/2',
+        'text-green-400 p-6 rounded-md')}>
+        {/* 터미널 스타일 타이핑 애니메이션 */}
+        <div className="font-mono text-2xl">
+          <span className='text-gray-400'>JangHwanPark &gt;</span>
+          <span> {text} </span>
+          <span>▋</span>
         </div>
-      </section>
-      <div ref={secondOverlayRef} className={`${classes} bg-[#48d64c] z-[9990]`}></div>
-    </>
+
+        {/* 프로그레스 바 */}
+        <div className="w-full h-2 bg-gray-700 mt-2 rounded-md">
+          <div ref={progressBarRef} className="h-full bg-green-400 rounded-md w-0"></div>
+        </div>
+      </div>
+
+      <PreloaderText
+        className='h-[20rem] relative top-1/2 -translate-y-1/2 justify-center'
+        items={welcome}
+        itemRef={welcomeRef}/>
+    </section>
   );
 };
 

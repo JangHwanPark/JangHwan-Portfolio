@@ -1,27 +1,14 @@
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import NavItem from "./NavItem";
-import clsx from "clsx";
 import { useScroll } from "../../providers/ScrollProvider";
 import { useNavigate } from "react-router-dom";
 import { PiHamburger } from "react-icons/pi";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-// import { useGSAP } from "@gsap/react";
-
-interface Navbar {
-  href: string;
-  title?: string;
-}
-
-interface NavigationProps {
-  items: Navbar[];
-  className?: string;
-}
 
 const Navigation = ({
   items,
-  className,
 }: NavigationProps) => {
   gsap.registerPlugin(ScrollToPlugin);
   const { sections } = useScroll();
@@ -70,13 +57,10 @@ const Navigation = ({
     }
   }
 
-  const navbarClass = clsx(
-    'w-fit md:w-full max-w-xs lg:max-w-xl', className);
-
   return (
-    <nav className={navbarClass}>
+    <nav className='w-fit lg:w-full max-w-xs lg:max-w-md xl:max-w-xl'>
       {/* PC / Tablet */}
-      <ul className='hidden md:flex gap-5 flex-row justify-between'>
+      <ul className='hidden lg:flex gap-3 xl:gap-5 flex-row justify-between'>
         {items.map((item, index) => (
           <NavItem
             key={index}
@@ -110,8 +94,7 @@ const Navigation = ({
                 <NavItem
                   key={index}
                   onClick={(e) => handleClick(e, item.href.slice(1))}
-                  href={item.href}
-                  className="">
+                  href={item.href}>
                   {item.title}
                 </NavItem>
               ))}
