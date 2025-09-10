@@ -41,7 +41,7 @@ const RootLayout = () => {
             lastClass="w-full h-72 ml-56" />
           <Project onSelectProject={setSelectedProject} />
           {selectedProject && <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />}
-          {/* <Experience /> */}
+          <Experience />
         </main>
         <Footer />
         <AsideMenu />
