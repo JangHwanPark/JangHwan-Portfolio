@@ -51,8 +51,6 @@ export const experience: Experience[] = [
     skills: ["React", "Next.js", "TypeScript", "Figma", "GitHub"],
     achievements: [
       "컴퓨터 정보학회 논문 투고",
-      "캡스톤 프로젝트: 머신러닝을 활용한 데이터 분석 플랫폼 개발",
-      "사이드 프로젝트: 개인 포트폴리오 웹 애플리케이션 개발",
       "교내 멘토링 프로그램 참여 (후배 대상 코딩 교육 & 알고리즘 강의)",
       "코멘토 : 기업 연계 프로젝트를 통해 실무 피드백을 반영한 웹 서비스 개발",
     ],

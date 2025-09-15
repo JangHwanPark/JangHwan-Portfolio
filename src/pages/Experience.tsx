@@ -8,26 +8,24 @@ import TimeLine from "../components/TimeLine/TimeLine";
 // 더미 데이터
 const experienceData = [
   {
-    year: "2017",
-    position: "웹 개발자",
-    company: "블루 큐브 디지털",
-    description:
-      "프론트엔드 및 백엔드 개발을 수행하며 CMS 대시보드를 구축하고, PHP, MySQL, JavaScript를 사용하여 반응형 웹 페이지를 개발했습니다.",
-  },
-  {
     year: "2020",
-    position: "솔루션 리더",
-    company: "브레인 엔터프라이즈",
+    position: "Game Play QA",
+    company: "Adecco Korea",
     description:
-      "웹 기능 개발, 제품 프로토타입 제작 및 재사용 가능한 컴포넌트/마이크로서비스를 구축하며, UI 개선 및 TypeScript 기반 3D UI 인터페이스를 구현했습니다.",
+      "EA Korea FIFA Online 프로젝트의 게임 플레이 QA로 근무하며 경기 AI, 플레이 밸런스, 선수 움직임, 물리 엔진, 스킬 시스템 등을 집중적으로 테스트했습니다.\n" +
+      "플레이 경험을 분석해 개선안을 제안하고, 재현이 어려운 버그를 사내 QA 툴(TestBad)을 활용하여 분석·보고하는 업무를 담당했습니다.\n" +
+      "PC/모바일 플랫폼에서 호환성 테스트를 수행하고, JIRA 기반의 버그 리포트 작성 및 개발/기획팀과 협업하여 품질 안정성 확보에 기여했습니다."
   },
   {
     year: "NOW",
-    position: "프리랜서 & 기술 학습",
-    company: "프리랜서",
+    position: "Computer Science 학사 과정",
+    company: "안산 대학교",
     description:
-      "다양한 클라이언트를 위한 3D 및 웹 서비스를 제공하며, 기술 학습을 통해 여러 분야에서 역량을 키우고 있습니다.",
-  },
+      "학부 과정에서 운영체제, 네트워크, 데이터베이스, 알고리즘, 소프트웨어 공학 등 컴퓨터공학 기초 지식을 습득하고 있습니다.\n" +
+      "컴퓨터 정보학회 학술대회에 논문을 투고하여 연구 경험과 학문적 글쓰기 능력을 습득했습니다.\n" +
+      "교내 졸업작품 경진대회에서 2등(우수상)을 수상하며 협업 능력과 개발 성과를 인정받았습니다.\n" +
+      "교내 멘토링 프로그램에 참여하여 후배 대상 코딩 교육과 알고리즘 강의를 진행하며 지식 전달 및 커뮤니케이션 역량을 강화했습니다."
+  }
 ];
 
 gsap.registerPlugin(ScrollTrigger);
