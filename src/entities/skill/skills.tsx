@@ -13,8 +13,7 @@ import {
 import { SiJira, SiNaver, SiPostman, SiSpring } from "react-icons/si";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 
-export const skills = [
-  // 프론트엔드
+const FRONTEND = [
   {
     name: "HTML",
     icon: <FaHtml5 className="w-full h-full text-orange-600" />,
@@ -63,9 +62,10 @@ export const skills = [
     color: "text-sky-400",
     category: "FrontEnd",
     usage: "frequent",
-  },
+  }
+]
 
-  // 백엔드
+const BACKEND = [
   {
     name: "NodeJS (Express.js)",
     icon: <FaNodeJs className="w-full h-full text-green-500" />,
@@ -101,8 +101,9 @@ export const skills = [
     category: "BackEnd",
     usage: "familiar",
   },
+]
 
-  // DevOps (클라우드 & OS 포함)
+const DEVOPS = [
   {
     name: "Linux (Ubuntu)",
     icon: <FaDocker className="w-full h-full text-orange-500" />,
@@ -131,8 +132,9 @@ export const skills = [
     category: "DevOps",
     usage: "familiar",
   },
+]
 
-  // 툴 (협업, 생산성 도구)
+const COLLABORATION = [
   {
     name: "Figma",
     icon: <FaFigma className="w-full h-full text-pink-500" />,
@@ -168,4 +170,11 @@ export const skills = [
     category: "Tools",
     usage: "frequent",
   },
-];
+]
+
+export const SKILLS = {
+  FRONTEND,
+  BACKEND,
+  DEVOPS,
+  COLLABORATION,
+}

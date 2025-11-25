@@ -1,0 +1,1 @@
+export { CAREER } from '@/entities/career/schema';
