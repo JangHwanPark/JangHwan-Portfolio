@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "composite": true,
-    "noEmit": false,
+    "noEmit": true,
     "strict": true,
     "baseUrl": "./",
     "paths": {
