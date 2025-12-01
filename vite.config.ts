@@ -2,12 +2,14 @@
 import {defineConfig} from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from "@tailwindcss/vite";
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    tsconfigPaths(),
   ],
 
   // test.globals 옵션은 테스트 파일의 전역 함수를 import 없이 사용할 수 있게 합니다.
