@@ -24,9 +24,16 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
 
   return (
     <section
-      className="animate-fadeIn fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 backdrop-blur-md sm:p-8"
-      onClick={onClose}
-    >
+    className="
+      animate-fadeIn fixed inset-0 z-[999]
+      flex justify-center
+      items-start sm:items-center
+      bg-black/60 backdrop-blur-md
+      px-4 py-6 sm:p-8
+      overflow-y-auto
+    "
+    onClick={onClose}
+  >
       {/* 모달 본문 */}
       <article
         className="modal-content relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900/95 to-slate-800 text-slate-100 shadow-2xl"
@@ -38,7 +45,7 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
         </div>
 
         {/* 닫기 버튼 */}
-        <div className="text-primary mb-10 flex justify-end">
+        <div className="text-slate-100 mt-2 mr-2 flex justify-end">
           <button onClick={onClose} className="cursor-pointer px-2 py-2">
             <MdCloseFullscreen size={20} />
           </button>
