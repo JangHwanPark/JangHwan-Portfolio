@@ -15,10 +15,10 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps ) => {
   if (!project) return null;
 
   return (
-    <section className="fixed inset-0 bg-black/50 grid grid-cols-12 p-4" onClick={onClose}>
+    <section className="fixed inset-0 z-[60] flex justify-center items-center bg-black/60 backdrop-blur-md p-4 sm:p-8 animate-fadeIn" onClick={onClose}>
       {/* 모달 본문 */}
       <article
-        className="modal-content bg-white shadow-lg rounded-lg p-8 col-start-4 col-end-10 my-32 overflow-y-auto max-h-screen"
+        className="modal-content relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900/95 to-slate-800 text-slate-100 shadow-2xl max-h-full overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* 닫기 버튼 */}
