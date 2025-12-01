@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
   return (
-    <h1 className='text-md xs:text-lg md:text-xl font-bold dark:hover:text-h-yellow'>
-      <Link to='/about'>japark.dev</Link>
+    <h1 className="text-md xs:text-lg dark:hover:text-h-yellow font-bold md:text-xl">
+      <Link to="/about">japark.dev</Link>
     </h1>
   );
 };

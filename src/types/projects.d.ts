@@ -1,37 +1,30 @@
 // 프로젝트 진행 상태 타입 (고정된 문자열 값만 허용)
 type ProjectStatus =
-  | "PLANNED"    // 기획 중 (아직 시작되지 않음)
-  | "INPROGRESS" // 진행 중 (개발/운영 중)
-  | "COMPLETED"  // 완료됨 (개발 완료 및 배포됨)
-  | "MAINTENANCE" // 유지보수 중 (추가 기능 개발 또는 유지보수 진행 중)
-  | "CANCELLED"  // 중단됨 (계획되었으나 취소됨)
-  | "ARCHIVED";  // 종료됨 (더 이상 유지보수되지 않음)
+  | 'PLANNED' // 기획 중 (아직 시작되지 않음)
+  | 'INPROGRESS' // 진행 중 (개발/운영 중)
+  | 'COMPLETED' // 완료됨 (개발 완료 및 배포됨)
+  | 'MAINTENANCE' // 유지보수 중 (추가 기능 개발 또는 유지보수 진행 중)
+  | 'CANCELLED' // 중단됨 (계획되었으나 취소됨)
+  | 'ARCHIVED'; // 종료됨 (더 이상 유지보수되지 않음)
 
 // 프로젝트 유형 타입 (개인 프로젝트 or 팀 프로젝트)
-type ProjectType = "TEAM" | "PERSONAL";
+type ProjectType = 'TEAM' | 'PERSONAL';
 
 // 역할 타입 (유연성을 위해 확장 가능)
 type RoleType =
-  | "Frontend Developer"
-  | "Backend Developer"
-  | "Fullstack Developer"
-  | "Designer"
-  | "Project Manager"
-  | "QA Engineer"
+  | 'Frontend Developer'
+  | 'Backend Developer'
+  | 'Fullstack Developer'
+  | 'Designer'
+  | 'Project Manager'
+  | 'QA Engineer'
   | string; // 확장 가능하도록 추가
 
 // 협업 도구 타입 (기본적인 협업 도구 목록)
-type CollaborationTool =
-  | "JIRA"
-  | "Notion"
-  | "Slack"
-  | "Figma"
-  | "GitHub"
-  | "Trello"
-  | string; // 확장 가능하도록 추가
+type CollaborationTool = 'JIRA' | 'Notion' | 'Slack' | 'Figma' | 'GitHub' | 'Trello' | string; // 확장 가능하도록 추가
 
 interface ProjectsType {
-  id: number;  // 프로젝트의 고유 ID
+  id: number; // 프로젝트의 고유 ID
   status: ProjectStatus; // 프로젝트 상태 (고정된 값만 허용)
   titleImg: string; // 프로젝트 대표 이미지 (썸네일) URL
   name: string; // 프로젝트명

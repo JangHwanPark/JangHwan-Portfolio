@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 /**
  * `TabPanels` 컴포넌트는 `TabPanel` 컴포넌트들을 감싸는 컨테이너입니다.
@@ -14,18 +14,8 @@ import { ReactNode } from "react";
  * </TabPanels>
  * ```
  */
-const TabPanels = ({
-  children,
-  className,
-} : {
-  children: ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  );
+const TabPanels = ({ children, className }: { children: ReactNode; className?: string }) => {
+  return <div className={className}>{children}</div>;
 };
 
 export default TabPanels;

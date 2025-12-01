@@ -1,6 +1,8 @@
-import { ReactNode } from "react";
-import { useTabs } from "../../providers/TabProvider";
-import clsx from "clsx";
+import { ReactNode } from 'react';
+
+import clsx from 'clsx';
+
+import { useTabs } from '../../providers/TabProvider';
 
 /**
  * `TabPanel` 컴포넌트는 특정 탭이 활성화될 때만 표시되는 컨텐츠입니다.
@@ -16,17 +18,18 @@ import clsx from "clsx";
  * </TabPanels>
  * ```
  */
-const TabPanel = ({
-  tabKey,
-  children,
-} : {
-  tabKey: string;
-  children: ReactNode;
-}) => {
+const TabPanel = ({ tabKey, children }: { tabKey: string; children: ReactNode }) => {
   const { active } = useTabs();
-  return active === tabKey ? <div className={clsx(
-    'py-5 lg:py-0 lg:mt-5',
-    "grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 md:gap-10",)}>{children}</div> : null;
+  return active === tabKey ? (
+    <div
+      className={clsx(
+        'py-5 lg:mt-5 lg:py-0',
+        'grid grid-cols-1 grid-rows-2 gap-5 md:grid-cols-2 md:grid-rows-1 md:gap-10'
+      )}
+    >
+      {children}
+    </div>
+  ) : null;
 };
 
 export default TabPanel;

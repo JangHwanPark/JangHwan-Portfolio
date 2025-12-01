@@ -1,5 +1,6 @@
-import { Theme, ThemeContextType } from "../types/theme";
-import { ReactNode, useEffect, useState, createContext, useContext, MouseEvent } from "react";
+import { MouseEvent, ReactNode, createContext, useContext, useEffect, useState } from 'react';
+
+import { Theme, ThemeContextType } from '../types/theme';
 
 /**
  * `ThemeContext`는 애플리케이션의 다크/라이트 모드를 관리하는 컨텍스트입니다.
@@ -20,7 +21,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
  */
 export const useTheme = () => {
   const context = useContext(ThemeContext);
-  if (context === undefined) throw new Error("useTheme must be used within ThemeProvider");
+  if (context === undefined) throw new Error('useTheme must be used within ThemeProvider');
   return context;
 };
 
@@ -36,25 +37,17 @@ export const useTheme = () => {
  * </ThemeProvider>
  * ```
  */
-export const ThemeProvider = ({
-  children
-} : {
-  children: ReactNode;
-}) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('light');
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     const selectedTheme = e.currentTarget.dataset.theme as Theme;
     setTheme(selectedTheme);
-  }
+  };
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  return (
-    <ThemeContext.Provider value={{ theme, handleClick }}>
-      {children}
-    </ThemeContext.Provider>
-  )
-}
+  return <ThemeContext.Provider value={{ theme, handleClick }}>{children}</ThemeContext.Provider>;
+};

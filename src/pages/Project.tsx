@@ -1,15 +1,17 @@
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { projects } from "../data";
-import { useScroll } from "../providers/ScrollProvider";
-import ProjectCard from "../components/ProjectCard/ProjectCard";
+import { useRef } from 'react';
+
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+import ProjectCard from '../components/ProjectCard/ProjectCard';
+import { projects } from '../data';
+import { useScroll } from '../providers/ScrollProvider';
 
 gsap.registerPlugin(ScrollTrigger);
 const Project = ({
-  onSelectProject
-} : {
+  onSelectProject,
+}: {
   onSelectProject?: (project: ProjectsType | null) => void;
 }) => {
   const { sections } = useScroll();
@@ -25,12 +27,12 @@ const Project = ({
 
     gsap.to(horizonRef.current, {
       x: `-${totalWidth - window.innerWidth}px`, // 가로 스크롤 이동
-      ease: "none",
+      ease: 'none',
       scrollTrigger: {
         trigger: sections.projects.current, // 트리거 기준 요소
         // top top : article 의 Top 이 뷰포트 상단(top)에 도달하면 실행
         // bottom bottom : article 의 바텀이 `뷰포트 바텀`과 만나면 고정 시작
-        start: "top top",
+        start: 'top top',
         end: `+=${totalWidth} + window.innerHeight}px`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
         scrub: 1, // 부드러운 애니메이션 효과
         pin: true, // 활성화 시 article이 고정됨
@@ -41,17 +43,28 @@ const Project = ({
   console.log(totalWidth);
   return (
     /* work-section */
-    <section id="projects" ref={sections.projects} className="h-[100vh] flex flex-col items-start justify-start">
+    <section
+      id="projects"
+      ref={sections.projects}
+      className="flex h-[100vh] flex-col items-start justify-start"
+    >
       {/* mt-26 */}
-      <h2 className="mt-32 lg:ml-20 mb-5 px-4 md:mt-10 md:mb-16 text-4xl lg:text-6xl 2xl:text-7xl font-bold w-full max-w-3xl md:max-w-6xl mx-auto from-[#F4B400] to-white bg-gradient-to-b bg-clip-text text-transparent">
+      <h2 className="mx-auto mt-32 mb-5 w-full max-w-3xl bg-gradient-to-b from-[#F4B400] to-white bg-clip-text px-4 text-4xl font-bold text-transparent md:mt-10 md:mb-16 md:max-w-6xl lg:ml-20 lg:text-6xl 2xl:text-7xl">
         My Work
       </h2>
-      <ul ref={horizonRef}
+      <ul
+        ref={horizonRef}
         // w-[3600px]
-          style={{ width: `${totalWidth}px` }}
-          className="relative w-full lg:h-[80%] mb-0 flex gap-10 before:content-[''] before:w-[50000vw] before:h-[2px] before:bg-white before:absolute before:top-0 after:content-[''] after:w-[50000vw] after:h-[2px] after:absolute after:top-[100%] after:bg-white">
-        {projects?.map(project => (
-          <ProjectCard key={project.id} isModal={true} project={project} onSelectProject={onSelectProject}/>
+        style={{ width: `${totalWidth}px` }}
+        className="relative mb-0 flex w-full gap-10 before:absolute before:top-0 before:h-[2px] before:w-[50000vw] before:bg-white before:content-[''] after:absolute after:top-[100%] after:h-[2px] after:w-[50000vw] after:bg-white after:content-[''] lg:h-[80%]"
+      >
+        {projects?.map((project) => (
+          <ProjectCard
+            key={project.id}
+            isModal={true}
+            project={project}
+            onSelectProject={onSelectProject}
+          />
         ))}
       </ul>
     </section>
