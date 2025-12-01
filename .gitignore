@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Type declaration outputs
+src/**/*.d.ts
+src/**/*.d.ts.map
