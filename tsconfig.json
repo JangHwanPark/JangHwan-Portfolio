@@ -8,8 +8,10 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "composite": true,
     "noEmit": true,
+    "emitDeclarationOnly": false,
+    "composite": false,
+    "incremental": false,
     "strict": true,
     "baseUrl": "./",
     "paths": {
