@@ -1,1 +1,1 @@
-export { SKILLS} from '@/entities/skill/skills';
+export { SKILLS } from '@/entities/skill/skills';

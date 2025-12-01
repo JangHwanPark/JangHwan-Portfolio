@@ -1,12 +1,13 @@
-import { ReactNode } from "react";
-import { Link } from "react-router-dom";
-import clsx from "clsx";
+import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+
+import clsx from 'clsx';
 
 const LinkButton = ({
   title,
   href,
   className,
-  children
+  children,
 }: {
   title: string;
   href: string;
@@ -17,8 +18,8 @@ const LinkButton = ({
     <Link
       to={href}
       className={clsx(
-        "px-6 py-3 rounded-md text-lg font-semibold flex items-center gap-3 transition-all",
-        "bg-[#F4B400] text-white hover:bg-[#E6A700] shadow-md",
+        'flex items-center gap-3 rounded-md px-6 py-3 text-lg font-semibold transition-all',
+        'bg-[#F4B400] text-white shadow-md hover:bg-[#E6A700]',
         className
       )}
     >

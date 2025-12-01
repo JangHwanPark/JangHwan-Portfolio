@@ -1,6 +1,9 @@
-import "./index.css";
-import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routes";
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
 
-ReactDOM.createRoot(document.getElementById("JangHwanPark")!).render(<RouterProvider router={router} />);
+import './index.css';
+import { router } from './routes';
+
+ReactDOM.createRoot(document.getElementById('JangHwanPark')!).render(
+  <RouterProvider router={router} />
+);

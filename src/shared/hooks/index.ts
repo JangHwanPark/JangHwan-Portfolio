@@ -1,1 +1,1 @@
-export { useScrollLock} from '@/shared/hooks/use-scroll-lock';
+export { useScrollLock } from '@/shared/hooks/use-scroll-lock';

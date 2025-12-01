@@ -1,13 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
-import RootLayout from "./layout/RootLayout";
-import {
-  About,
-  Skills,
-  Project,
-  ProjectDetail,
-  Experience,
-  NotFound
-} from "./pages";
+import { createBrowserRouter } from 'react-router-dom';
+
+import RootLayout from './layout/RootLayout';
+import { About, Experience, NotFound, Project, ProjectDetail, Skills } from './pages';
 
 export const router = createBrowserRouter([
   {
@@ -18,17 +12,17 @@ export const router = createBrowserRouter([
       { index: true, Component: About },
 
       // 기술 스택
-      { path: "skills", Component: Skills },
+      { path: 'skills', Component: Skills },
 
       // 포트폴리오 (프로젝트)
-      { path: "projects", Component: Project },
-      { path: "projects/:id", Component: ProjectDetail },
+      { path: 'projects', Component: Project },
+      { path: 'projects/:id', Component: ProjectDetail },
 
       // 경력(경험)
-      { path: "experience", Component: Experience },
+      { path: 'experience', Component: Experience },
 
       // 오류 처리 (404)
-      { path: "*", Component: NotFound },
+      { path: '*', Component: NotFound },
     ],
-  }
-])
+  },
+]);

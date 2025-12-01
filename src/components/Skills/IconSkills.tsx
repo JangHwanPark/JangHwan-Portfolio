@@ -1,15 +1,15 @@
-import { useRef } from "react";
-import { gsap } from "gsap";
-import clsx from "clsx";
-import Tooltip from "../Tooltip/Tooltip";
+import { useRef } from 'react';
+
+import clsx from 'clsx';
+import { gsap } from 'gsap';
+
+import Tooltip from '../Tooltip/Tooltip';
 
 interface IconSkillsProps {
   skills: SkillsType[];
 }
 
-const IconSkills = ({
-  skills
-}: IconSkillsProps) => {
+const IconSkills = ({ skills }: IconSkillsProps) => {
   const popupRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleMouseEnter = (index: number) => {
@@ -17,7 +17,7 @@ const IconSkills = ({
       opacity: 1,
       y: -10,
       duration: 0.3,
-      ease: "power2.out",
+      ease: 'power2.out',
     });
   };
 
@@ -26,24 +26,33 @@ const IconSkills = ({
       opacity: 0,
       y: 0,
       duration: 0.3,
-      ease: "power2.out",
+      ease: 'power2.out',
     });
   };
 
   return (
-    <div className="cursor-pointer grid grid-rows-3 grid-cols-3 gap-6">
+    <div className="grid cursor-pointer grid-cols-3 grid-rows-3 gap-6">
       {skills.map((skill, index) => (
         <div
           key={index}
           className="relative flex flex-col items-center"
           onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={() => handleMouseLeave(index)}>
-          <figure className={clsx('w-14 h-14 md:w-16 md:h-16 lg:w-24 lg:h-24 p-4 border-2 rounded-xl', skill.color)}>
+          onMouseLeave={() => handleMouseLeave(index)}
+        >
+          <figure
+            className={clsx(
+              'h-14 w-14 rounded-xl border-2 p-4 md:h-16 md:w-16 lg:h-24 lg:w-24',
+              skill.color
+            )}
+          >
             {skill.icon}
           </figure>
-          <Tooltip ref={(el) =>{
-            if (el) (popupRefs.current[index] = el);
-          }} text={skill.name}/>
+          <Tooltip
+            ref={(el) => {
+              if (el) popupRefs.current[index] = el;
+            }}
+            text={skill.name}
+          />
         </div>
       ))}
     </div>

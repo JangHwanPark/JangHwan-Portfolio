@@ -1,8 +1,9 @@
-import { createContext, useRef, useContext, RefObject, ReactNode } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactNode, RefObject, createContext, useContext, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import { useGSAP } from '@gsap/react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface ScrollContextProps {
   sections: {
@@ -46,37 +47,32 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
 
       ScrollTrigger.create({
         trigger: ref.current,
-        start: "top center",
-        end: "bottom center",
+        start: 'top center',
+        end: 'bottom center',
 
         // 아래 방향 스크롤 시 URL 변경
         onEnter: () => {
-          if (location.pathname !== `/${key}` && key !== "about") {
+          if (location.pathname !== `/${key}` && key !== 'about') {
             navigate(`/${key}`, { replace: true });
-          } else if (key === "about" && location.pathname !== "/") {
-            navigate("/", { replace: true });
+          } else if (key === 'about' && location.pathname !== '/') {
+            navigate('/', { replace: true });
           }
         },
 
         // 위 방향 스크롤 시 URL 변경
         onEnterBack: () => {
-          if (location.pathname !== `/${key}` && key !== "about") {
+          if (location.pathname !== `/${key}` && key !== 'about') {
             navigate(`/${key}`, { replace: true });
-          } else if (key === "about" && location.pathname !== "/") {
-            navigate("/", { replace: true });
+          } else if (key === 'about' && location.pathname !== '/') {
+            navigate('/', { replace: true });
           }
         },
       });
     });
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
   }, []);
 
-  return (
-    <ScrollContext.Provider value={{ sections }}>
-      {children}
-    </ScrollContext.Provider>
-  );
+  return <ScrollContext.Provider value={{ sections }}>{children}</ScrollContext.Provider>;
 };
 
 /**
@@ -89,7 +85,7 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
 export const useScroll = () => {
   const context = useContext(ScrollContext);
   if (!context) {
-    throw new Error("useScroll must be used within a ScrollProvider");
+    throw new Error('useScroll must be used within a ScrollProvider');
   }
   return context;
 };
