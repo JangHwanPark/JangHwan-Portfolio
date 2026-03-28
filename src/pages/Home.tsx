@@ -33,7 +33,7 @@ const Home = () => {
 
   const textClass = clsx('hidden md:block font-bold flex gap-3 text-md', 'lg:text-4xl lg:flex-col');
 
-  const testMobileClass = clsx(
+  const textMobileClass = clsx(
     'text-2xl flex flex-col items-center justify-start gap-6',
     'lg:hidden'
   );
@@ -48,7 +48,7 @@ const Home = () => {
           <span>A Passionate Frontend Developer.</span>
         </h2>
         {/* Mobile */}
-        <h2 ref={textRef} className={testMobileClass}>
+        <h2 ref={textRef} className={textMobileClass}>
           <span>Hello,</span>
           <span>I'm JangHwan.</span>
           <span>A Passionate</span>

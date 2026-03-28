@@ -9,11 +9,7 @@ import { projects } from '../data';
 import { useScroll } from '../providers/ScrollProvider';
 
 gsap.registerPlugin(ScrollTrigger);
-const Project = ({
-  onSelectProject,
-}: {
-  onSelectProject?: (project: ProjectsType | null) => void;
-}) => {
+const Project = () => {
   const { sections } = useScroll();
   const horizonRef = useRef<HTMLUListElement | null>(null);
 
@@ -33,14 +29,13 @@ const Project = ({
         // top top : article 의 Top 이 뷰포트 상단(top)에 도달하면 실행
         // bottom bottom : article 의 바텀이 `뷰포트 바텀`과 만나면 고정 시작
         start: 'top top',
-        end: `+=${totalWidth} + window.innerHeight}px`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
+        end: `+=${totalWidth + window.innerHeight}px`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
         scrub: 1, // 부드러운 애니메이션 효과
         pin: true, // 활성화 시 article이 고정됨
       },
     });
   }, []);
 
-  console.log(totalWidth);
   return (
     /* work-section */
     <section
@@ -61,9 +56,7 @@ const Project = ({
         {projects?.map((project) => (
           <ProjectCard
             key={project.id}
-            isModal={true}
             project={project}
-            onSelectProject={onSelectProject}
           />
         ))}
       </ul>

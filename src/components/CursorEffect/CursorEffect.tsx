@@ -20,7 +20,7 @@ const CursorEffect = () => {
         ease: 'power2.out',
       });
 
-      // 그레디언트 배경을 따라다니도록 설정
+      // 그래디언트 배경을 따라다니도록 설정
       gsap.to(gradientRef.current, {
         x,
         y,
@@ -35,7 +35,7 @@ const CursorEffect = () => {
 
   return (
     <>
-      {/* 배경 그레디언트 효과 (마우스를 따라다님) */}
+      {/* 배경 그래디언트 효과 (마우스를 따라다님) */}
       <div
         ref={gradientRef}
         className="pointer-events-none fixed h-[1200px] w-[1200px] rounded-full bg-gradient-to-r from-pink-500 to-purple-700 opacity-30 blur-3xl"

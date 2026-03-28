@@ -28,7 +28,7 @@ const Skills = () => {
     <section
       ref={sections.skills}
       id="skills"
-      className="lex mx-auto mb-32 w-full max-w-3xl flex-col justify-center gap-5 px-4 sm:px-8 md:max-w-4xl md:px-10 lg:mb-0 lg:max-w-4xl"
+      className="flex mx-auto mb-32 w-full max-w-3xl flex-col justify-center gap-5 px-4 sm:px-8 md:max-w-4xl md:px-10 lg:mb-0 lg:max-w-4xl"
     >
       {/* 섹션 헤더 */}
       <header className="pt-20 pb-10 lg:pt-5">

@@ -5,18 +5,18 @@ import { ScrollProvider } from '@/providers/ScrollProvider';
 import CursorEffect from '../components/CursorEffect/CursorEffect';
 import CurveLine from '../components/Line/CurveLine';
 import LinearLine from '../components/Line/LinearLine';
-import Preloader from '../components/Preloader/Preloader';
+// import Preloader from '../components/Preloader/Preloader';
 import { Footer, Header } from '../layout';
 import { AsideMenu } from '../layout';
-import { About, Experience, Project, ProjectDetail, Skills } from '../pages';
+import { About, Experience, Project, Skills } from '../pages';
 
 const RootLayout = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectsType | null>(null);
-  const [complete, setComplete] = useState(false);
+  const [complete] = useState(true);
 
   return (
     <>
-      <Preloader setComplete={setComplete} />
+      {/* Preloader 비활성화 — 컴포넌트는 유지 */}
+      {/* <Preloader setComplete={setComplete} /> */}
       {complete && (
         <ScrollProvider>
           <h1 className="hidden">JangHwanPark | FrontEnd Development</h1>
@@ -35,10 +35,7 @@ const RootLayout = () => {
               firstClass="w-6/12 h-52 ml-56 pl-4 border-b-2"
               lastClass="w-full h-72 ml-56"
             />
-            <Project onSelectProject={setSelectedProject} />
-            {selectedProject && (
-              <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />
-            )}
+            <Project />
             <Experience />
           </main>
           <Footer />

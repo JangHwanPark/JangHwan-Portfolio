@@ -1,17 +1,7 @@
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({
-  isModal,
-  project,
-  onSelectProject,
-}: {
-  isModal: boolean;
-  project: ProjectsType;
-  onSelectProject?: (project: ProjectsType | null) => void;
-}) => {
-  // h-[860px] lg:h-[904px] xl:h-[1024px]
+const ProjectCard = ({ project }: { project: ProjectsType }) => {
   return (
-    /* w-[350px] md:w-[600px] py-10 */
     <li className="flex w-[350px] flex-col items-center justify-start gap-6 border-r p-6 lg:w-[500px]">
       {/* 프로젝트 헤더 */}
       <div className="w-full">
@@ -31,12 +21,10 @@ const ProjectCard = ({
           </div>
         </div>
       </div>
-      {/* 프로젝트 이미지 (모달 페이지로 출력) */}
+      {/* 프로젝트 이미지 */}
       <figure className="flex w-full justify-center">
         <Link
           to={`/projects/${project.id}`}
-          state={{ modal: isModal, project: project }}
-          onClick={() => onSelectProject?.(project)}
           className="relative"
         >
           <img src="/images/p2.webp" alt="" className="max-h-[250px] w-full lg:max-h-[300px]" />

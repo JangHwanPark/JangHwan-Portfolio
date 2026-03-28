@@ -15,7 +15,6 @@ const About = () => {
 
   useGSAP(() => {
     const tl = gsap.timeline();
-    console.log('titleRef 애니메인션 실행');
     tl.fromTo(
       titleRef.current,
       {

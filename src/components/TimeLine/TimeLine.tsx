@@ -79,7 +79,7 @@ const TimeLine = forwardRef<HTMLDivElement, TimeLineProps>(({ data, timelineRef,
                 <h4 className="w-full text-xl leading-8 font-bold md:text-[22px] lg:w-[180px] lg:text-[33px] lg:leading-10">
                   {experience.position}
                 </h4>
-                {/* 사명 */}
+                {/* 회사명 */}
                 <h5 className="text-accent mt-[10px] w-full pb-5 text-lg font-normal capitalize md:text-[17px] lg:text-lg xl:text-[20px]">
                   {experience.company}
                 </h5>

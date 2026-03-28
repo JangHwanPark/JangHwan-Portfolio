@@ -1,28 +1,18 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import RootLayout from './layout/RootLayout';
-import { About, Experience, NotFound, Project, ProjectDetail, Skills } from './pages';
+import { NotFound, ProjectDetail } from './pages';
 
 export const router = createBrowserRouter([
-  {
-    path: '/',
-    Component: RootLayout,
-    children: [
-      // 메인 페이지 (소개 페이지)
-      { index: true, Component: About },
+  // 메인 싱글페이지 (ScrollProvider가 스크롤 시 URL을 변경함)
+  { path: '/', Component: RootLayout },
+  { path: '/skills', Component: RootLayout },
+  { path: '/projects', Component: RootLayout },
+  { path: '/experience', Component: RootLayout },
 
-      // 기술 스택
-      { path: 'skills', Component: Skills },
+  // 프로젝트 상세 (독립 페이지)
+  { path: '/projects/:id', Component: ProjectDetail },
 
-      // 포트폴리오 (프로젝트)
-      { path: 'projects', Component: Project },
-      { path: 'projects/:id', Component: ProjectDetail },
-
-      // 경력(경험)
-      { path: 'experience', Component: Experience },
-
-      // 오류 처리 (404)
-      { path: '*', Component: NotFound },
-    ],
-  },
+  // 404
+  { path: '*', Component: NotFound },
 ]);

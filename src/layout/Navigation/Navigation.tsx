@@ -16,7 +16,6 @@ const Navigation = ({ items }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuOpen = () => {
-    console.log('menu open');
     setIsOpen(!isOpen);
   };
 
