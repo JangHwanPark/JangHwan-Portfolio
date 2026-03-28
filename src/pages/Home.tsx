@@ -11,6 +11,7 @@ const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
   const { sections } = useScroll();
   const textRef = useRef<HTMLHeadingElement | null>(null);
+  const textMobileRef = useRef<HTMLHeadingElement | null>(null);
 
   useGSAP(() => {
     gsap.to(textRef.current, {
@@ -48,7 +49,7 @@ const Home = () => {
           <span>A Passionate Frontend Developer.</span>
         </h2>
         {/* Mobile */}
-        <h2 ref={textRef} className={textMobileClass}>
+        <h2 ref={textMobileRef} className={textMobileClass}>
           <span>Hello,</span>
           <span>I'm JangHwan.</span>
           <span>A Passionate</span>

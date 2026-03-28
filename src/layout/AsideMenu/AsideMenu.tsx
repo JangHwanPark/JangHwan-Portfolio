@@ -1,5 +1,4 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 const icon = [
   { href: 'https://github.com/JangHwanPark', icon: <FaGithub className="h-6 w-6" /> },
@@ -16,7 +15,7 @@ const AsideMenu = () => {
       <ul className="flex w-full flex-col gap-5">
         {icon.map((item, index) => (
           <li key={index}>
-            <Link to={item.href}>{item.icon}</Link>
+            <a href={item.href} target="_blank" rel="noopener noreferrer">{item.icon}</a>
           </li>
         ))}
       </ul>
