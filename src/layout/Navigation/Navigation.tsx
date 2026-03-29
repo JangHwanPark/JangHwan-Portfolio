@@ -65,7 +65,7 @@ const Navigation = ({ items }: NavigationProps) => {
       </ul>
 
       {/* Mobile */}
-      <button className="flex items-center lg:hidden" onClick={handleMenuOpen}>
+      <button className="flex items-center lg:hidden" onClick={handleMenuOpen} aria-label="메뉴 열기">
         <PiHamburger className="h-6 w-6" />
       </button>
 

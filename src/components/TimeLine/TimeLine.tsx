@@ -74,18 +74,18 @@ const TimeLine = forwardRef<HTMLDivElement, TimeLineProps>(({ data, timelineRef,
             <div className="flex flex-row justify-between gap-[50px] lg:w-[40%]">
               <div className="flex w-full flex-col">
                 {/* 포지션 */}
-                <h4 className="w-full text-xl leading-8 font-bold md:text-[22px] lg:w-[180px] lg:text-[33px] lg:leading-10">
+                <h3 className="w-full text-xl leading-8 font-bold md:text-[22px] lg:w-[180px] lg:text-[33px] lg:leading-10">
                   {experience.position}
-                </h4>
+                </h3>
                 {/* 회사명 */}
-                <h5 className="text-accent mt-[10px] w-full pb-5 text-lg font-normal capitalize md:text-[17px] lg:text-lg xl:text-[20px]">
+                <h4 className="text-accent mt-[10px] w-full pb-5 text-lg font-normal capitalize md:text-[17px] lg:text-lg xl:text-[20px]">
                   {experience.company}
-                </h5>
+                </h4>
               </div>
               {/* 연도 */}
-              <h3 className="xs:text-2xl text-xl leading-[45px] font-medium md:text-[40px] lg:text-[48px]">
+              <span className="xs:text-2xl text-xl leading-[45px] font-medium md:text-[40px] lg:text-[48px]" aria-label={`${experience.year}년`}>
                 {experience.year}
-              </h3>
+              </span>
             </div>
             {/* 설명 */}
             <p className="xs:text-base w-full text-sm font-light md:text-[18px] lg:w-[40%]">

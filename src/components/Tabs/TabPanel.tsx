@@ -22,6 +22,9 @@ const TabPanel = ({ tabKey, children }: { tabKey: string; children: ReactNode })
   const { active } = useTabs();
   return active === tabKey ? (
     <div
+      role="tabpanel"
+      id={`panel-${tabKey}`}
+      aria-labelledby={`tab-${tabKey}`}
       className={clsx(
         'py-5 lg:mt-5 lg:py-0',
         'grid grid-cols-1 grid-rows-2 gap-5 md:grid-cols-2 md:grid-rows-1 md:gap-10'

@@ -28,17 +28,17 @@ const Tab = ({ tabKey, className, children }: TabProps) => {
   /*before:content-[""] before:absolute before:bottom-[-1px] before:left-[-36px] before:w-8 before:h-8 before:border-b-2 before:border-r-2 before:border-c-yellow before:rounded-br-xl before:translate-x-1 after:content-[""] after:absolute after:bottom-[-1px] after:right-[-36px] after:w-8 after:h-8 after:border-b-2 after:border-l-2 after:border-c-yellow after:rounded-bl-xl after:-translate-x-1*/
 
   return (
-    <li className={classes}>
-      <button
-        role="tab"
-        className="h-full w-full cursor-pointer"
-        aria-selected={isActive}
-        aria-controls={`panel-${tabKey}`}
-        onClick={() => handleTabChange(tabKey)}
-      >
-        {children}
-      </button>
-    </li>
+    <button
+      role="tab"
+      id={`tab-${tabKey}`}
+      className={clsx(classes, 'h-full cursor-pointer')}
+      aria-selected={isActive}
+      aria-controls={`panel-${tabKey}`}
+      tabIndex={isActive ? 0 : -1}
+      onClick={() => handleTabChange(tabKey)}
+    >
+      {children}
+    </button>
   );
 };
 

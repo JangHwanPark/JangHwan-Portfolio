@@ -23,9 +23,9 @@ const TabList = ({ children, className = '' }: TabListProps) => {
     'flex items-center xs:justify-center sm:justify-start'
   );
   return (
-    <ul role="tablist" aria-orientation="horizontal" className={classes}>
+    <div role="tablist" aria-orientation="horizontal" className={classes}>
       {children}
-    </ul>
+    </div>
   );
 };
 

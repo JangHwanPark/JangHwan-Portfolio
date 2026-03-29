@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janghwanpark.github.io/sitemap.xml

@@ -1,10 +1,11 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const icon = [
-  { href: 'https://github.com/JangHwanPark', icon: <FaGithub className="h-6 w-6" /> },
+  { href: 'https://github.com/JangHwanPark', icon: <FaGithub className="h-6 w-6" />, label: 'GitHub' },
   {
     href: 'https://www.linkedin.com/in/%EC%9E%A5%ED%99%98-%EB%B0%95-b8259a198/',
     icon: <FaLinkedin className="h-6 w-6" />,
+    label: 'LinkedIn',
   },
 ];
 
@@ -15,7 +16,7 @@ const AsideMenu = () => {
       <ul className="flex w-full flex-col gap-5">
         {icon.map((item, index) => (
           <li key={index}>
-            <a href={item.href} target="_blank" rel="noopener noreferrer">{item.icon}</a>
+            <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.label}>{item.icon}</a>
           </li>
         ))}
       </ul>

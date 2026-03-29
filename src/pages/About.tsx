@@ -85,7 +85,7 @@ const About = () => {
             <span>About</span>
             <span >&lt;</span>h1<span >/&gt;</span>
           </h2>*/}
-          <h3
+          <h2
             ref={titleRef}
             className="relative z-12 w-full text-center leading-8 font-bold lg:mb-3 lg:text-left lg:leading-12"
           >
@@ -104,7 +104,7 @@ const About = () => {
                 {text}
               </p>
             ))}
-          </h3>
+          </h2>
           <div ref={textRef} className="mr-auto w-full lg:max-w-lg xl:max-w-2xl">
             <p className={`${aboutTextClass} mb-2`}>제 홈페이지에 방문해 주셔서 감사합니다.</p>
             <p className={`${aboutTextClass} leading-7`}>
