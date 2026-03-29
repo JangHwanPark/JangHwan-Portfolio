@@ -55,7 +55,7 @@ const About = () => {
       },
       '-=0.5'
     );
-  }, [titleRef, textRef, imgRef]);
+  }, []);
 
   const titleTexts = [
     '안녕하세요. 데이터를 조각하는',

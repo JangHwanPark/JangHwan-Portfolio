@@ -1,8 +1,6 @@
 import { ReactNode, RefObject, createContext, useContext, useRef } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface ScrollContextProps {
@@ -11,27 +9,9 @@ interface ScrollContextProps {
   };
 }
 
-/**
- * ScrollContext: 페이지의 특정 섹션을 관리하는 컨텍스트
- *
- * @constant {React.Context<ScrollContextProps | undefined>}
- */
 const ScrollContext = createContext<ScrollContextProps | undefined>(undefined);
 
-/**
- * ScrollProvider: 페이지 섹션의 참조(Ref)를 제공하는 컨텍스트 프로바이더
- *
- * @example
- * <ScrollProvider>
- *   <App />
- * </ScrollProvider>
- */
 export const ScrollProvider = ({ children }: { children: ReactNode }) => {
-  gsap.registerPlugin(ScrollTrigger);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  // 주요 페이지 섹션을 관리하는 참조 객체
   const sections = {
     home: useRef<HTMLElement>(null),
     about: useRef<HTMLElement>(null),
@@ -40,33 +20,28 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
     experience: useRef<HTMLElement>(null),
   };
 
-  // useGSAP을 사용하여 ScrollTrigger 설정
   useGSAP(() => {
+    // 현재 URL을 추적하여 중복 호출 방지
+    let currentPath = window.location.pathname;
+
     Object.entries(sections).forEach(([key, ref]) => {
       if (!ref.current) return;
+
+      const targetPath = key === 'about' ? '/' : `/${key}`;
+
+      const updateURL = () => {
+        if (currentPath === targetPath) return;
+        currentPath = targetPath;
+        // React Router를 거치지 않고 URL만 변경 → 리렌더링 없음
+        window.history.replaceState(null, '', targetPath);
+      };
 
       ScrollTrigger.create({
         trigger: ref.current,
         start: 'top center',
         end: 'bottom center',
-
-        // 아래 방향 스크롤 시 URL 변경
-        onEnter: () => {
-          if (location.pathname !== `/${key}` && key !== 'about') {
-            navigate(`/${key}`, { replace: true });
-          } else if (key === 'about' && location.pathname !== '/') {
-            navigate('/', { replace: true });
-          }
-        },
-
-        // 위 방향 스크롤 시 URL 변경
-        onEnterBack: () => {
-          if (location.pathname !== `/${key}` && key !== 'about') {
-            navigate(`/${key}`, { replace: true });
-          } else if (key === 'about' && location.pathname !== '/') {
-            navigate('/', { replace: true });
-          }
-        },
+        onEnter: updateURL,
+        onEnterBack: updateURL,
       });
     });
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

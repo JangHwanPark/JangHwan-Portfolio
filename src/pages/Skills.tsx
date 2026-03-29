@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import clsx from 'clsx';
 
@@ -15,14 +15,14 @@ const tabItems = [
 ];
 
 const categories = ['FrontEnd', 'BackEnd', 'DevOps', 'Tools'];
+const tagClass = 'bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent';
 
 const Skills = () => {
   const [selectedTab, setSelectedTab] = useState(tabItems[0]);
   const { sections } = useScroll();
-  const categorizedSkills = getCategorizedSkills();
+  const categorizedSkills = useMemo(() => getCategorizedSkills(), []);
   const frequent = categorizedSkills.frequent;
   const familiar = categorizedSkills.familiar;
-  const tagClass = clsx('bg-gradient-to-b from-[#F4B400] to-white bg-clip-text text-transparent');
 
   return (
     <section

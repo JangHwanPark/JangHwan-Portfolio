@@ -4,13 +4,11 @@ import { PiHamburger } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 
 import gsap from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 import { useScroll } from '../../providers/ScrollProvider';
 import NavItem from './NavItem';
 
 const Navigation = ({ items }: NavigationProps) => {
-  gsap.registerPlugin(ScrollToPlugin);
   const { sections } = useScroll();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);

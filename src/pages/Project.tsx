@@ -2,13 +2,11 @@ import { useRef } from 'react';
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import ProjectCard from '../components/ProjectCard/ProjectCard';
 import { projects } from '../data';
 import { useScroll } from '../providers/ScrollProvider';
 
-gsap.registerPlugin(ScrollTrigger);
 const Project = () => {
   const { sections } = useScroll();
   const horizonRef = useRef<HTMLUListElement | null>(null);
@@ -30,8 +28,9 @@ const Project = () => {
         // bottom bottom : article 의 바텀이 `뷰포트 바텀`과 만나면 고정 시작
         start: 'top top',
         end: `+=${totalWidth + window.innerHeight}px`, // 스크롤이 totalWidth 만큼 진행될 때까지 효과 유지
-        scrub: 1, // 부드러운 애니메이션 효과
-        pin: true, // 활성화 시 article이 고정됨
+        scrub: 0.3, // 고주사율 모니터 대응: 반응 지연 최소화
+        pin: true,
+        anticipatePin: 1, // pin 전환 시 점프 방지
       },
     });
   }, []);

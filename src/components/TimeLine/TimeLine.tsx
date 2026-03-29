@@ -2,7 +2,6 @@ import { Ref, forwardRef, useRef } from 'react';
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface Experience {
   year: string;
@@ -17,7 +16,6 @@ interface TimeLineProps {
   dotRef: Ref<HTMLDivElement>;
 }
 
-gsap.registerPlugin(ScrollTrigger);
 const TimeLine = forwardRef<HTMLDivElement, TimeLineProps>(({ data, timelineRef, dotRef }, ref) => {
   // 각 리스트 아이템의 ref 저장
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);

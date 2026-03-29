@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ project }: { project: ProjectsType }) => {
+const ProjectCard = memo(({ project }: { project: ProjectsType }) => {
   return (
     <li className="flex w-[350px] flex-col items-center justify-start gap-6 border-r p-6 lg:w-[500px]">
       {/* 프로젝트 헤더 */}
@@ -32,6 +33,7 @@ const ProjectCard = ({ project }: { project: ProjectsType }) => {
       </figure>
     </li>
   );
-};
+});
 
+ProjectCard.displayName = 'ProjectCard';
 export default ProjectCard;

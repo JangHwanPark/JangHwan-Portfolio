@@ -2,7 +2,6 @@ import { useRef } from 'react';
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import TimeLine from '../components/TimeLine/TimeLine';
 import { useScroll } from '../providers/ScrollProvider';
@@ -30,7 +29,6 @@ const experienceData = [
   },
 ];
 
-gsap.registerPlugin(ScrollTrigger);
 const Experience = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);

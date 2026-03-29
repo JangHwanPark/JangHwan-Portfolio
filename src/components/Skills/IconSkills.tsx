@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 import clsx from 'clsx';
 import { gsap } from 'gsap';
@@ -12,23 +12,26 @@ interface IconSkillsProps {
 const IconSkills = ({ skills }: IconSkillsProps) => {
   const popupRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const handleMouseEnter = (index: number) => {
+  // data-index로 인덱스를 읽어 인라인 함수 생성 제거
+  const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const index = Number(e.currentTarget.dataset.index);
     gsap.to(popupRefs.current[index], {
       opacity: 1,
       y: -10,
       duration: 0.3,
       ease: 'power2.out',
     });
-  };
+  }, []);
 
-  const handleMouseLeave = (index: number) => {
+  const handleMouseLeave = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const index = Number(e.currentTarget.dataset.index);
     gsap.to(popupRefs.current[index], {
       opacity: 0,
       y: 0,
       duration: 0.3,
       ease: 'power2.out',
     });
-  };
+  }, []);
 
   return (
     <div className="grid cursor-pointer grid-cols-3 grid-rows-3 gap-6">
@@ -36,8 +39,9 @@ const IconSkills = ({ skills }: IconSkillsProps) => {
         <div
           key={index}
           className="relative flex flex-col items-center"
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={() => handleMouseLeave(index)}
+          data-index={index}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <figure
             className={clsx(

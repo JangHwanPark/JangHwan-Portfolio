@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import { TabsContextType, TabsProps } from '../types/tabs';
 
@@ -73,8 +73,10 @@ export const TabsProvider = <T extends {} = {}>({
     [onChange]
   );
 
+  const value = useMemo(() => ({ active, handleTabChange, tabs }), [active, handleTabChange, tabs]);
+
   return (
-    <TabsContext.Provider value={{ active, handleTabChange, tabs }}>
+    <TabsContext.Provider value={value}>
       {children}
     </TabsContext.Provider>
   );
