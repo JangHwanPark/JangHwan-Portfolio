@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello JangHwanPark</title>
     <meta name="description" content="프론트엔드 개발자 박장환의 포트폴리오입니다. React, TypeScript, GSAP을 활용한 프로젝트와 경험을 소개합니다." />
-    <!-- Google Fonts: Noto Sans KR (서브셋 분할, font-display: swap) -->
+    <!-- LCP 이미지 preload -->
+    <link rel="preload" as="image" type="image/webp" href="/images/p1.webp" />
+    <!-- Google Fonts: 비동기 로드 (render-blocking 방지) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" /></noscript>
   </head>
   <body>
     <div id="JangHwanPark"></div>
