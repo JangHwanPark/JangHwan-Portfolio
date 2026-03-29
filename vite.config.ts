@@ -8,9 +8,18 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   plugins: [react(), tailwindcss(), tsconfigPaths()],
 
-  // test.globals 옵션은 테스트 파일의 전역 함수를 import 없이 사용할 수 있게 합니다.
-  // test.environment 옵션은 테스트 환경을 지정합니다.
-  // test.setupFiles는 테스트 전에 실행될 파일을 지정합니다.
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // 벤더 청크 분리 → 캐싱 효율 향상
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-gsap': ['gsap', 'gsap/ScrollTrigger', 'gsap/ScrollToPlugin', '@gsap/react'],
+        },
+      },
+    },
+  },
+
   test: {
     globals: true,
     environment: 'jsdom',

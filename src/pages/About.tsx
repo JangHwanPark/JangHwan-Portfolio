@@ -42,14 +42,13 @@ const About = () => {
       '-=0.5'
     );
 
+    // Avatar(LCP 요소)는 opacity: 1 유지 → LCP 지연 방지
     tl.fromTo(
       imgRef.current,
       {
-        opacity: 0,
         x: 100,
       },
       {
-        opacity: 1,
         duration: 1.2,
         x: 0,
       },

@@ -17,6 +17,8 @@ const Avatar = forwardRef<HTMLDivElement, {}>((_, ref) => {
         alt="Profile"
         width={410}
         height={450}
+        loading="eager"
+        fetchPriority="high"
         className={`${imgSize} relative z-10 object-cover`}
       />
     </div>
