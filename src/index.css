@@ -30,20 +30,8 @@
 /* 다크모드 */
 @variant dark (&:where([data-them=dark], [data-theme=dark] *));
 
-/* 폰트 */
-@font-face {
-  font-family: 'Noto Sans KR';
-  src: url('/public/font/NotoSansKR-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Noto Sans KR';
-  src: url('/public/font/NotoSansKR-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
+/* 폰트 — Google Fonts CDN (서브셋 분할 제공, ~200KB) */
+/* index.html에서 <link>로 로드, font-display: swap 적용 */
 
 html,
 body {
