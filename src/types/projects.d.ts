@@ -1,4 +1,4 @@
-type ProjectStatus = 'PLANNED' | 'INPROGRESS' | 'COMPLETED' | 'MAINTENANCE' | 'CANCELLED' | 'ARCHIVED';
+type ProjectStatus = 'PLANNED' | 'INPROGRESS' | 'MVP' | 'COMPLETED' | 'MAINTENANCE' | 'CANCELLED' | 'ARCHIVED';
 type ProjectType = 'TEAM' | 'PERSONAL';
 type RoleType = 'Frontend Developer' | 'Backend Developer' | 'Fullstack Developer' | string;
 type CollaborationTool = 'Jira' | 'Notion' | 'Slack' | 'Figma' | 'GitHub' | string;

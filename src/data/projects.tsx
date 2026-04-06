@@ -2,6 +2,19 @@ export const projects: ProjectsType[] = [
   {
     id: 1,
     status: 'INPROGRESS',
+    thumbnail: '/thumbnail/bbangkri_thumbnail.png',
+    name: 'Bbangkri (빵그리)',
+    dateRange: '2026.03 ~ 진행 중',
+    description: '',
+    projectType: 'TEAM',
+    role: ['Frontend Developer'],
+    github: '',
+    stack: ['Next.js', 'TypeScript', 'React Query', 'Zustand', 'Storybook'],
+    features: [],
+  },
+  {
+    id: 2,
+    status: 'MVP',
     thumbnail: '/thumbnail/testea_thumbnail.png',
     name: 'Testea',
     dateRange: '2024.09 ~ 진행 중',
@@ -37,7 +50,7 @@ QA 경험을 바탕으로 실무 테스트 프로세스를 자동화하는 것�
     ],
   },
   {
-    id: 2,
+    id: 3,
     status: 'COMPLETED',
     thumbnail: '/thumbnail/au-pay_thumbnail.png',
     name: 'DA (DataArtist)',
@@ -65,7 +78,7 @@ QA 경험을 바탕으로 실무 테스트 프로세스를 자동화하는 것�
     awards: ['졸업작품 2등 (우수상)', '컴퓨터 정보학회 논문 투고'],
   },
   {
-    id: 3,
+    id: 4,
     status: 'COMPLETED',
     thumbnail: '/thumbnail/dedu_thumbnail.png',
     name: "D'edu (디에듀)",
