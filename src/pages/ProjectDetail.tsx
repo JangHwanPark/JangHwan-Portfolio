@@ -102,7 +102,7 @@ const ProjectDetail = () => {
           <div className="from-primary/40 absolute inset-0 bg-gradient-to-tr via-transparent to-white/20 mix-blend-screen" />
           <Image
             alt={project.name}
-            src="/images/p4.webp"
+            src={project.thumbnail ?? '/images/p4.webp'}
             className="h-full max-h-[500px] w-full object-cover"
           />
         </figure>

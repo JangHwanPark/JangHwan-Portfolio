@@ -29,7 +29,7 @@ const ProjectCard = memo(({ project }: { project: ProjectsType }) => {
           className="relative"
           aria-label={`${project.name} 프로젝트 상세 보기`}
         >
-          <img src="/images/p2.webp" alt={project.name} width={500} height={300} className="max-h-[250px] w-full lg:max-h-[300px]" />
+          <img src={project.thumbnail ?? '/images/p2.webp'} alt={project.name} width={500} height={300} className="max-h-[250px] w-full lg:max-h-[300px]" />
         </Link>
       </figure>
     </li>
